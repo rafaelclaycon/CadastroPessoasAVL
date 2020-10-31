@@ -11,7 +11,7 @@ import SwiftUI
 struct CadastroPessoasAVLApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            TelaPrincipal()
         }
     }
 }
