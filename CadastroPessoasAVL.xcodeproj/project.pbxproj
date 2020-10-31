@@ -1,0 +1,585 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D90DE5F1254DDEE60062E7B3 /* CadastroPessoasAVLApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90DE5F0254DDEE60062E7B3 /* CadastroPessoasAVLApp.swift */; };
+		D90DE5F3254DDEE60062E7B3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90DE5F2254DDEE60062E7B3 /* ContentView.swift */; };
+		D90DE5F5254DDEE70062E7B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D90DE5F4254DDEE70062E7B3 /* Assets.xcassets */; };
+		D90DE5F8254DDEE70062E7B3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D90DE5F7254DDEE70062E7B3 /* Preview Assets.xcassets */; };
+		D90DE603254DDEE80062E7B3 /* CadastroPessoasAVLTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90DE602254DDEE80062E7B3 /* CadastroPessoasAVLTests.swift */; };
+		D90DE60E254DDEE80062E7B3 /* CadastroPessoasAVLUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90DE60D254DDEE80062E7B3 /* CadastroPessoasAVLUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D90DE5FF254DDEE80062E7B3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D90DE5E5254DDEE60062E7B3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D90DE5EC254DDEE60062E7B3;
+			remoteInfo = CadastroPessoasAVL;
+		};
+		D90DE60A254DDEE80062E7B3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D90DE5E5254DDEE60062E7B3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D90DE5EC254DDEE60062E7B3;
+			remoteInfo = CadastroPessoasAVL;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D90DE5ED254DDEE60062E7B3 /* CadastroPessoasAVL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CadastroPessoasAVL.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D90DE5F0254DDEE60062E7B3 /* CadastroPessoasAVLApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CadastroPessoasAVLApp.swift; sourceTree = "<group>"; };
+		D90DE5F2254DDEE60062E7B3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		D90DE5F4254DDEE70062E7B3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D90DE5F7254DDEE70062E7B3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		D90DE5F9254DDEE70062E7B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D90DE5FE254DDEE80062E7B3 /* CadastroPessoasAVLTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CadastroPessoasAVLTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D90DE602254DDEE80062E7B3 /* CadastroPessoasAVLTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CadastroPessoasAVLTests.swift; sourceTree = "<group>"; };
+		D90DE604254DDEE80062E7B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D90DE609254DDEE80062E7B3 /* CadastroPessoasAVLUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CadastroPessoasAVLUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D90DE60D254DDEE80062E7B3 /* CadastroPessoasAVLUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CadastroPessoasAVLUITests.swift; sourceTree = "<group>"; };
+		D90DE60F254DDEE80062E7B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D90DE5EA254DDEE60062E7B3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D90DE5FB254DDEE80062E7B3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D90DE606254DDEE80062E7B3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D90DE5E4254DDEE60062E7B3 = {
+			isa = PBXGroup;
+			children = (
+				D90DE5EF254DDEE60062E7B3 /* CadastroPessoasAVL */,
+				D90DE601254DDEE80062E7B3 /* CadastroPessoasAVLTests */,
+				D90DE60C254DDEE80062E7B3 /* CadastroPessoasAVLUITests */,
+				D90DE5EE254DDEE60062E7B3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D90DE5EE254DDEE60062E7B3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D90DE5ED254DDEE60062E7B3 /* CadastroPessoasAVL.app */,
+				D90DE5FE254DDEE80062E7B3 /* CadastroPessoasAVLTests.xctest */,
+				D90DE609254DDEE80062E7B3 /* CadastroPessoasAVLUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D90DE5EF254DDEE60062E7B3 /* CadastroPessoasAVL */ = {
+			isa = PBXGroup;
+			children = (
+				D90DE5F0254DDEE60062E7B3 /* CadastroPessoasAVLApp.swift */,
+				D90DE5F2254DDEE60062E7B3 /* ContentView.swift */,
+				D90DE5F4254DDEE70062E7B3 /* Assets.xcassets */,
+				D90DE5F9254DDEE70062E7B3 /* Info.plist */,
+				D90DE5F6254DDEE70062E7B3 /* Preview Content */,
+			);
+			path = CadastroPessoasAVL;
+			sourceTree = "<group>";
+		};
+		D90DE5F6254DDEE70062E7B3 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				D90DE5F7254DDEE70062E7B3 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		D90DE601254DDEE80062E7B3 /* CadastroPessoasAVLTests */ = {
+			isa = PBXGroup;
+			children = (
+				D90DE602254DDEE80062E7B3 /* CadastroPessoasAVLTests.swift */,
+				D90DE604254DDEE80062E7B3 /* Info.plist */,
+			);
+			path = CadastroPessoasAVLTests;
+			sourceTree = "<group>";
+		};
+		D90DE60C254DDEE80062E7B3 /* CadastroPessoasAVLUITests */ = {
+			isa = PBXGroup;
+			children = (
+				D90DE60D254DDEE80062E7B3 /* CadastroPessoasAVLUITests.swift */,
+				D90DE60F254DDEE80062E7B3 /* Info.plist */,
+			);
+			path = CadastroPessoasAVLUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D90DE5EC254DDEE60062E7B3 /* CadastroPessoasAVL */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D90DE612254DDEE80062E7B3 /* Build configuration list for PBXNativeTarget "CadastroPessoasAVL" */;
+			buildPhases = (
+				D90DE5E9254DDEE60062E7B3 /* Sources */,
+				D90DE5EA254DDEE60062E7B3 /* Frameworks */,
+				D90DE5EB254DDEE60062E7B3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CadastroPessoasAVL;
+			productName = CadastroPessoasAVL;
+			productReference = D90DE5ED254DDEE60062E7B3 /* CadastroPessoasAVL.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D90DE5FD254DDEE80062E7B3 /* CadastroPessoasAVLTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D90DE615254DDEE80062E7B3 /* Build configuration list for PBXNativeTarget "CadastroPessoasAVLTests" */;
+			buildPhases = (
+				D90DE5FA254DDEE80062E7B3 /* Sources */,
+				D90DE5FB254DDEE80062E7B3 /* Frameworks */,
+				D90DE5FC254DDEE80062E7B3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D90DE600254DDEE80062E7B3 /* PBXTargetDependency */,
+			);
+			name = CadastroPessoasAVLTests;
+			productName = CadastroPessoasAVLTests;
+			productReference = D90DE5FE254DDEE80062E7B3 /* CadastroPessoasAVLTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D90DE608254DDEE80062E7B3 /* CadastroPessoasAVLUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D90DE618254DDEE80062E7B3 /* Build configuration list for PBXNativeTarget "CadastroPessoasAVLUITests" */;
+			buildPhases = (
+				D90DE605254DDEE80062E7B3 /* Sources */,
+				D90DE606254DDEE80062E7B3 /* Frameworks */,
+				D90DE607254DDEE80062E7B3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D90DE60B254DDEE80062E7B3 /* PBXTargetDependency */,
+			);
+			name = CadastroPessoasAVLUITests;
+			productName = CadastroPessoasAVLUITests;
+			productReference = D90DE609254DDEE80062E7B3 /* CadastroPessoasAVLUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D90DE5E5254DDEE60062E7B3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1210;
+				LastUpgradeCheck = 1210;
+				TargetAttributes = {
+					D90DE5EC254DDEE60062E7B3 = {
+						CreatedOnToolsVersion = 12.1;
+					};
+					D90DE5FD254DDEE80062E7B3 = {
+						CreatedOnToolsVersion = 12.1;
+						TestTargetID = D90DE5EC254DDEE60062E7B3;
+					};
+					D90DE608254DDEE80062E7B3 = {
+						CreatedOnToolsVersion = 12.1;
+						TestTargetID = D90DE5EC254DDEE60062E7B3;
+					};
+				};
+			};
+			buildConfigurationList = D90DE5E8254DDEE60062E7B3 /* Build configuration list for PBXProject "CadastroPessoasAVL" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D90DE5E4254DDEE60062E7B3;
+			productRefGroup = D90DE5EE254DDEE60062E7B3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D90DE5EC254DDEE60062E7B3 /* CadastroPessoasAVL */,
+				D90DE5FD254DDEE80062E7B3 /* CadastroPessoasAVLTests */,
+				D90DE608254DDEE80062E7B3 /* CadastroPessoasAVLUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D90DE5EB254DDEE60062E7B3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D90DE5F8254DDEE70062E7B3 /* Preview Assets.xcassets in Resources */,
+				D90DE5F5254DDEE70062E7B3 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D90DE5FC254DDEE80062E7B3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D90DE607254DDEE80062E7B3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D90DE5E9254DDEE60062E7B3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D90DE5F3254DDEE60062E7B3 /* ContentView.swift in Sources */,
+				D90DE5F1254DDEE60062E7B3 /* CadastroPessoasAVLApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D90DE5FA254DDEE80062E7B3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D90DE603254DDEE80062E7B3 /* CadastroPessoasAVLTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D90DE605254DDEE80062E7B3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D90DE60E254DDEE80062E7B3 /* CadastroPessoasAVLUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D90DE600254DDEE80062E7B3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D90DE5EC254DDEE60062E7B3 /* CadastroPessoasAVL */;
+			targetProxy = D90DE5FF254DDEE80062E7B3 /* PBXContainerItemProxy */;
+		};
+		D90DE60B254DDEE80062E7B3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D90DE5EC254DDEE60062E7B3 /* CadastroPessoasAVL */;
+			targetProxy = D90DE60A254DDEE80062E7B3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		D90DE610254DDEE80062E7B3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D90DE611254DDEE80062E7B3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D90DE613254DDEE80062E7B3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"CadastroPessoasAVL/Preview Content\"";
+				DEVELOPMENT_TEAM = L8X3H5XA82;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = CadastroPessoasAVL/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.rafaelschmitt.CadastroPessoasAVL;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D90DE614254DDEE80062E7B3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"CadastroPessoasAVL/Preview Content\"";
+				DEVELOPMENT_TEAM = L8X3H5XA82;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = CadastroPessoasAVL/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.rafaelschmitt.CadastroPessoasAVL;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		D90DE616254DDEE80062E7B3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L8X3H5XA82;
+				INFOPLIST_FILE = CadastroPessoasAVLTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.rafaelschmitt.CadastroPessoasAVLTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CadastroPessoasAVL.app/CadastroPessoasAVL";
+			};
+			name = Debug;
+		};
+		D90DE617254DDEE80062E7B3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L8X3H5XA82;
+				INFOPLIST_FILE = CadastroPessoasAVLTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.rafaelschmitt.CadastroPessoasAVLTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CadastroPessoasAVL.app/CadastroPessoasAVL";
+			};
+			name = Release;
+		};
+		D90DE619254DDEE80062E7B3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L8X3H5XA82;
+				INFOPLIST_FILE = CadastroPessoasAVLUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.rafaelschmitt.CadastroPessoasAVLUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CadastroPessoasAVL;
+			};
+			name = Debug;
+		};
+		D90DE61A254DDEE80062E7B3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L8X3H5XA82;
+				INFOPLIST_FILE = CadastroPessoasAVLUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.rafaelschmitt.CadastroPessoasAVLUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CadastroPessoasAVL;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D90DE5E8254DDEE60062E7B3 /* Build configuration list for PBXProject "CadastroPessoasAVL" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D90DE610254DDEE80062E7B3 /* Debug */,
+				D90DE611254DDEE80062E7B3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D90DE612254DDEE80062E7B3 /* Build configuration list for PBXNativeTarget "CadastroPessoasAVL" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D90DE613254DDEE80062E7B3 /* Debug */,
+				D90DE614254DDEE80062E7B3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D90DE615254DDEE80062E7B3 /* Build configuration list for PBXNativeTarget "CadastroPessoasAVLTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D90DE616254DDEE80062E7B3 /* Debug */,
+				D90DE617254DDEE80062E7B3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D90DE618254DDEE80062E7B3 /* Build configuration list for PBXNativeTarget "CadastroPessoasAVLUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D90DE619254DDEE80062E7B3 /* Debug */,
+				D90DE61A254DDEE80062E7B3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D90DE5E5254DDEE60062E7B3 /* Project object */;
+}
