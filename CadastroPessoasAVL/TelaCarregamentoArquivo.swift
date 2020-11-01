@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct TelaCarregamentoArquivo: View {
-    
+    @ObservedObject var viewModel: TelaCarregamentoArquivoViewModel
     
     var body: some View {
         Cabecalho()
@@ -25,7 +25,7 @@ struct TelaCarregamentoArquivo: View {
                 )
             
             Button(action: {
-                // your action here
+                viewModel.processarArquivo()
             }) {
                 HStack {
                     Image(systemName: "folder.fill.badge.plus")

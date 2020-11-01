@@ -11,8 +11,8 @@ import SwiftUI
 struct CadastroPessoasAVLApp: App {
     var body: some Scene {
         WindowGroup {
-            TelaPesquisa(viewModel: TelaPesquisaViewModel())
-            //TelaCarregamentoArquivo()
+            //TelaPesquisa(viewModel: TelaPesquisaViewModel())
+            TelaCarregamentoArquivo(viewModel: TelaCarregamentoArquivoViewModel())
         }
     }
 }

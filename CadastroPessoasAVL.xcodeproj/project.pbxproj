@@ -18,6 +18,10 @@
 		D90DE62E254DF7520062E7B3 /* TelaPesquisaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90DE62D254DF7520062E7B3 /* TelaPesquisaViewModel.swift */; };
 		D90DE639254E3DD50062E7B3 /* TelaCarregamentoArquivo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90DE638254E3DD50062E7B3 /* TelaCarregamentoArquivo.swift */; };
 		D90DE641254E3F230062E7B3 /* Cabecalho.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90DE640254E3F230062E7B3 /* Cabecalho.swift */; };
+		D90DE64D254E494F0062E7B3 /* ArvoreAVL.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90DE64C254E494F0062E7B3 /* ArvoreAVL.swift */; };
+		D90DE652254E49B80062E7B3 /* No.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90DE651254E49B80062E7B3 /* No.swift */; };
+		D90DE65A254F04900062E7B3 /* AnalisadorCSV.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90DE659254F04900062E7B3 /* AnalisadorCSV.swift */; };
+		D90DE65F254F04CE0062E7B3 /* TelaCarregamentoArquivoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90DE65E254F04CE0062E7B3 /* TelaCarregamentoArquivoViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +59,10 @@
 		D90DE62D254DF7520062E7B3 /* TelaPesquisaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelaPesquisaViewModel.swift; sourceTree = "<group>"; };
 		D90DE638254E3DD50062E7B3 /* TelaCarregamentoArquivo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelaCarregamentoArquivo.swift; sourceTree = "<group>"; };
 		D90DE640254E3F230062E7B3 /* Cabecalho.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cabecalho.swift; sourceTree = "<group>"; };
+		D90DE64C254E494F0062E7B3 /* ArvoreAVL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArvoreAVL.swift; sourceTree = "<group>"; };
+		D90DE651254E49B80062E7B3 /* No.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = No.swift; sourceTree = "<group>"; };
+		D90DE659254F04900062E7B3 /* AnalisadorCSV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalisadorCSV.swift; sourceTree = "<group>"; };
+		D90DE65E254F04CE0062E7B3 /* TelaCarregamentoArquivoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelaCarregamentoArquivoViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,10 +119,12 @@
 				D90DE5F2254DDEE60062E7B3 /* TelaPesquisa.swift */,
 				D90DE62D254DF7520062E7B3 /* TelaPesquisaViewModel.swift */,
 				D90DE638254E3DD50062E7B3 /* TelaCarregamentoArquivo.swift */,
+				D90DE65E254F04CE0062E7B3 /* TelaCarregamentoArquivoViewModel.swift */,
 				D90DE5F4254DDEE70062E7B3 /* Assets.xcassets */,
 				D90DE5F9254DDEE70062E7B3 /* Info.plist */,
 				D90DE621254DEBCF0062E7B3 /* Recursos */,
 				D90DE5F6254DDEE70062E7B3 /* Preview Content */,
+				D90DE659254F04900062E7B3 /* AnalisadorCSV.swift */,
 			);
 			path = CadastroPessoasAVL;
 			sourceTree = "<group>";
@@ -156,6 +166,8 @@
 		D90DE627254DEDC30062E7B3 /* Modelo */ = {
 			isa = PBXGroup;
 			children = (
+				D90DE651254E49B80062E7B3 /* No.swift */,
+				D90DE64C254E494F0062E7B3 /* ArvoreAVL.swift */,
 				D90DE628254DEDD00062E7B3 /* Pessoa.swift */,
 			);
 			path = Modelo;
@@ -299,9 +311,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D90DE652254E49B80062E7B3 /* No.swift in Sources */,
 				D90DE5F3254DDEE60062E7B3 /* TelaPesquisa.swift in Sources */,
+				D90DE64D254E494F0062E7B3 /* ArvoreAVL.swift in Sources */,
 				D90DE629254DEDD00062E7B3 /* Pessoa.swift in Sources */,
+				D90DE65A254F04900062E7B3 /* AnalisadorCSV.swift in Sources */,
 				D90DE5F1254DDEE60062E7B3 /* CadastroPessoasAVLApp.swift in Sources */,
+				D90DE65F254F04CE0062E7B3 /* TelaCarregamentoArquivoViewModel.swift in Sources */,
 				D90DE62E254DF7520062E7B3 /* TelaPesquisaViewModel.swift in Sources */,
 				D90DE641254E3F230062E7B3 /* Cabecalho.swift in Sources */,
 				D90DE639254E3DD50062E7B3 /* TelaCarregamentoArquivo.swift in Sources */,
