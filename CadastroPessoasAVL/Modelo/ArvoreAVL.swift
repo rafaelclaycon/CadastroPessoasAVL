@@ -17,49 +17,49 @@ class ArvoreAVL {
     private var caminhamento = [String]()
     
     // MARK: - Inserção
-    func inserir(_ valor: Int) {
+    func inserir(_ chave: Int) {
         if raiz == nil {
-            raiz = No(pai: nil, esquerda: nil, direita: nil, valor: valor)
-            print("O número \(valor) foi inserido.")
+            raiz = No(pai: nil, esquerda: nil, direita: nil, chave: chave)
+            print("O número \(chave) foi inserido.")
         } else {
-            if valor < raiz!.valor {
+            if chave < raiz!.chave {
                 if raiz?.esquerda == nil {
-                    raiz?.esquerda = No(pai: raiz, esquerda: nil, direita: nil, valor: valor)
-                    print("O número \(valor) foi inserido.")
+                    raiz?.esquerda = No(pai: raiz, esquerda: nil, direita: nil, chave: chave)
+                    print("O número \(chave) foi inserido.")
                 } else {
-                    inserirEmSubarvore((raiz?.esquerda)!, valor)
+                    inserirEmSubarvore((raiz?.esquerda)!, chave)
                 }
-            } else if valor > raiz!.valor {
+            } else if chave > raiz!.chave {
                 if raiz?.direita == nil {
-                    raiz?.direita = No(pai: raiz, esquerda: nil, direita: nil, valor: valor)
-                    print("O número \(valor) foi inserido.")
+                    raiz?.direita = No(pai: raiz, esquerda: nil, direita: nil, chave: chave)
+                    print("O número \(chave) foi inserido.")
                 } else {
-                    inserirEmSubarvore((raiz?.direita)!, valor)
+                    inserirEmSubarvore((raiz?.direita)!, chave)
                 }
             } else {
-                print("O número \(valor) já existe na árvore.")
+                print("O número \(chave) já existe na árvore.")
             }
         }
         verificarBalanceamento(raiz, balancear: true)
     }
     
-    func inserirEmSubarvore(_ raiz: No, _ valor: Int) {
-        if valor < raiz.valor {
+    func inserirEmSubarvore(_ raiz: No, _ chave: Int) {
+        if chave < raiz.chave {
             if raiz.esquerda == nil {
-                raiz.esquerda = No(pai: raiz, esquerda: nil, direita: nil, valor: valor)
-                print("O número \(valor) foi inserido.")
+                raiz.esquerda = No(pai: raiz, esquerda: nil, direita: nil, chave: chave)
+                print("O número \(chave) foi inserido.")
             } else {
-                inserirEmSubarvore((raiz.esquerda)!, valor)
+                inserirEmSubarvore((raiz.esquerda)!, chave)
             }
-        } else if valor > raiz.valor {
+        } else if chave > raiz.chave {
             if raiz.direita == nil {
-                raiz.direita = No(pai: raiz, esquerda: nil, direita: nil, valor: valor)
-                print("O número \(valor) foi inserido.")
+                raiz.direita = No(pai: raiz, esquerda: nil, direita: nil, chave: chave)
+                print("O número \(chave) foi inserido.")
             } else {
-                inserirEmSubarvore((raiz.direita)!, valor)
+                inserirEmSubarvore((raiz.direita)!, chave)
             }
         } else {
-            print("O número \(valor) já existe na árvore.")
+            print("O número \(chave) já existe na árvore.")
         }
     }
     
@@ -72,10 +72,10 @@ class ArvoreAVL {
         verificarBalanceamento(noAtual.esquerda, balancear: balancear)
         verificarBalanceamento(noAtual.direita, balancear: balancear)
         
-        print("\(noAtual.valor) consultado para balanceamento. F: \(noAtual.fatorBalanceamento)")
+        print("\(noAtual.chave) consultado para balanceamento. F: \(noAtual.fatorBalanceamento)")
         
         if (noAtual.fatorBalanceamento < -1) || (noAtual.fatorBalanceamento > 1) {
-            print("Nó \(noAtual.valor) necessita balanceamento!")
+            print("Nó \(noAtual.chave) necessita balanceamento!")
             
             // Rotação Simples à Direita
             // Toda vez que uma sub-árvore fica com um fator
@@ -93,7 +93,7 @@ class ArvoreAVL {
                         rotacaoSimplesADireita(noAtual)
                         print("Rotação Simples à Direita aplicada.")
                     } else {
-                        print("Executaria uma Rotação Simples à Direita no nó \(noAtual.valor).")
+                        print("Executaria uma Rotação Simples à Direita no nó \(noAtual.chave).")
                     }
                 } else if noAtual.esquerda!.fatorBalanceamento < 0 {
                     print("Rotação Dupla à Direita")
@@ -102,7 +102,7 @@ class ArvoreAVL {
                         rotacaoDuplaADireita(noAtual)
                         print("Rotação Dupla à Direita aplicada.")
                     } else {
-                        print("Executaria uma Rotação Dupla à Direita no nó \(noAtual.valor).")
+                        print("Executaria uma Rotação Dupla à Direita no nó \(noAtual.chave).")
                     }
                 }
             }
@@ -123,7 +123,7 @@ class ArvoreAVL {
                         rotacaoDuplaAEsquerda(noAtual)
                         print("Rotação Dupla à Esquerda aplicada.")
                     } else {
-                        print("Executaria uma Rotação Dupla à Esquerda no nó \(noAtual.valor).")
+                        print("Executaria uma Rotação Dupla à Esquerda no nó \(noAtual.chave).")
                     }
                 } else if noAtual.direita!.fatorBalanceamento < 0 {
                     print("Rotação Simples à Esquerda")
@@ -132,7 +132,7 @@ class ArvoreAVL {
                         rotacaoSimplesAEsquerda(noAtual)
                         print("Rotação Simples à Esquerda aplicada.")
                     } else {
-                        print("Executaria uma Rotação Simples à Esquerda no nó \(noAtual.valor).")
+                        print("Executaria uma Rotação Simples à Esquerda no nó \(noAtual.chave).")
                     }
                 }
             }
@@ -291,28 +291,28 @@ class ArvoreAVL {
     }
     
     // MARK: - Busca
-    func buscar(valor: Int) {
+    func buscar(chave: Int) {
         if raiz == nil {
             print("☹️  O número consultado não está na árvore pois a árvore está vazia.")
         } else {
-            self.nosConsultados.append("\(raiz!.valor)")
+            self.nosConsultados.append("\(raiz!.chave)")
             
-            if valor == raiz!.valor {
-                print("🎉  O número \(valor) está na árvore. Nós consultados: " + self.nosConsultados.joined(separator: ", "))
+            if chave == raiz!.chave {
+                print("🎉  O número \(chave) está na árvore. Nós consultados: " + self.nosConsultados.joined(separator: ", "))
             } else {
                 var no: No?
-                if valor < raiz!.valor {
+                if chave < raiz!.chave {
                     no = raiz!.esquerda
                 } else {
                     no = raiz!.direita
                 }
                 
-                let encontrado = buscarNaSubarvore(valor, no)
+                let encontrado = buscarNaSubarvore(chave, no)
                 
                 if encontrado {
-                    print("🎉  O número \(valor) está na árvore. Nós consultados: " + self.nosConsultados.joined(separator: ", "))
+                    print("🎉  O número \(chave) está na árvore. Nós consultados: " + self.nosConsultados.joined(separator: ", "))
                 } else {
-                    print("☹️  O número \(valor) não está na árvore. Nós consultados: " + self.nosConsultados.joined(separator: ", "))
+                    print("☹️  O número \(chave) não está na árvore. Nós consultados: " + self.nosConsultados.joined(separator: ", "))
                 }
             }
             // Limpa o array que guarda o caminho percorrido pela pesquisa.
@@ -320,30 +320,30 @@ class ArvoreAVL {
         }
     }
     
-    func buscarNaSubarvore(_ valor: Int, _ no: No?) -> Bool {
+    func buscarNaSubarvore(_ chave: Int, _ no: No?) -> Bool {
         guard let no = no else {
             return false
         }
         
-        self.nosConsultados.append("\(no.valor)")
+        self.nosConsultados.append("\(no.chave)")
         
-        if valor < no.valor {
-            return buscarNaSubarvore(valor, no.esquerda)
-        } else if valor > no.valor {
-            return buscarNaSubarvore(valor, no.direita)
+        if chave < no.chave {
+            return buscarNaSubarvore(chave, no.esquerda)
+        } else if chave > no.chave {
+            return buscarNaSubarvore(chave, no.direita)
         }
         return true
     }
     
     // MARK: - Remoção
-    func remover(_ valor: Int) {
-        guard let noASerRemovido = getNo(comValor: valor, aPartirDe: raiz) else {
-            return print("⛔️  Não é possível remover o número \(valor) pois ele não está na árvore.")
+    func remover(_ chave: Int) {
+        guard let noASerRemovido = getNo(comChave: chave, aPartirDe: raiz) else {
+            return print("⛔️  Não é possível remover o número \(chave) pois ele não está na árvore.")
         }
         
         // Caso 1: O nó a ser removido é um nó folha.
         if (noASerRemovido.esquerda == nil) && (noASerRemovido.direita == nil) {
-            if noASerRemovido.valor == raiz?.valor {
+            if noASerRemovido.chave == raiz?.chave {
                 raiz = nil
             } else {
                 switch noASerRemovido.orientacaoEmRelacaoAoPai {
@@ -353,7 +353,7 @@ class ArvoreAVL {
                     noASerRemovido.pai?.direita = nil
                 }
             }
-            print("💀  O número \(valor) foi removido.")
+            print("💀  O número \(chave) foi removido.")
             
         // Caso 2: O nó a ser removido só tem 1 filho.
         } else if (noASerRemovido.esquerda == nil) || (noASerRemovido.direita == nil) {
@@ -364,7 +364,7 @@ class ArvoreAVL {
                 filho = noASerRemovido.direita!
             }
             
-            if noASerRemovido.valor == raiz?.valor {
+            if noASerRemovido.chave == raiz?.chave {
                 raiz = filho
                 filho!.pai = nil
             } else {
@@ -376,18 +376,18 @@ class ArvoreAVL {
                 }
                 filho!.pai = noASerRemovido.pai
             }
-            print("💀  O número \(valor) foi removido.")
+            print("💀  O número \(chave) foi removido.")
             
         // Caso 3: O nó a ser removido tem 2 filhos.
         } else if (noASerRemovido.esquerda != nil) && (noASerRemovido.direita != nil) {
             let sucessorEmOrdem = getMenorADireita(noASerRemovido.direita!)
-            remover(sucessorEmOrdem.valor)
+            remover(sucessorEmOrdem.chave)
             
             sucessorEmOrdem.pai = noASerRemovido.pai
             sucessorEmOrdem.esquerda = noASerRemovido.esquerda
             sucessorEmOrdem.direita = noASerRemovido.direita
             
-            if noASerRemovido.valor == raiz?.valor {
+            if noASerRemovido.chave == raiz?.chave {
                 raiz = sucessorEmOrdem
             } else {
                 switch noASerRemovido.orientacaoEmRelacaoAoPai {
@@ -397,21 +397,21 @@ class ArvoreAVL {
                     noASerRemovido.pai?.direita = sucessorEmOrdem
                 }
             }
-            print("💀  O número \(valor) foi removido.")
+            print("💀  O número \(chave) foi removido.")
         }
         
         verificarBalanceamento(raiz, balancear: true)
     }
     
-    func getNo(comValor valor: Int, aPartirDe no: No?) -> No? {
+    func getNo(comChave chave: Int, aPartirDe no: No?) -> No? {
         guard let no = no else {
             return nil
         }
                 
-        if valor < no.valor {
-            return getNo(comValor: valor, aPartirDe: no.esquerda)
-        } else if valor > no.valor {
-            return getNo(comValor: valor, aPartirDe: no.direita)
+        if chave < no.chave {
+            return getNo(comChave: chave, aPartirDe: no.esquerda)
+        } else if chave > no.chave {
+            return getNo(comChave: chave, aPartirDe: no.direita)
         }
         return no
     }
@@ -463,7 +463,7 @@ class ArvoreAVL {
         guard let no = no else {
             return
         }
-        caminhamento.append("\(no.valor)")
+        caminhamento.append("\(no.chave)")
         subarvorePreOrdem(no.esquerda)
         subarvorePreOrdem(no.direita)
     }
@@ -474,7 +474,7 @@ class ArvoreAVL {
         }
         subarvorePosOrdem(no.esquerda)
         subarvorePosOrdem(no.direita)
-        caminhamento.append("\(no.valor)")
+        caminhamento.append("\(no.chave)")
     }
     
     func subarvoreEmOrdem(_ no: No?) {
@@ -482,7 +482,7 @@ class ArvoreAVL {
             return
         }
         subarvoreEmOrdem(no.esquerda)
-        caminhamento.append("\(no.valor)")
+        caminhamento.append("\(no.chave)")
         subarvoreEmOrdem(no.direita)
     }
     
@@ -491,6 +491,6 @@ class ArvoreAVL {
         guard let variavel = variavel else {
             return print(nome + ": -")
         }
-        print(nome + ": \(variavel.valor)")
+        print(nome + ": \(variavel.chave)")
     }
 }

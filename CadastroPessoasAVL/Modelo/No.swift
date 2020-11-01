@@ -11,7 +11,7 @@ class No {
     var pai: No?
     var esquerda: No?
     var direita: No?
-    var valor: Int
+    var chave: Int
     var fatorBalanceamento: Int {
         return No.getAltura(esquerda) - No.getAltura(direita)
     }
@@ -22,7 +22,7 @@ class No {
         if pai == nil {
             return .nenhuma
         } else {
-            if pai?.esquerda?.valor == self.valor {
+            if pai?.esquerda?.chave == self.chave {
                 return .esquerda
             } else {
                 return .direita
@@ -30,11 +30,11 @@ class No {
         }
     }
     
-    init(pai: No?, esquerda: No?, direita: No?, valor: Int) {
+    init(pai: No?, esquerda: No?, direita: No?, chave: Int) {
         self.pai = pai
         self.esquerda = esquerda
         self.direita = direita
-        self.valor = valor
+        self.chave = chave
     }
     
     static func getAltura(_ no: No?) -> Int {
