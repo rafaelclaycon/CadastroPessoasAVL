@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+var indices = IndicesArvore()
+
 struct TelaCarregamentoArquivo: View {
     @ObservedObject var viewModel: TelaCarregamentoArquivoViewModel
     

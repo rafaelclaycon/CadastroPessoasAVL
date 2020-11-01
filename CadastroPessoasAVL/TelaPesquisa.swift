@@ -15,6 +15,7 @@ struct TelaPesquisa: View {
     @State private var dataFinal = Date()
     var filtros = ["CPF", "Nome", "Data de nascimento"]
     @State private var filtroSelecionado = 0
+    //@State private var indices: IndicesArvore = IndicesArvore()
     
     var body: some View {
         VStack {

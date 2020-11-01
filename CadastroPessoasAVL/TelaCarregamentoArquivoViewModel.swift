@@ -16,10 +16,7 @@ class TelaCarregamentoArquivoViewModel: ObservableObject {
         do {
             let arquivo = try String(contentsOf: fileURL, encoding: .utf8)
             
-            let lines = arquivo.split(separator: "\n")
-            for line in lines {
-                print(line)
-            }
+            AnalisadorCSV.analisar(arquivo: arquivo)
         } catch {
             // TODO: Lidar com o erro de ler o arquivo!
         }
