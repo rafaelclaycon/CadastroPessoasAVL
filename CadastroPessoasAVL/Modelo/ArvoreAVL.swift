@@ -17,24 +17,24 @@ class ArvoreAVL {
     private var caminhamento = [String]()
     
     // MARK: - Inserção
-    func inserir(_ chave: Int) {
+    func inserir(_ chave: Int, _ dados: Pessoa) {
         if raiz == nil {
-            raiz = No(pai: nil, esquerda: nil, direita: nil, chave: chave)
+            raiz = No(pai: nil, esquerda: nil, direita: nil, chave: chave, dados: dados)
             print("O número \(chave) foi inserido.")
         } else {
             if chave < raiz!.chave {
                 if raiz?.esquerda == nil {
-                    raiz?.esquerda = No(pai: raiz, esquerda: nil, direita: nil, chave: chave)
+                    raiz?.esquerda = No(pai: raiz, esquerda: nil, direita: nil, chave: chave, dados: dados)
                     print("O número \(chave) foi inserido.")
                 } else {
-                    inserirEmSubarvore((raiz?.esquerda)!, chave)
+                    inserirEmSubarvore((raiz?.esquerda)!, chave, dados)
                 }
             } else if chave > raiz!.chave {
                 if raiz?.direita == nil {
-                    raiz?.direita = No(pai: raiz, esquerda: nil, direita: nil, chave: chave)
+                    raiz?.direita = No(pai: raiz, esquerda: nil, direita: nil, chave: chave, dados: dados)
                     print("O número \(chave) foi inserido.")
                 } else {
-                    inserirEmSubarvore((raiz?.direita)!, chave)
+                    inserirEmSubarvore((raiz?.direita)!, chave, dados)
                 }
             } else {
                 print("O número \(chave) já existe na árvore.")
@@ -43,20 +43,20 @@ class ArvoreAVL {
         verificarBalanceamento(raiz, balancear: true)
     }
     
-    func inserirEmSubarvore(_ raiz: No, _ chave: Int) {
+    func inserirEmSubarvore(_ raiz: No, _ chave: Int, _ dados: Pessoa) {
         if chave < raiz.chave {
             if raiz.esquerda == nil {
-                raiz.esquerda = No(pai: raiz, esquerda: nil, direita: nil, chave: chave)
+                raiz.esquerda = No(pai: raiz, esquerda: nil, direita: nil, chave: chave, dados: dados)
                 print("O número \(chave) foi inserido.")
             } else {
-                inserirEmSubarvore((raiz.esquerda)!, chave)
+                inserirEmSubarvore((raiz.esquerda)!, chave, dados)
             }
         } else if chave > raiz.chave {
             if raiz.direita == nil {
-                raiz.direita = No(pai: raiz, esquerda: nil, direita: nil, chave: chave)
+                raiz.direita = No(pai: raiz, esquerda: nil, direita: nil, chave: chave, dados: dados)
                 print("O número \(chave) foi inserido.")
             } else {
-                inserirEmSubarvore((raiz.direita)!, chave)
+                inserirEmSubarvore((raiz.direita)!, chave, dados)
             }
         } else {
             print("O número \(chave) já existe na árvore.")

@@ -57,7 +57,8 @@ class AnalisadorCSV {
             let pessoa = Pessoa(cpf: cpf, rg: rg, nome: nome, dataNascimento: dataNascimento, nomeCidadeNascimento: nomeCidadeNascimento)
             
             // TODO: Inserir nas árvores
-            indices.indiceCPF.inserir(pessoa.cpf)
+            indices.cpf.inserir(pessoa.cpf, pessoa)
+            //indices.indiceNome
         }
     }
     

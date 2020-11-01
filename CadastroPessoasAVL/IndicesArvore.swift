@@ -8,13 +8,13 @@
 import Foundation
 
 class IndicesArvore {
-    var indiceCPF: ArvoreAVL
-    var indiceNome: ArvoreAVL
-    var indiceDataNascimento: ArvoreAVL
+    var cpf: ArvoreAVL
+    var nome: ArvoreAVL
+    var dataNascimento: ArvoreAVL
     
     init() {
-        self.indiceCPF = ArvoreAVL()
-        self.indiceNome = ArvoreAVL()
-        self.indiceDataNascimento = ArvoreAVL()
+        self.cpf = ArvoreAVL()
+        self.nome = ArvoreAVL()
+        self.dataNascimento = ArvoreAVL()
     }
 }

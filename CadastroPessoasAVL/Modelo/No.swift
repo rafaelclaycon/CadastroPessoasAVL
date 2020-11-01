@@ -12,6 +12,7 @@ class No {
     var esquerda: No?
     var direita: No?
     var chave: Int
+    var dados: Pessoa
     var fatorBalanceamento: Int {
         return No.getAltura(esquerda) - No.getAltura(direita)
     }
@@ -30,11 +31,12 @@ class No {
         }
     }
     
-    init(pai: No?, esquerda: No?, direita: No?, chave: Int) {
+    init(pai: No?, esquerda: No?, direita: No?, chave: Int, dados: Pessoa) {
         self.pai = pai
         self.esquerda = esquerda
         self.direita = direita
         self.chave = chave
+        self.dados = dados
     }
     
     static func getAltura(_ no: No?) -> Int {

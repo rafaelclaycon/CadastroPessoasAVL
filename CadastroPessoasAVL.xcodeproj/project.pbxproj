@@ -23,6 +23,10 @@
 		D90DE65A254F04900062E7B3 /* AnalisadorCSV.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90DE659254F04900062E7B3 /* AnalisadorCSV.swift */; };
 		D90DE65F254F04CE0062E7B3 /* TelaCarregamentoArquivoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90DE65E254F04CE0062E7B3 /* TelaCarregamentoArquivoViewModel.swift */; };
 		D90DE667254F0FE20062E7B3 /* IndicesArvore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90DE666254F0FE20062E7B3 /* IndicesArvore.swift */; };
+		D97BB515254F21C400023D9F /* VisualizacaoArvores.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97BB514254F21C400023D9F /* VisualizacaoArvores.swift */; };
+		D97BB51D254F295A00023D9F /* Color+CoresPersonalizadas.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97BB51C254F295A00023D9F /* Color+CoresPersonalizadas.swift */; };
+		D97BB523254F296200023D9F /* NoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97BB521254F296200023D9F /* NoView.swift */; };
+		D97BB524254F296200023D9F /* DiagramaSubarvore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97BB522254F296200023D9F /* DiagramaSubarvore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +69,10 @@
 		D90DE659254F04900062E7B3 /* AnalisadorCSV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalisadorCSV.swift; sourceTree = "<group>"; };
 		D90DE65E254F04CE0062E7B3 /* TelaCarregamentoArquivoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelaCarregamentoArquivoViewModel.swift; sourceTree = "<group>"; };
 		D90DE666254F0FE20062E7B3 /* IndicesArvore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicesArvore.swift; sourceTree = "<group>"; };
+		D97BB514254F21C400023D9F /* VisualizacaoArvores.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualizacaoArvores.swift; sourceTree = "<group>"; };
+		D97BB51C254F295A00023D9F /* Color+CoresPersonalizadas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Color+CoresPersonalizadas.swift"; sourceTree = "<group>"; };
+		D97BB521254F296200023D9F /* NoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoView.swift; sourceTree = "<group>"; };
+		D97BB522254F296200023D9F /* DiagramaSubarvore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiagramaSubarvore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +123,8 @@
 		D90DE5EF254DDEE60062E7B3 /* CadastroPessoasAVL */ = {
 			isa = PBXGroup;
 			children = (
+				D97BB51B254F294800023D9F /* Apoio */,
+				D97BB519254F225D00023D9F /* Views Arvore */,
 				D90DE645254E3F330062E7B3 /* Views */,
 				D90DE627254DEDC30062E7B3 /* Modelo */,
 				D90DE5F0254DDEE60062E7B3 /* CadastroPessoasAVLApp.swift */,
@@ -128,6 +138,7 @@
 				D90DE621254DEBCF0062E7B3 /* Recursos */,
 				D90DE5F6254DDEE70062E7B3 /* Preview Content */,
 				D90DE659254F04900062E7B3 /* AnalisadorCSV.swift */,
+				D97BB514254F21C400023D9F /* VisualizacaoArvores.swift */,
 			);
 			path = CadastroPessoasAVL;
 			sourceTree = "<group>";
@@ -182,6 +193,23 @@
 				D90DE640254E3F230062E7B3 /* Cabecalho.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		D97BB519254F225D00023D9F /* Views Arvore */ = {
+			isa = PBXGroup;
+			children = (
+				D97BB522254F296200023D9F /* DiagramaSubarvore.swift */,
+				D97BB521254F296200023D9F /* NoView.swift */,
+			);
+			path = "Views Arvore";
+			sourceTree = "<group>";
+		};
+		D97BB51B254F294800023D9F /* Apoio */ = {
+			isa = PBXGroup;
+			children = (
+				D97BB51C254F295A00023D9F /* Color+CoresPersonalizadas.swift */,
+			);
+			path = Apoio;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -315,11 +343,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				D90DE652254E49B80062E7B3 /* No.swift in Sources */,
+				D97BB523254F296200023D9F /* NoView.swift in Sources */,
+				D97BB524254F296200023D9F /* DiagramaSubarvore.swift in Sources */,
 				D90DE5F3254DDEE60062E7B3 /* TelaPesquisa.swift in Sources */,
 				D90DE667254F0FE20062E7B3 /* IndicesArvore.swift in Sources */,
 				D90DE64D254E494F0062E7B3 /* ArvoreAVL.swift in Sources */,
 				D90DE629254DEDD00062E7B3 /* Pessoa.swift in Sources */,
+				D97BB515254F21C400023D9F /* VisualizacaoArvores.swift in Sources */,
 				D90DE65A254F04900062E7B3 /* AnalisadorCSV.swift in Sources */,
+				D97BB51D254F295A00023D9F /* Color+CoresPersonalizadas.swift in Sources */,
 				D90DE5F1254DDEE60062E7B3 /* CadastroPessoasAVLApp.swift in Sources */,
 				D90DE65F254F04CE0062E7B3 /* TelaCarregamentoArquivoViewModel.swift in Sources */,
 				D90DE62E254DF7520062E7B3 /* TelaPesquisaViewModel.swift in Sources */,
