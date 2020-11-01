@@ -1,5 +1,5 @@
 //
-//  TelaPrincipal.swift
+//  TelaPesquisa.swift
 //  CadastroPessoasAVL
 //
 //  Created by Rafael Schmitt on 31/10/20.
@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct TelaPrincipal: View {
-    @ObservedObject var viewModel: TelaPrincipalViewModel
+struct TelaPesquisa: View {
+    @ObservedObject var viewModel: TelaPesquisaViewModel
     @State private var entrada = ""
     @State private var entradaNome = ""
     @State private var dataInicial = Date()
@@ -18,26 +18,7 @@ struct TelaPrincipal: View {
     
     var body: some View {
         VStack {
-            HStack {
-                VStack(alignment: .leading) {
-                    Text("Cadastro de Pessoas 👩🏾‍🦱👨🏻🧒🏽👵🏽👩🏼")
-                        .font(.largeTitle)
-                        .bold()
-                        .padding(.bottom, 1)
-                        
-                    Text("TRABALHO DO GRAU B - ESTRUTURAS AVANÇADAS DE DADOS I")
-                        .font(.headline)
-                        .foregroundColor(.gray)
-                }
-                .padding()
-                .padding(.leading, 10)
-                
-                Spacer()
-                
-                Text("Rafael Claycon Schmitt")
-                    .font(.title3)
-                    .padding(.trailing, 8)
-            }
+            Cabecalho()
             
             HStack {
                 Spacer()
@@ -110,6 +91,6 @@ struct TelaPrincipal: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        TelaPrincipal(viewModel: TelaPrincipalViewModel())
+        TelaPesquisa(viewModel: TelaPesquisaViewModel())
     }
 }

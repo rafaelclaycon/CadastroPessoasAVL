@@ -8,14 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		D90DE5F1254DDEE60062E7B3 /* CadastroPessoasAVLApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90DE5F0254DDEE60062E7B3 /* CadastroPessoasAVLApp.swift */; };
-		D90DE5F3254DDEE60062E7B3 /* TelaPrincipal.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90DE5F2254DDEE60062E7B3 /* TelaPrincipal.swift */; };
+		D90DE5F3254DDEE60062E7B3 /* TelaPesquisa.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90DE5F2254DDEE60062E7B3 /* TelaPesquisa.swift */; };
 		D90DE5F5254DDEE70062E7B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D90DE5F4254DDEE70062E7B3 /* Assets.xcassets */; };
 		D90DE5F8254DDEE70062E7B3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D90DE5F7254DDEE70062E7B3 /* Preview Assets.xcassets */; };
 		D90DE603254DDEE80062E7B3 /* CadastroPessoasAVLTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90DE602254DDEE80062E7B3 /* CadastroPessoasAVLTests.swift */; };
 		D90DE60E254DDEE80062E7B3 /* CadastroPessoasAVLUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90DE60D254DDEE80062E7B3 /* CadastroPessoasAVLUITests.swift */; };
 		D90DE623254DECEC0062E7B3 /* Pessoas.csv in Resources */ = {isa = PBXBuildFile; fileRef = D90DE622254DECEC0062E7B3 /* Pessoas.csv */; };
 		D90DE629254DEDD00062E7B3 /* Pessoa.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90DE628254DEDD00062E7B3 /* Pessoa.swift */; };
-		D90DE62E254DF7520062E7B3 /* TelaPrincipalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90DE62D254DF7520062E7B3 /* TelaPrincipalViewModel.swift */; };
+		D90DE62E254DF7520062E7B3 /* TelaPesquisaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90DE62D254DF7520062E7B3 /* TelaPesquisaViewModel.swift */; };
+		D90DE639254E3DD50062E7B3 /* TelaCarregamentoArquivo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90DE638254E3DD50062E7B3 /* TelaCarregamentoArquivo.swift */; };
+		D90DE641254E3F230062E7B3 /* Cabecalho.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90DE640254E3F230062E7B3 /* Cabecalho.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +40,7 @@
 /* Begin PBXFileReference section */
 		D90DE5ED254DDEE60062E7B3 /* CadastroPessoasAVL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CadastroPessoasAVL.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D90DE5F0254DDEE60062E7B3 /* CadastroPessoasAVLApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CadastroPessoasAVLApp.swift; sourceTree = "<group>"; };
-		D90DE5F2254DDEE60062E7B3 /* TelaPrincipal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelaPrincipal.swift; sourceTree = "<group>"; };
+		D90DE5F2254DDEE60062E7B3 /* TelaPesquisa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelaPesquisa.swift; sourceTree = "<group>"; };
 		D90DE5F4254DDEE70062E7B3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D90DE5F7254DDEE70062E7B3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D90DE5F9254DDEE70062E7B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -50,7 +52,9 @@
 		D90DE60F254DDEE80062E7B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D90DE622254DECEC0062E7B3 /* Pessoas.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Pessoas.csv; sourceTree = "<group>"; };
 		D90DE628254DEDD00062E7B3 /* Pessoa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pessoa.swift; sourceTree = "<group>"; };
-		D90DE62D254DF7520062E7B3 /* TelaPrincipalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelaPrincipalViewModel.swift; sourceTree = "<group>"; };
+		D90DE62D254DF7520062E7B3 /* TelaPesquisaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelaPesquisaViewModel.swift; sourceTree = "<group>"; };
+		D90DE638254E3DD50062E7B3 /* TelaCarregamentoArquivo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelaCarregamentoArquivo.swift; sourceTree = "<group>"; };
+		D90DE640254E3F230062E7B3 /* Cabecalho.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cabecalho.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,10 +105,12 @@
 		D90DE5EF254DDEE60062E7B3 /* CadastroPessoasAVL */ = {
 			isa = PBXGroup;
 			children = (
+				D90DE645254E3F330062E7B3 /* Views */,
 				D90DE627254DEDC30062E7B3 /* Modelo */,
 				D90DE5F0254DDEE60062E7B3 /* CadastroPessoasAVLApp.swift */,
-				D90DE5F2254DDEE60062E7B3 /* TelaPrincipal.swift */,
-				D90DE62D254DF7520062E7B3 /* TelaPrincipalViewModel.swift */,
+				D90DE5F2254DDEE60062E7B3 /* TelaPesquisa.swift */,
+				D90DE62D254DF7520062E7B3 /* TelaPesquisaViewModel.swift */,
+				D90DE638254E3DD50062E7B3 /* TelaCarregamentoArquivo.swift */,
 				D90DE5F4254DDEE70062E7B3 /* Assets.xcassets */,
 				D90DE5F9254DDEE70062E7B3 /* Info.plist */,
 				D90DE621254DEBCF0062E7B3 /* Recursos */,
@@ -153,6 +159,14 @@
 				D90DE628254DEDD00062E7B3 /* Pessoa.swift */,
 			);
 			path = Modelo;
+			sourceTree = "<group>";
+		};
+		D90DE645254E3F330062E7B3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D90DE640254E3F230062E7B3 /* Cabecalho.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -285,10 +299,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D90DE5F3254DDEE60062E7B3 /* TelaPrincipal.swift in Sources */,
+				D90DE5F3254DDEE60062E7B3 /* TelaPesquisa.swift in Sources */,
 				D90DE629254DEDD00062E7B3 /* Pessoa.swift in Sources */,
 				D90DE5F1254DDEE60062E7B3 /* CadastroPessoasAVLApp.swift in Sources */,
-				D90DE62E254DF7520062E7B3 /* TelaPrincipalViewModel.swift in Sources */,
+				D90DE62E254DF7520062E7B3 /* TelaPesquisaViewModel.swift in Sources */,
+				D90DE641254E3F230062E7B3 /* Cabecalho.swift in Sources */,
+				D90DE639254E3DD50062E7B3 /* TelaCarregamentoArquivo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
