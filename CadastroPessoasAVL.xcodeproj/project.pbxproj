@@ -15,6 +15,7 @@
 		D90DE60E254DDEE80062E7B3 /* CadastroPessoasAVLUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90DE60D254DDEE80062E7B3 /* CadastroPessoasAVLUITests.swift */; };
 		D90DE623254DECEC0062E7B3 /* Pessoas.csv in Resources */ = {isa = PBXBuildFile; fileRef = D90DE622254DECEC0062E7B3 /* Pessoas.csv */; };
 		D90DE629254DEDD00062E7B3 /* Pessoa.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90DE628254DEDD00062E7B3 /* Pessoa.swift */; };
+		D90DE62E254DF7520062E7B3 /* TelaPrincipalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90DE62D254DF7520062E7B3 /* TelaPrincipalViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		D90DE60F254DDEE80062E7B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D90DE622254DECEC0062E7B3 /* Pessoas.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Pessoas.csv; sourceTree = "<group>"; };
 		D90DE628254DEDD00062E7B3 /* Pessoa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pessoa.swift; sourceTree = "<group>"; };
+		D90DE62D254DF7520062E7B3 /* TelaPrincipalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelaPrincipalViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				D90DE627254DEDC30062E7B3 /* Modelo */,
 				D90DE5F0254DDEE60062E7B3 /* CadastroPessoasAVLApp.swift */,
 				D90DE5F2254DDEE60062E7B3 /* TelaPrincipal.swift */,
+				D90DE62D254DF7520062E7B3 /* TelaPrincipalViewModel.swift */,
 				D90DE5F4254DDEE70062E7B3 /* Assets.xcassets */,
 				D90DE5F9254DDEE70062E7B3 /* Info.plist */,
 				D90DE621254DEBCF0062E7B3 /* Recursos */,
@@ -285,6 +288,7 @@
 				D90DE5F3254DDEE60062E7B3 /* TelaPrincipal.swift in Sources */,
 				D90DE629254DEDD00062E7B3 /* Pessoa.swift in Sources */,
 				D90DE5F1254DDEE60062E7B3 /* CadastroPessoasAVLApp.swift in Sources */,
+				D90DE62E254DF7520062E7B3 /* TelaPrincipalViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
