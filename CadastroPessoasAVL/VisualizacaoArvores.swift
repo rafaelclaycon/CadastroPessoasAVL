@@ -9,7 +9,12 @@ import SwiftUI
 
 struct VisualizacaoArvores: View {
     var body: some View {
-        DiagramaSubarvore(no: indices.cpf.raiz)
+        VStack {
+            Text("CPF")
+                .font(.title)
+                .bold()
+            DiagramaSubarvore(no: indices.cpf.raiz)
+        }
     }
 }
 

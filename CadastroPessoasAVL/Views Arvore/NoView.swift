@@ -25,12 +25,13 @@ struct NoView: View {
             Text(String(self.valor))
                 .font(.body)
                 .foregroundColor(.white)
+                .background(Color.black.opacity(0.5))
             
             Text(String(self.fator))
                 .font(.body)
                 //UIColor(red: 0.15, green: 0.49, blue: 0.86, alpha: 1.00).bold()
                 .foregroundColor(corFator)
-                .offset(x: -40.0)
+                .offset(x: -35.0, y: -25.0)
         }
     }
 }
