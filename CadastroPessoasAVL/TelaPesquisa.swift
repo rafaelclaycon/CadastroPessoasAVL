@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct TelaPesquisa: View {
-    @ObservedObject var viewModel = TelaPesquisaViewModel(pessoas: [Pessoa]())
+    @ObservedObject var viewModel: TelaPesquisaViewModel
     @State private var entrada = ""
     @State private var entradaNome = ""
     @State private var dataInicial = Date()
@@ -22,7 +22,7 @@ struct TelaPesquisa: View {
             
             HStack {
                 Spacer()
-                
+
                 Picker(selection: $filtroSelecionado, label: Text("Filtro de consulta")) {
                     ForEach(0 ..< filtros.count) {
                         Text(self.filtros[$0])
@@ -30,10 +30,10 @@ struct TelaPesquisa: View {
                 }
                 .pickerStyle(MenuPickerStyle())
                 .padding(.trailing, 30)
-                
+
                 if filtroSelecionado == 0 {
                     Text("CPF:")
-                    
+
                     TextField("", text: $entrada)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .keyboardType(.numberPad)
@@ -41,7 +41,7 @@ struct TelaPesquisa: View {
                         .padding(.trailing, 30)
                 } else if filtroSelecionado == 1 {
                     Text("Nome:")
-                    
+
                     TextField("", text: $entradaNome)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .keyboardType(.numberPad)
@@ -51,11 +51,11 @@ struct TelaPesquisa: View {
                     DatePicker("Nascidos entre", selection: $dataInicial, displayedComponents: .date)
                         .frame(width: 250)
                         .padding(.trailing, 4)
-                    
+
                     DatePicker(" e ", selection: $dataFinal, displayedComponents: .date)
                         .frame(width: 150)
                 }
-                
+
                 Button(action: {
                     // TODO: Pesquisar
                 }) {
@@ -65,7 +65,7 @@ struct TelaPesquisa: View {
                     }
                 }
                 .padding(.leading, 10)
-                
+
                 Spacer()
             }
             
@@ -79,9 +79,19 @@ struct TelaPesquisa: View {
                     Spacer()
                 }
                 
-//                List(viewModel.pessoas) { pessoa in
-//                    CartaoPessoa(viewModel: CartaoPessoaViewModel(pessoa: pessoa))
-//                }
+                if viewModel.listaVazia {
+                    Spacer()
+                    Text("Nenhum Resultado")
+                        .font(.largeTitle)
+                        .foregroundColor(.gray)
+                        .bold()
+                        .opacity(0.4)
+                    Spacer()
+                } else {
+                    List(viewModel.pessoas!, id: \.cpf) { pessoa in
+                        CartaoPessoa(viewModel: CartaoPessoaViewModel(pessoa: pessoa))
+                    }
+                }
             }
         }
     }

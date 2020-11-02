@@ -32,6 +32,8 @@ struct VisualizacaoArvores: View {
                     DiagramaSubarvore(no: indices.dataNascimento.raiz)
                 }
             }
+            
+            Spacer()
         }
     }
 }

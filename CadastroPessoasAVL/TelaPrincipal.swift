@@ -27,7 +27,7 @@ struct TelaPrincipal: View {
             }
             
             VStack {
-                TelaPesquisa(viewModel: TelaPesquisaViewModel(pessoas: [Pessoa]()))
+                TelaPesquisa(viewModel: TelaPesquisaViewModel(pessoas: nil))
             }
             .tabItem {
                 Image(systemName: "magnifyingglass")
