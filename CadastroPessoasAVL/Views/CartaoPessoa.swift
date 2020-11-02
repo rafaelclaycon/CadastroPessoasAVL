@@ -48,6 +48,7 @@ struct CartaoPessoa: View {
                             .bold()
                     }.padding(.leading, 65)
                 }.padding(.bottom, 2)
+                
                 HStack {
                     VStack(alignment: .leading) {
                         Text("DATA DE NASCIMENTO")

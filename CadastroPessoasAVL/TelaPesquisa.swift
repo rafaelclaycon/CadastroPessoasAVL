@@ -80,10 +80,8 @@ struct TelaPesquisa: View {
                     Spacer()
                 }
                 
-                HStack {
-                    List {
-                        
-                    }
+                List {
+                    //CartaoPessoa()
                 }
             }
         }
