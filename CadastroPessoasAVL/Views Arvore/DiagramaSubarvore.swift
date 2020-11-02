@@ -15,11 +15,9 @@ struct DiagramaSubarvore: View {
             VStack(alignment: .center) {
                 NoView(chave: no!.chave, fator: no!.fatorBalanceamento)
                 HStack(alignment: .center, spacing: 10) {
-                    //Spacer()
                     DiagramaSubarvore(no: no!.esquerda)
                     Spacer()
                     DiagramaSubarvore(no: no!.direita)
-                    //Spacer()
                 }
             }
         }

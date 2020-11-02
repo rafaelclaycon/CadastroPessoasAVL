@@ -18,7 +18,6 @@ struct NoView: View {
         
         ZStack {
             Circle()
-                //.strokeBorder(Color.black, lineWidth: 1)
                 .fill(gradiente)
                 .frame(width: 50, height: 50, alignment: .center)
             
@@ -29,7 +28,6 @@ struct NoView: View {
             
             Text(String(self.fator))
                 .font(.body)
-                //UIColor(red: 0.15, green: 0.49, blue: 0.86, alpha: 1.00).bold()
                 .foregroundColor(corFator)
                 .offset(x: -35.0, y: -25.0)
         }

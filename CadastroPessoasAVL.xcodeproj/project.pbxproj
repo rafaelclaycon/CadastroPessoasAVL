@@ -29,6 +29,7 @@
 		D97BB524254F296200023D9F /* DiagramaSubarvore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97BB522254F296200023D9F /* DiagramaSubarvore.swift */; };
 		D981B44B2550494600FEC57C /* CartaoPessoa.swift in Sources */ = {isa = PBXBuildFile; fileRef = D981B44A2550494600FEC57C /* CartaoPessoa.swift */; };
 		D981B45025508E3D00FEC57C /* CartaoPessoaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D981B44F25508E3D00FEC57C /* CartaoPessoaViewModel.swift */; };
+		D9C8F9752550C1E800C3B6A3 /* TelaPrincipal.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C8F9742550C1E800C3B6A3 /* TelaPrincipal.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		D97BB522254F296200023D9F /* DiagramaSubarvore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiagramaSubarvore.swift; sourceTree = "<group>"; };
 		D981B44A2550494600FEC57C /* CartaoPessoa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartaoPessoa.swift; sourceTree = "<group>"; };
 		D981B44F25508E3D00FEC57C /* CartaoPessoaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartaoPessoaViewModel.swift; sourceTree = "<group>"; };
+		D9C8F9742550C1E800C3B6A3 /* TelaPrincipal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelaPrincipal.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,18 +133,19 @@
 				D97BB519254F225D00023D9F /* Views Arvore */,
 				D90DE645254E3F330062E7B3 /* Views */,
 				D90DE627254DEDC30062E7B3 /* Modelo */,
-				D90DE5F0254DDEE60062E7B3 /* CadastroPessoasAVLApp.swift */,
 				D90DE5F2254DDEE60062E7B3 /* TelaPesquisa.swift */,
 				D90DE666254F0FE20062E7B3 /* IndicesArvore.swift */,
 				D90DE62D254DF7520062E7B3 /* TelaPesquisaViewModel.swift */,
 				D90DE638254E3DD50062E7B3 /* TelaCarregamentoArquivo.swift */,
+				D9C8F9742550C1E800C3B6A3 /* TelaPrincipal.swift */,
 				D90DE65E254F04CE0062E7B3 /* TelaCarregamentoArquivoViewModel.swift */,
 				D97BB514254F21C400023D9F /* VisualizacaoArvores.swift */,
+				D90DE659254F04900062E7B3 /* AnalisadorCSV.swift */,
+				D90DE5F0254DDEE60062E7B3 /* CadastroPessoasAVLApp.swift */,
 				D90DE5F4254DDEE70062E7B3 /* Assets.xcassets */,
 				D90DE5F9254DDEE70062E7B3 /* Info.plist */,
 				D90DE621254DEBCF0062E7B3 /* Recursos */,
 				D90DE5F6254DDEE70062E7B3 /* Preview Content */,
-				D90DE659254F04900062E7B3 /* AnalisadorCSV.swift */,
 			);
 			path = CadastroPessoasAVL;
 			sourceTree = "<group>";
@@ -356,6 +359,7 @@
 				D90DE667254F0FE20062E7B3 /* IndicesArvore.swift in Sources */,
 				D90DE64D254E494F0062E7B3 /* ArvoreAVL.swift in Sources */,
 				D90DE629254DEDD00062E7B3 /* Pessoa.swift in Sources */,
+				D9C8F9752550C1E800C3B6A3 /* TelaPrincipal.swift in Sources */,
 				D97BB515254F21C400023D9F /* VisualizacaoArvores.swift in Sources */,
 				D90DE65A254F04900062E7B3 /* AnalisadorCSV.swift in Sources */,
 				D97BB51D254F295A00023D9F /* Color+CoresPersonalizadas.swift in Sources */,

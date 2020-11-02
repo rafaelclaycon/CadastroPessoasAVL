@@ -10,6 +10,8 @@ import SwiftUI
 struct VisualizacaoArvores: View {
     var body: some View {
         VStack {
+            Cabecalho()
+            
             Text("CPF")
                 .font(.title)
                 .bold()
