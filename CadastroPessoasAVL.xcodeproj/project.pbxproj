@@ -27,6 +27,8 @@
 		D97BB51D254F295A00023D9F /* Color+CoresPersonalizadas.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97BB51C254F295A00023D9F /* Color+CoresPersonalizadas.swift */; };
 		D97BB523254F296200023D9F /* NoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97BB521254F296200023D9F /* NoView.swift */; };
 		D97BB524254F296200023D9F /* DiagramaSubarvore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97BB522254F296200023D9F /* DiagramaSubarvore.swift */; };
+		D981B44B2550494600FEC57C /* CartaoPessoa.swift in Sources */ = {isa = PBXBuildFile; fileRef = D981B44A2550494600FEC57C /* CartaoPessoa.swift */; };
+		D981B45025508E3D00FEC57C /* CartaoPessoaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D981B44F25508E3D00FEC57C /* CartaoPessoaViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +75,8 @@
 		D97BB51C254F295A00023D9F /* Color+CoresPersonalizadas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Color+CoresPersonalizadas.swift"; sourceTree = "<group>"; };
 		D97BB521254F296200023D9F /* NoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoView.swift; sourceTree = "<group>"; };
 		D97BB522254F296200023D9F /* DiagramaSubarvore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiagramaSubarvore.swift; sourceTree = "<group>"; };
+		D981B44A2550494600FEC57C /* CartaoPessoa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartaoPessoa.swift; sourceTree = "<group>"; };
+		D981B44F25508E3D00FEC57C /* CartaoPessoaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartaoPessoaViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,6 +195,8 @@
 			isa = PBXGroup;
 			children = (
 				D90DE640254E3F230062E7B3 /* Cabecalho.swift */,
+				D981B44A2550494600FEC57C /* CartaoPessoa.swift */,
+				D981B44F25508E3D00FEC57C /* CartaoPessoaViewModel.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -344,6 +350,7 @@
 			files = (
 				D90DE652254E49B80062E7B3 /* No.swift in Sources */,
 				D97BB523254F296200023D9F /* NoView.swift in Sources */,
+				D981B44B2550494600FEC57C /* CartaoPessoa.swift in Sources */,
 				D97BB524254F296200023D9F /* DiagramaSubarvore.swift in Sources */,
 				D90DE5F3254DDEE60062E7B3 /* TelaPesquisa.swift in Sources */,
 				D90DE667254F0FE20062E7B3 /* IndicesArvore.swift in Sources */,
@@ -355,6 +362,7 @@
 				D90DE5F1254DDEE60062E7B3 /* CadastroPessoasAVLApp.swift in Sources */,
 				D90DE65F254F04CE0062E7B3 /* TelaCarregamentoArquivoViewModel.swift in Sources */,
 				D90DE62E254DF7520062E7B3 /* TelaPesquisaViewModel.swift in Sources */,
+				D981B45025508E3D00FEC57C /* CartaoPessoaViewModel.swift in Sources */,
 				D90DE641254E3F230062E7B3 /* Cabecalho.swift in Sources */,
 				D90DE639254E3DD50062E7B3 /* TelaCarregamentoArquivo.swift in Sources */,
 			);
