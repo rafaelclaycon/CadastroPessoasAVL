@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct TelaPesquisa: View {
-    @ObservedObject var viewModel: TelaPesquisaViewModel
+    @ObservedObject var viewModel = TelaPesquisaViewModel(pessoas: [Pessoa]())
     @State private var entrada = ""
     @State private var entradaNome = ""
     @State private var dataInicial = Date()
@@ -80,9 +80,9 @@ struct TelaPesquisa: View {
                     Spacer()
                 }
                 
-                List {
-                    //CartaoPessoa()
-                }
+//                List(viewModel.pessoas) { pessoa in
+//                    CartaoPessoa(viewModel: CartaoPessoaViewModel(pessoa: pessoa))
+//                }
             }
         }
     }
@@ -90,6 +90,6 @@ struct TelaPesquisa: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        TelaPesquisa(viewModel: TelaPesquisaViewModel())
+        TelaPesquisa(viewModel: TelaPesquisaViewModel(pessoas: [Pessoa]()))
     }
 }

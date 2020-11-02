@@ -137,12 +137,12 @@
 				D90DE62D254DF7520062E7B3 /* TelaPesquisaViewModel.swift */,
 				D90DE638254E3DD50062E7B3 /* TelaCarregamentoArquivo.swift */,
 				D90DE65E254F04CE0062E7B3 /* TelaCarregamentoArquivoViewModel.swift */,
+				D97BB514254F21C400023D9F /* VisualizacaoArvores.swift */,
 				D90DE5F4254DDEE70062E7B3 /* Assets.xcassets */,
 				D90DE5F9254DDEE70062E7B3 /* Info.plist */,
 				D90DE621254DEBCF0062E7B3 /* Recursos */,
 				D90DE5F6254DDEE70062E7B3 /* Preview Content */,
 				D90DE659254F04900062E7B3 /* AnalisadorCSV.swift */,
-				D97BB514254F21C400023D9F /* VisualizacaoArvores.swift */,
 			);
 			path = CadastroPessoasAVL;
 			sourceTree = "<group>";

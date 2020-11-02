@@ -17,7 +17,7 @@ class ArvoreAVL {
     private var caminhamento = [String]()
     
     // MARK: - Inserção
-    func inserir(_ chave: Int, _ dados: Pessoa) {
+    func inserir(_ chave: String, _ dados: Pessoa) {
         if raiz == nil {
             raiz = No(pai: nil, esquerda: nil, direita: nil, chave: chave, dados: dados)
             print("O número \(chave) foi inserido.")
@@ -43,7 +43,7 @@ class ArvoreAVL {
         verificarBalanceamento(raiz, balancear: true)
     }
     
-    func inserirEmSubarvore(_ raiz: No, _ chave: Int, _ dados: Pessoa) {
+    func inserirEmSubarvore(_ raiz: No, _ chave: String, _ dados: Pessoa) {
         if chave < raiz.chave {
             if raiz.esquerda == nil {
                 raiz.esquerda = No(pai: raiz, esquerda: nil, direita: nil, chave: chave, dados: dados)
@@ -291,7 +291,7 @@ class ArvoreAVL {
     }
     
     // MARK: - Busca
-    func buscar(chave: Int) {
+    func buscar(chave: String) {
         if raiz == nil {
             print("☹️  O número consultado não está na árvore pois a árvore está vazia.")
         } else {
@@ -320,7 +320,7 @@ class ArvoreAVL {
         }
     }
     
-    func buscarNaSubarvore(_ chave: Int, _ no: No?) -> Bool {
+    func buscarNaSubarvore(_ chave: String, _ no: No?) -> Bool {
         guard let no = no else {
             return false
         }
@@ -336,7 +336,7 @@ class ArvoreAVL {
     }
     
     // MARK: - Remoção
-    func remover(_ chave: Int) {
+    func remover(_ chave: String) {
         guard let noASerRemovido = getNo(comChave: chave, aPartirDe: raiz) else {
             return print("⛔️  Não é possível remover o número \(chave) pois ele não está na árvore.")
         }
@@ -403,7 +403,7 @@ class ArvoreAVL {
         verificarBalanceamento(raiz, balancear: true)
     }
     
-    func getNo(comChave chave: Int, aPartirDe no: No?) -> No? {
+    func getNo(comChave chave: String, aPartirDe no: No?) -> No? {
         guard let no = no else {
             return nil
         }

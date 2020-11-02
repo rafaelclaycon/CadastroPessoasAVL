@@ -57,7 +57,7 @@ struct TelaCarregamentoArquivo: View {
             }
             
             VStack {
-                TelaPesquisa(viewModel: TelaPesquisaViewModel())
+                TelaPesquisa(viewModel: TelaPesquisaViewModel(pessoas: [Pessoa]()))
             }
             .tabItem {
                 Image(systemName: "magnifyingglass")

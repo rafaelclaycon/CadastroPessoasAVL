@@ -9,5 +9,9 @@ import Combine
 import SwiftUI
 
 class TelaPesquisaViewModel: ObservableObject {
-    @Published var pessoaSelecionada: Pessoa? = nil
+    @Published var pessoas: [Pessoa]
+    
+    init(pessoas: [Pessoa]) {
+        self.pessoas = pessoas
+    }
 }

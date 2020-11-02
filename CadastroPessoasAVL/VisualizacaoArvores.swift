@@ -14,6 +14,22 @@ struct VisualizacaoArvores: View {
                 .font(.title)
                 .bold()
             DiagramaSubarvore(no: indices.cpf.raiz)
+            
+            HStack {
+                VStack {
+                    Text("Nomes")
+                        .font(.title)
+                        .bold()
+                    DiagramaSubarvore(no: indices.nome.raiz)
+                }
+                
+                VStack {
+                    Text("Data de nascimento")
+                        .font(.title)
+                        .bold()
+                    DiagramaSubarvore(no: indices.dataNascimento.raiz)
+                }
+            }
         }
     }
 }

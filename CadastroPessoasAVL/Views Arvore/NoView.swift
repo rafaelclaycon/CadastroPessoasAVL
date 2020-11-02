@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct NoView: View {
-    @State var valor: Int
+    @State var chave: String
     @State var fator: Int
     
     let gradiente = LinearGradient(gradient: Gradient(colors: [.azulEscuro, .azulClaro]), startPoint: .topLeading, endPoint: .bottomTrailing)
@@ -22,7 +22,7 @@ struct NoView: View {
                 .fill(gradiente)
                 .frame(width: 50, height: 50, alignment: .center)
             
-            Text(String(self.valor))
+            Text(self.chave)
                 .font(.body)
                 .foregroundColor(.white)
                 .background(Color.black.opacity(0.5))
@@ -39,9 +39,9 @@ struct NoView: View {
 struct NoView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            NoView(valor: 1, fator: 0)
-            NoView(valor: 10, fator: 0)
-            NoView(valor: 999, fator: 0)
+            NoView(chave: "1", fator: 0)
+            NoView(chave: "10", fator: 0)
+            NoView(chave: "999", fator: 0)
         }
         .previewLayout(.fixed(width: 100, height: 80))
     }

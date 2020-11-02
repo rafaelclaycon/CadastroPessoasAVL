@@ -56,9 +56,9 @@ class AnalisadorCSV {
             
             let pessoa = Pessoa(cpf: cpf, rg: rg, nome: nome, dataNascimento: dataNascimento, nomeCidadeNascimento: nomeCidadeNascimento)
             
-            // TODO: Inserir nas árvores
-            indices.cpf.inserir(pessoa.cpf, pessoa)
-            //indices.indiceNome
+            indices.cpf.inserir(String(pessoa.cpf), pessoa)
+            indices.nome.inserir(pessoa.nome, pessoa)
+            indices.dataNascimento.inserir(self.getISODateFrom(pessoa.dataNascimento), pessoa)
         }
     }
     
@@ -67,5 +67,11 @@ class AnalisadorCSV {
         dateFormatter.locale = Locale(identifier: "pt-br")
         dateFormatter.dateFormat = "dd/MM/yyyy"
         return dateFormatter.date(from: stringDate)!
+    }
+    
+    static func getISODateFrom(_ date: Date) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        return dateFormatter.string(from: date)
     }
 }
