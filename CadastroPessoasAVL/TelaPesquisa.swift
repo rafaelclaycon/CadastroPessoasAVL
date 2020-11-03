@@ -57,7 +57,9 @@ struct TelaPesquisa: View {
                 }
 
                 Button(action: {
-                    // TODO: Pesquisar
+                    if entrada.isInt {
+                        viewModel.buscarCPF(entrada)
+                    }
                 }) {
                     HStack {
                         Image(systemName: "magnifyingglass")

@@ -13,7 +13,7 @@ class ArvoreAVL {
     var arvoreVazia: Bool {
         return raiz == nil
     }
-    private var nosConsultados = [String]()
+    //private var nosConsultados = [String]()
     private var caminhamento = [String]()
     
     // MARK: - Inserção
@@ -291,14 +291,12 @@ class ArvoreAVL {
     }
     
     // MARK: - Busca
-    func buscar(chave: String) {
-        if raiz == nil {
-            print("☹️  O número consultado não está na árvore pois a árvore está vazia.")
-        } else {
-            self.nosConsultados.append("\(raiz!.chave)")
+    func buscar(chave: String) -> Pessoa? {
+        if raiz != nil {
+            //self.nosConsultados.append("\(raiz!.chave)")
             
             if chave == raiz!.chave {
-                print("🎉  O número \(chave) está na árvore. Nós consultados: " + self.nosConsultados.joined(separator: ", "))
+                return raiz!.dados
             } else {
                 var no: No?
                 if chave < raiz!.chave {
@@ -309,30 +307,31 @@ class ArvoreAVL {
                 
                 let encontrado = buscarNaSubarvore(chave, no)
                 
-                if encontrado {
-                    print("🎉  O número \(chave) está na árvore. Nós consultados: " + self.nosConsultados.joined(separator: ", "))
+                if encontrado != nil {
+                    return encontrado
                 } else {
-                    print("☹️  O número \(chave) não está na árvore. Nós consultados: " + self.nosConsultados.joined(separator: ", "))
+                    return nil
                 }
             }
             // Limpa o array que guarda o caminho percorrido pela pesquisa.
-            self.nosConsultados.removeAll()
+            //self.nosConsultados.removeAll()
         }
+        return nil
     }
     
-    func buscarNaSubarvore(_ chave: String, _ no: No?) -> Bool {
+    func buscarNaSubarvore(_ chave: String, _ no: No?) -> Pessoa? {
         guard let no = no else {
-            return false
+            return nil
         }
         
-        self.nosConsultados.append("\(no.chave)")
+        //self.nosConsultados.append("\(no.chave)")
         
         if chave < no.chave {
             return buscarNaSubarvore(chave, no.esquerda)
         } else if chave > no.chave {
             return buscarNaSubarvore(chave, no.direita)
         }
-        return true
+        return no.dados
     }
     
     // MARK: - Remoção
