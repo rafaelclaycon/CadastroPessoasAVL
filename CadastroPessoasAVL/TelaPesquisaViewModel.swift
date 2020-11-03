@@ -9,26 +9,22 @@ import Combine
 import SwiftUI
 
 class TelaPesquisaViewModel: ObservableObject {
-    @Published var pessoas: [Pessoa]?
+    @Published var pessoas: [Pessoa]
+    @Published var exibirAlerta: Bool = false
     
     var listaVazia: Bool {
-        return pessoas == nil
+        return pessoas.isEmpty
     }
     
-    init(pessoas: [Pessoa]?) {
+    init(pessoas: [Pessoa]) {
         self.pessoas = pessoas
     }
     
     func buscarCPF(_ cpfProcurado: String) {
-        if self.pessoas != nil {
-            self.pessoas?.removeAll()
-        }
+        self.pessoas.removeAll()
         guard let pessoa = indices.cpf.buscar(chave: cpfProcurado) else {
-            return
+            return self.exibirAlerta = true
         }
-        if self.pessoas == nil {
-            self.pessoas = [Pessoa]()
-        }
-        self.pessoas!.append(pessoa)
+        self.pessoas.append(pessoa)
     }
 }

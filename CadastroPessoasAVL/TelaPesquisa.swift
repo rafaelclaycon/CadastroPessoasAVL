@@ -67,6 +67,9 @@ struct TelaPesquisa: View {
                     }
                 }
                 .padding(.leading, 10)
+                .alert(isPresented: $viewModel.exibirAlerta) {
+                    Alert(title: Text("Chave não encontrada"), message: Text("Não foi encontrada nenhuma pessoa para \"\(entrada)\"."), dismissButton: .default(Text("OK")))
+                }
 
                 Spacer()
             }
@@ -90,7 +93,7 @@ struct TelaPesquisa: View {
                         .opacity(0.4)
                     Spacer()
                 } else {
-                    List(viewModel.pessoas!, id: \.cpf) { pessoa in
+                    List(viewModel.pessoas, id: \.cpf) { pessoa in
                         CartaoPessoa(viewModel: CartaoPessoaViewModel(pessoa: pessoa))
                     }
                 }
