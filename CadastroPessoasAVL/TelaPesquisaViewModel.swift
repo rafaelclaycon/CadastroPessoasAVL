@@ -20,9 +20,9 @@ class TelaPesquisaViewModel: ObservableObject {
     }
     
     func buscarCPF(_ cpfProcurado: String) {
-//        if self.pessoas != nil {
-//            self.pessoas?.removeAll()
-//        }
+        if self.pessoas != nil {
+            self.pessoas?.removeAll()
+        }
         guard let pessoa = indices.cpf.buscar(chave: cpfProcurado) else {
             return
         }

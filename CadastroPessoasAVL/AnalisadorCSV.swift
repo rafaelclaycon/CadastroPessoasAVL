@@ -12,8 +12,8 @@ class AnalisadorCSV {
         let lines = arquivo.split(separator: "\n")
         
         var campo: Int = 0
-        var cpf: Int = 0
-        var rg: Int = 0
+        var cpf: String = ""
+        var rg: String = ""
         var nome: String = ""
         var dataNascimento: Date = Date()
         var nomeCidadeNascimento: String = ""
@@ -28,15 +28,13 @@ class AnalisadorCSV {
                 print(column)
                 
                 if campo == 0 {
-                    if let cpfEncontrado = Int(column) {
-                        print("Int = \(cpfEncontrado)")
-                        cpf = cpfEncontrado
-                    }
+                    let cpfEncontrado = column
+                    print("String = \(cpfEncontrado)")
+                    cpf = String(cpfEncontrado)
                 } else if campo == 1 {
-                    if let rgEncontrado = Int(column) {
-                        print("Int = \(rgEncontrado)")
-                        rg = rgEncontrado
-                    }
+                    let rgEncontrado = column
+                    print("String = \(rgEncontrado)")
+                    rg = String(rgEncontrado)
                 } else if campo == 2 {
                     let nomeEncontrado = column
                     print("String = \(nomeEncontrado)")
