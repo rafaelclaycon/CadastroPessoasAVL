@@ -15,6 +15,7 @@ struct TelaPesquisa: View {
     @State private var dataFinal = Date()
     var filtros = ["CPF", "Nome", "Data de nascimento"]
     @State private var filtroSelecionado = 0
+    @State private var exibirAlertaValorInvalido: Bool = false
     
     var body: some View {
         VStack {
@@ -59,6 +60,8 @@ struct TelaPesquisa: View {
                 Button(action: {
                     if entrada.isInt {
                         viewModel.buscarCPF(entrada)
+                    } else if !entrada.isEmpty {
+                        self.exibirAlertaValorInvalido = true
                     }
                 }) {
                     HStack {
@@ -67,8 +70,8 @@ struct TelaPesquisa: View {
                     }
                 }
                 .padding(.leading, 10)
-                .alert(isPresented: $viewModel.exibirAlerta) {
-                    Alert(title: Text("Chave não encontrada"), message: Text("Não foi encontrada nenhuma pessoa para \"\(entrada)\"."), dismissButton: .default(Text("OK")))
+                .alert(isPresented: $exibirAlertaValorInvalido) {
+                    Alert(title: Text("Valor Inválido"), message: Text("Utilize apenas números para realizar essa pesquisa."), dismissButton: .default(Text("OK")))
                 }
 
                 Spacer()
@@ -98,6 +101,9 @@ struct TelaPesquisa: View {
                     }
                 }
             }
+        }
+        .alert(isPresented: $viewModel.exibirAlerta) {
+            Alert(title: Text("Nenhuma Pessoa Encontrada"), message: Text("Não foi encontrada nenhuma chave para \"\(entrada)\"."), dismissButton: .default(Text("OK")))
         }
     }
 }
