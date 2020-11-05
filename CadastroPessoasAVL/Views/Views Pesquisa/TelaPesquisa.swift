@@ -36,7 +36,7 @@ struct TelaPesquisa: View {
                 } else if viewModel.filtroSelecionado == 1 {
                     Text("Nome:")
 
-                    TextField("", text: $viewModel.entrada)
+                    TextField("", text: $viewModel.entradaNome)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .keyboardType(.numberPad)
                         .frame(width: 180)
@@ -51,7 +51,11 @@ struct TelaPesquisa: View {
                 }
 
                 Button(action: {
-                    viewModel.processarEntrada(viewModel.entrada)
+                    if viewModel.filtroSelecionado == 0 {
+                        viewModel.processarEntrada(viewModel.entrada)
+                    } else if viewModel.filtroSelecionado == 1 {
+                        viewModel.processarEntrada(viewModel.entradaNome)
+                    }
                 }) {
                     HStack {
                         Image(systemName: "magnifyingglass")
