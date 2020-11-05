@@ -10,7 +10,14 @@ import SwiftUI
 
 class TelaPesquisaViewModel: ObservableObject {
     @Published var pessoas: [Pessoa]
-    @Published var exibirAlerta: Bool = false
+    @Published var entrada = ""
+    @Published var entradaNome = ""
+    @Published var dataInicial = Date()
+    @Published var dataFinal = Date()
+    @Published var filtros = ["CPF", "Nome", "Data de nascimento"]
+    @Published var filtroSelecionado = 0
+    @Published var exibirAlertaNenhumResultado: Bool = false
+    @Published var exibirAlertaValorInvalido: Bool = false
     
     var listaVazia: Bool {
         return pessoas.isEmpty
@@ -20,11 +27,43 @@ class TelaPesquisaViewModel: ObservableObject {
         self.pessoas = pessoas
     }
     
-    func buscarCPF(_ cpfProcurado: String) {
+    private func limparResultados() {
         self.pessoas.removeAll()
+    }
+    
+    func processarEntrada(_ entrada: String) {
+        guard !entrada.isEmpty else {
+            return self.exibirAlertaValorInvalido = true
+        }
+        
+        if self.filtroSelecionado == 0 {
+            if entrada.isInt {
+                buscarCPF(entrada)
+            } else {
+                return self.exibirAlertaValorInvalido = true
+            }
+        }
+        if entrada.isInt {
+            buscarCPF(entrada)
+        } else if !entrada.isEmpty {
+            
+        }
+    }
+    
+    func buscarCPF(_ cpfProcurado: String) {
+        limparResultados()
         guard let pessoa = indices.cpf.buscar(chave: cpfProcurado) else {
-            return self.exibirAlerta = true
+            return exibirAlertaNenhumResultado = true
         }
         self.pessoas.append(pessoa)
+    }
+    
+    func buscarNome() {
+        limparResultados()
+        
+    }
+    
+    func buscarIntervaloDatas() {
+        
     }
 }
