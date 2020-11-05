@@ -147,10 +147,10 @@ class ArvoreAVL {
         // d
         let d = b.esquerda
         
-        imprimirVariavelAuxiliar(a, "a")
-        imprimirVariavelAuxiliar(b, "b")
-        imprimirVariavelAuxiliar(c, "c")
-        imprimirVariavelAuxiliar(d, "d")
+//        imprimirVariavelAuxiliar(a, "a")
+//        imprimirVariavelAuxiliar(b, "b")
+//        imprimirVariavelAuxiliar(c, "c")
+//        imprimirVariavelAuxiliar(d, "d")
         
         if a.isRaiz {
             self.raiz = b
@@ -180,11 +180,11 @@ class ArvoreAVL {
         // z
         let z = k2.direita
         
-        imprimirVariavelAuxiliar(k2, "k2")
-        imprimirVariavelAuxiliar(k1, "k1")
-        imprimirVariavelAuxiliar(x, "x")
-        imprimirVariavelAuxiliar(y, "y")
-        imprimirVariavelAuxiliar(z, "z")
+//        imprimirVariavelAuxiliar(k2, "k2")
+//        imprimirVariavelAuxiliar(k1, "k1")
+//        imprimirVariavelAuxiliar(x, "x")
+//        imprimirVariavelAuxiliar(y, "y")
+//        imprimirVariavelAuxiliar(z, "z")
         
         if k2.isRaiz {
             self.raiz = k1
@@ -254,13 +254,13 @@ class ArvoreAVL {
         let c = k2.direita
         let d = k3.direita
         
-        imprimirVariavelAuxiliar(k1, "k1")
-        imprimirVariavelAuxiliar(k2, "k2")
-        imprimirVariavelAuxiliar(k3, "k3")
-        imprimirVariavelAuxiliar(a, "a")
-        imprimirVariavelAuxiliar(b, "b")
-        imprimirVariavelAuxiliar(c, "c")
-        imprimirVariavelAuxiliar(d, "d")
+//        imprimirVariavelAuxiliar(k1, "k1")
+//        imprimirVariavelAuxiliar(k2, "k2")
+//        imprimirVariavelAuxiliar(k3, "k3")
+//        imprimirVariavelAuxiliar(a, "a")
+//        imprimirVariavelAuxiliar(b, "b")
+//        imprimirVariavelAuxiliar(c, "c")
+//        imprimirVariavelAuxiliar(d, "d")
         
         // Rotação direita
         k1.direita = k2
@@ -334,31 +334,32 @@ class ArvoreAVL {
         return no.dados
     }
     
-    /*func buscarSubstring(chave: String) -> [Pessoa]? {
-        if raiz != nil {            
-            if chave == raiz!.chave {
-                return raiz!.dados
+    func buscarNosQueContem(substring: String) -> [Pessoa]? {
+        if raiz != nil {
+            var resultado = [Pessoa]()
+            
+            buscarNosQueContemNaSubarvore(raiz, substring: substring, &resultado)
+            
+            if resultado.count == 0 {
+                return nil
             } else {
-                var no: No?
-                if chave < raiz!.chave {
-                    no = raiz!.esquerda
-                } else {
-                    no = raiz!.direita
-                }
-                
-                let encontrado = buscarNaSubarvore(chave, no)
-                
-                if encontrado != nil {
-                    return encontrado
-                } else {
-                    return nil
-                }
+                return resultado
             }
-            // Limpa o array que guarda o caminho percorrido pela pesquisa.
-            //self.nosConsultados.removeAll()
         }
         return nil
-    }*/
+    }
+    
+    func buscarNosQueContemNaSubarvore(_ no: No?, substring: String, _ arrayResultado: inout [Pessoa]) {
+        if no != nil {
+            if no!.chave.contains(substring) {
+                arrayResultado.append(raiz!.dados)
+                buscarNosQueContemNaSubarvore(no!.esquerda, substring: substring, &arrayResultado)
+                buscarNosQueContemNaSubarvore(no!.direita, substring: substring, &arrayResultado)
+            }
+            return
+        }
+        return
+    }
     
     // MARK: - Remoção
     func remover(_ chave: String) {

@@ -11,25 +11,31 @@ struct NoView: View {
     @State var chave: String
     @State var fator: Int
     
-    let gradiente = LinearGradient(gradient: Gradient(colors: [.azulEscuro, .azulClaro]), startPoint: .topLeading, endPoint: .bottomTrailing)
+    //let gradiente = LinearGradient(gradient: Gradient(colors: [.azulEscuro, .azulClaro]), startPoint: .topLeading, endPoint: .bottomTrailing)
+    
+    let raioNo: CGFloat = 40.0
     
     var body: some View {
         let corFator = fator < -1 || fator > 1 ? Color.red : Color.verdeEscuro
         
         ZStack {
             Circle()
-                .fill(gradiente)
-                .frame(width: 50, height: 50, alignment: .center)
+                .strokeBorder(Color.blue, lineWidth: 1.5)
+                //.fill(gradiente)
+                .frame(width: raioNo, height: raioNo, alignment: .center)
+                //.opacity(0.6)
             
             Text(self.chave)
-                .font(.body)
+                .font(.footnote)
+                .bold()
                 .foregroundColor(.white)
-                .background(Color.black.opacity(0.5))
+                .background(Color.black.opacity(0.65))
+                //.frame(width: 160)
             
             Text(String(self.fator))
-                .font(.body)
+                .font(.footnote)
                 .foregroundColor(corFator)
-                .offset(x: -35.0, y: -25.0)
+                .offset(x: -25.0, y: -25.0)
         }
     }
 }
@@ -37,10 +43,11 @@ struct NoView: View {
 struct NoView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            NoView(chave: "1", fator: 0)
-            NoView(chave: "10", fator: 0)
-            NoView(chave: "999", fator: 0)
+            NoView(chave: "1994-07-19", fator: 0)
+            NoView(chave: "57309454421", fator: 0)
+            NoView(chave: "CARLOS EDUARDO MIGUEL LUCAS FERNANDES", fator: 0)
+            NoView(chave: "CARLA MAYA MARIANA RODRIGUES", fator: 0)
         }
-        .previewLayout(.fixed(width: 100, height: 80))
+        .previewLayout(.fixed(width: 500, height: 100))
     }
 }

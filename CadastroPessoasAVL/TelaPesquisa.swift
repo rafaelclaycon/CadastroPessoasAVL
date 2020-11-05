@@ -36,7 +36,7 @@ struct TelaPesquisa: View {
                 } else if viewModel.filtroSelecionado == 1 {
                     Text("Nome:")
 
-                    TextField("", text: $viewModel.entradaNome)
+                    TextField("", text: $viewModel.entrada)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .keyboardType(.numberPad)
                         .frame(width: 180)

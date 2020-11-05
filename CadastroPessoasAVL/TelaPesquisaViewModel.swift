@@ -42,11 +42,10 @@ class TelaPesquisaViewModel: ObservableObject {
             } else {
                 return self.exibirAlertaValorInvalido = true
             }
-        }
-        if entrada.isInt {
-            buscarCPF(entrada)
-        } else if !entrada.isEmpty {
-            
+        } else if self.filtroSelecionado == 1 {
+            buscarNome(entrada)
+        } else if self.filtroSelecionado == 2 {
+            buscarIntervaloDatas()
         }
     }
     
@@ -58,9 +57,12 @@ class TelaPesquisaViewModel: ObservableObject {
         self.pessoas.append(pessoa)
     }
     
-    func buscarNome() {
+    func buscarNome(_ substring: String) {
         limparResultados()
-        
+        guard let pessoas = indices.nome.buscarNosQueContem(substring: substring) else {
+            return exibirAlertaNenhumResultado = true
+        }
+        self.pessoas.append(contentsOf: pessoas)
     }
     
     func buscarIntervaloDatas() {
