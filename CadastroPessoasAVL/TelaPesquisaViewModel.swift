@@ -16,7 +16,7 @@ class TelaPesquisaViewModel: ObservableObject {
     @Published private var dataFinal = Date()
     @Published private var filtros = ["CPF", "Nome", "Data de nascimento"]
     @Published private var filtroSelecionado = 0
-    @Published var exibirAlerta: Bool = false
+    @Published var exibirAlertaNenhumResultado: Bool = false
     @Published private var exibirAlertaValorInvalido: Bool = false
     
     var listaVazia: Bool {
@@ -38,10 +38,11 @@ class TelaPesquisaViewModel: ObservableObject {
         
         if self.filtroSelecionado == 0 {
             if entrada.isInt {
-                self.buscarCPF(entrada)
+                buscarCPF(entrada)
+            }
         }
         if entrada.isInt {
-            self.buscarCPF(entrada)
+            buscarCPF(entrada)
         } else if !entrada.isEmpty {
             
         }
@@ -50,7 +51,7 @@ class TelaPesquisaViewModel: ObservableObject {
     func buscarCPF(_ cpfProcurado: String) {
         limparResultados()
         guard let pessoa = indices.cpf.buscar(chave: cpfProcurado) else {
-            return self.exibirAlerta = true
+            return exibirAlertaNenhumResultado = true
         }
         self.pessoas.append(pessoa)
     }

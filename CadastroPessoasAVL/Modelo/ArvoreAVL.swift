@@ -334,7 +334,7 @@ class ArvoreAVL {
         return no.dados
     }
     
-    func buscar(chave: String) -> [Pessoa]? {
+    /*func buscarSubstring(chave: String) -> [Pessoa]? {
         if raiz != nil {            
             if chave == raiz!.chave {
                 return raiz!.dados
@@ -358,7 +358,7 @@ class ArvoreAVL {
             //self.nosConsultados.removeAll()
         }
         return nil
-    }
+    }*/
     
     // MARK: - Remoção
     func remover(_ chave: String) {

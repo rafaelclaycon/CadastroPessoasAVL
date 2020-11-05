@@ -18,30 +18,30 @@ struct TelaPesquisa: View {
                 Spacer()
 
                 Picker(selection: $viewModel.filtroSelecionado, label: Text("Filtro de consulta")) {
-                    ForEach(0 ..< Filtro.allCases) {
+                    ForEach(0 ..< viewModel.filtros.count) {
                         Text(self.filtros[$0])
                     }
                 }
                 .pickerStyle(MenuPickerStyle())
                 .padding(.trailing, 30)
 
-                if filtroSelecionado == 0 {
+                if viewModel.filtroSelecionado == 0 {
                     Text("CPF:")
 
-                    TextField("", text: $entrada)
+                    TextField("", text: $viewModel.entrada)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .keyboardType(.numberPad)
                         .frame(width: 150)
                         .padding(.trailing, 30)
-                } else if filtroSelecionado == 1 {
+                } else if viewModel.filtroSelecionado == 1 {
                     Text("Nome:")
 
-                    TextField("", text: $entradaNome)
+                    TextField("", text: $viewModel.entradaNome)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .keyboardType(.numberPad)
                         .frame(width: 180)
                         .padding(.trailing, 30)
-                } else if filtroSelecionado == 2 {
+                } else if viewModel.filtroSelecionado == 2 {
                     DatePicker("Nascidos entre", selection: $viewModel.dataInicial, displayedComponents: .date)
                         .frame(width: 250)
                         .padding(.trailing, 4)
@@ -51,7 +51,7 @@ struct TelaPesquisa: View {
                 }
 
                 Button(action: {
-                    viewModel.processarEntrada(entrada)
+                    viewModel.processarEntrada(viewModel.entrada)
                 }) {
                     HStack {
                         Image(systemName: "magnifyingglass")
@@ -91,7 +91,7 @@ struct TelaPesquisa: View {
                 }
             }
         }
-        .alert(isPresented: $viewModel.exibirAlerta) {
+        .alert(isPresented: $viewModel.exibirAlertaNenhumResultado) {
             Alert(title: Text("Nenhuma Pessoa Encontrada"), message: Text("Não foi encontrada nenhuma chave para \"\(entrada)\"."), dismissButton: .default(Text("OK")))
         }
     }
