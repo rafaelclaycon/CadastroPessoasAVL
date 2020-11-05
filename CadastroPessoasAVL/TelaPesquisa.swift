@@ -19,7 +19,7 @@ struct TelaPesquisa: View {
 
                 Picker(selection: $viewModel.filtroSelecionado, label: Text("Filtro de consulta")) {
                     ForEach(0 ..< viewModel.filtros.count) {
-                        Text(self.filtros[$0])
+                        Text(viewModel.filtros[$0])
                     }
                 }
                 .pickerStyle(MenuPickerStyle())
@@ -92,7 +92,7 @@ struct TelaPesquisa: View {
             }
         }
         .alert(isPresented: $viewModel.exibirAlertaNenhumResultado) {
-            Alert(title: Text("Nenhuma Pessoa Encontrada"), message: Text("Não foi encontrada nenhuma chave para \"\(entrada)\"."), dismissButton: .default(Text("OK")))
+            Alert(title: Text("Nenhum Resultado"), message: Text("Não foi encontrada nenhuma pessoa para a chave \"\(viewModel.entrada)\"."), dismissButton: .default(Text("OK")))
         }
     }
 }

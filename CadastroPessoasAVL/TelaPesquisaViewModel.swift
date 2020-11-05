@@ -10,14 +10,14 @@ import SwiftUI
 
 class TelaPesquisaViewModel: ObservableObject {
     @Published var pessoas: [Pessoa]
-    @Published private var entrada = ""
-    @Published private var entradaNome = ""
-    @Published private var dataInicial = Date()
-    @Published private var dataFinal = Date()
-    @Published private var filtros = ["CPF", "Nome", "Data de nascimento"]
-    @Published private var filtroSelecionado = 0
+    @Published var entrada = ""
+    @Published var entradaNome = ""
+    @Published var dataInicial = Date()
+    @Published var dataFinal = Date()
+    @Published var filtros = ["CPF", "Nome", "Data de nascimento"]
+    @Published var filtroSelecionado = 0
     @Published var exibirAlertaNenhumResultado: Bool = false
-    @Published private var exibirAlertaValorInvalido: Bool = false
+    @Published var exibirAlertaValorInvalido: Bool = false
     
     var listaVazia: Bool {
         return pessoas.isEmpty
@@ -39,6 +39,8 @@ class TelaPesquisaViewModel: ObservableObject {
         if self.filtroSelecionado == 0 {
             if entrada.isInt {
                 buscarCPF(entrada)
+            } else {
+                return self.exibirAlertaValorInvalido = true
             }
         }
         if entrada.isInt {
