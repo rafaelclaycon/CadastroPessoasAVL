@@ -132,21 +132,12 @@
 			isa = PBXGroup;
 			children = (
 				D97BB51B254F294800023D9F /* Apoio */,
-				D97BB519254F225D00023D9F /* Views Arvore */,
 				D90DE645254E3F330062E7B3 /* Views */,
 				D90DE627254DEDC30062E7B3 /* Modelo */,
-				D90DE5F2254DDEE60062E7B3 /* TelaPesquisa.swift */,
-				D90DE666254F0FE20062E7B3 /* IndicesArvore.swift */,
-				D90DE62D254DF7520062E7B3 /* TelaPesquisaViewModel.swift */,
-				D90DE638254E3DD50062E7B3 /* TelaCarregamentoArquivo.swift */,
-				D9C8F9742550C1E800C3B6A3 /* TelaPrincipal.swift */,
-				D90DE65E254F04CE0062E7B3 /* TelaCarregamentoArquivoViewModel.swift */,
-				D97BB514254F21C400023D9F /* VisualizacaoArvores.swift */,
-				D90DE659254F04900062E7B3 /* AnalisadorCSV.swift */,
+				D90DE621254DEBCF0062E7B3 /* Recursos */,
 				D90DE5F0254DDEE60062E7B3 /* CadastroPessoasAVLApp.swift */,
 				D90DE5F4254DDEE70062E7B3 /* Assets.xcassets */,
 				D90DE5F9254DDEE70062E7B3 /* Info.plist */,
-				D90DE621254DEBCF0062E7B3 /* Recursos */,
 				D90DE5F6254DDEE70062E7B3 /* Preview Content */,
 			);
 			path = CadastroPessoasAVL;
@@ -192,6 +183,7 @@
 				D90DE651254E49B80062E7B3 /* No.swift */,
 				D90DE64C254E494F0062E7B3 /* ArvoreAVL.swift */,
 				D90DE628254DEDD00062E7B3 /* Pessoa.swift */,
+				D90DE666254F0FE20062E7B3 /* IndicesArvore.swift */,
 			);
 			path = Modelo;
 			sourceTree = "<group>";
@@ -200,8 +192,12 @@
 			isa = PBXGroup;
 			children = (
 				D90DE640254E3F230062E7B3 /* Cabecalho.swift */,
-				D981B44A2550494600FEC57C /* CartaoPessoa.swift */,
-				D981B44F25508E3D00FEC57C /* CartaoPessoaViewModel.swift */,
+				D9C8F9742550C1E800C3B6A3 /* TelaPrincipal.swift */,
+				D9CAFF6D255457BB00B50695 /* Views Carregamento Arquivo */,
+				D97BB514254F21C400023D9F /* VisualizacaoArvores.swift */,
+				D9CAFF69255457B000B50695 /* Views Pesquisa */,
+				D9CAFF682554579A00B50695 /* Views Pessoa */,
+				D97BB519254F225D00023D9F /* Views Arvore */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -218,10 +214,38 @@
 		D97BB51B254F294800023D9F /* Apoio */ = {
 			isa = PBXGroup;
 			children = (
+				D90DE659254F04900062E7B3 /* AnalisadorCSV.swift */,
 				D9C8F97F2550D6B500C3B6A3 /* String+isInt.swift */,
 				D97BB51C254F295A00023D9F /* Color+CoresPersonalizadas.swift */,
 			);
 			path = Apoio;
+			sourceTree = "<group>";
+		};
+		D9CAFF682554579A00B50695 /* Views Pessoa */ = {
+			isa = PBXGroup;
+			children = (
+				D981B44A2550494600FEC57C /* CartaoPessoa.swift */,
+				D981B44F25508E3D00FEC57C /* CartaoPessoaViewModel.swift */,
+			);
+			path = "Views Pessoa";
+			sourceTree = "<group>";
+		};
+		D9CAFF69255457B000B50695 /* Views Pesquisa */ = {
+			isa = PBXGroup;
+			children = (
+				D90DE5F2254DDEE60062E7B3 /* TelaPesquisa.swift */,
+				D90DE62D254DF7520062E7B3 /* TelaPesquisaViewModel.swift */,
+			);
+			path = "Views Pesquisa";
+			sourceTree = "<group>";
+		};
+		D9CAFF6D255457BB00B50695 /* Views Carregamento Arquivo */ = {
+			isa = PBXGroup;
+			children = (
+				D90DE638254E3DD50062E7B3 /* TelaCarregamentoArquivo.swift */,
+				D90DE65E254F04CE0062E7B3 /* TelaCarregamentoArquivoViewModel.swift */,
+			);
+			path = "Views Carregamento Arquivo";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
