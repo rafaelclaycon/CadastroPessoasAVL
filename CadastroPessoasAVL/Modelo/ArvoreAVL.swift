@@ -334,6 +334,32 @@ class ArvoreAVL {
         return no.dados
     }
     
+    func buscar(chave: String) -> [Pessoa]? {
+        if raiz != nil {            
+            if chave == raiz!.chave {
+                return raiz!.dados
+            } else {
+                var no: No?
+                if chave < raiz!.chave {
+                    no = raiz!.esquerda
+                } else {
+                    no = raiz!.direita
+                }
+                
+                let encontrado = buscarNaSubarvore(chave, no)
+                
+                if encontrado != nil {
+                    return encontrado
+                } else {
+                    return nil
+                }
+            }
+            // Limpa o array que guarda o caminho percorrido pela pesquisa.
+            //self.nosConsultados.removeAll()
+        }
+        return nil
+    }
+    
     // MARK: - Remoção
     func remover(_ chave: String) {
         guard let noASerRemovido = getNo(comChave: chave, aPartirDe: raiz) else {

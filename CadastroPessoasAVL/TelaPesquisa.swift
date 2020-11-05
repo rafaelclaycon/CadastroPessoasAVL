@@ -9,13 +9,6 @@ import SwiftUI
 
 struct TelaPesquisa: View {
     @ObservedObject var viewModel: TelaPesquisaViewModel
-    @State private var entrada = ""
-    @State private var entradaNome = ""
-    @State private var dataInicial = Date()
-    @State private var dataFinal = Date()
-    var filtros = ["CPF", "Nome", "Data de nascimento"]
-    @State private var filtroSelecionado = 0
-    @State private var exibirAlertaValorInvalido: Bool = false
     
     var body: some View {
         VStack {
@@ -24,8 +17,8 @@ struct TelaPesquisa: View {
             HStack {
                 Spacer()
 
-                Picker(selection: $filtroSelecionado, label: Text("Filtro de consulta")) {
-                    ForEach(0 ..< filtros.count) {
+                Picker(selection: $viewModel.filtroSelecionado, label: Text("Filtro de consulta")) {
+                    ForEach(0 ..< Filtro.allCases) {
                         Text(self.filtros[$0])
                     }
                 }
@@ -49,20 +42,16 @@ struct TelaPesquisa: View {
                         .frame(width: 180)
                         .padding(.trailing, 30)
                 } else if filtroSelecionado == 2 {
-                    DatePicker("Nascidos entre", selection: $dataInicial, displayedComponents: .date)
+                    DatePicker("Nascidos entre", selection: $viewModel.dataInicial, displayedComponents: .date)
                         .frame(width: 250)
                         .padding(.trailing, 4)
 
-                    DatePicker(" e ", selection: $dataFinal, displayedComponents: .date)
+                    DatePicker(" e ", selection: $viewModel.dataFinal, displayedComponents: .date)
                         .frame(width: 150)
                 }
 
                 Button(action: {
-                    if entrada.isInt {
-                        viewModel.buscarCPF(entrada)
-                    } else if !entrada.isEmpty {
-                        self.exibirAlertaValorInvalido = true
-                    }
+                    viewModel.processarEntrada(entrada)
                 }) {
                     HStack {
                         Image(systemName: "magnifyingglass")
@@ -70,7 +59,7 @@ struct TelaPesquisa: View {
                     }
                 }
                 .padding(.leading, 10)
-                .alert(isPresented: $exibirAlertaValorInvalido) {
+                .alert(isPresented: $viewModel.exibirAlertaValorInvalido) {
                     Alert(title: Text("Valor Inválido"), message: Text("Utilize apenas números para realizar essa pesquisa."), dismissButton: .default(Text("OK")))
                 }
 
