@@ -73,4 +73,32 @@ class CadastroPessoasAVLTests: XCTestCase {
         
         XCTAssertEqual(caminhamentoPosOrdemDepois, "04,06,27,88,42,15")
     }
+    
+    func testRotDuplaADireitaPag19() throws {
+        let arvore = ArvoreAVL()
+        arvore.inserir("120")
+        arvore.inserir("110")
+        arvore.inserir("150")
+        arvore.inserir("080")
+        arvore.inserir("130")
+        arvore.inserir("200")
+        
+        guard let arrayCaminhamentoPosOrdemAntes = arvore.getCaminhamentoPosOrdem() else {
+            return XCTFail("Não obteve caminhamento.")
+        }
+        
+        let caminhamentoPosOrdemAntes = arrayCaminhamentoPosOrdemAntes.joined(separator:",")
+        
+        XCTAssertEqual(caminhamentoPosOrdemAntes, "080,110,130,200,150,120")
+        
+        arvore.inserir("100")
+        
+        guard let arrayCaminhamentoPosOrdemDepois = arvore.getCaminhamentoPosOrdem() else {
+            return XCTFail("Não obteve caminhamento.")
+        }
+        
+        let caminhamentoPosOrdemDepois = arrayCaminhamentoPosOrdemDepois.joined(separator:",")
+        
+        XCTAssertEqual(caminhamentoPosOrdemDepois, "080,110,100,130,200,150,120")
+    }
 }
