@@ -12,9 +12,7 @@ struct NoView: View {
     @State var fator: Int
     @State var pai: String?
     
-    //let gradiente = LinearGradient(gradient: Gradient(colors: [.azulEscuro, .azulClaro]), startPoint: .topLeading, endPoint: .bottomTrailing)
-    
-    let raioNo: CGFloat = 40.0
+    private let raioNo: CGFloat = 40.0
     
     var body: some View {
         let corFator = fator < -1 || fator > 1 ? Color.red : Color.verdeEscuro
@@ -22,9 +20,7 @@ struct NoView: View {
         ZStack {
             Circle()
                 .strokeBorder(Color.blue, lineWidth: 1.5)
-                //.fill(gradiente)
                 .frame(width: raioNo, height: raioNo, alignment: .center)
-                //.opacity(0.6)
             
             Text(self.chave)
                 .font(.footnote)

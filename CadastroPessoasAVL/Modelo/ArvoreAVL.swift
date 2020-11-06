@@ -379,6 +379,44 @@ class ArvoreAVL {
         return
     }
     
+    func buscarChavePai(chave: String) -> String? {
+        if raiz != nil {
+            if chave == raiz!.chave {
+                // A raíz não tem pai, retorna nil
+                return nil
+            } else {
+                var no: No?
+                if chave < raiz!.chave {
+                    no = raiz!.esquerda
+                } else {
+                    no = raiz!.direita
+                }
+                
+                let encontrado = buscarChaveDoPaiNaSubarvore(chave, no)
+                
+                if encontrado != nil {
+                    return encontrado
+                } else {
+                    return nil
+                }
+            }
+        }
+        return nil
+    }
+    
+    func buscarChaveDoPaiNaSubarvore(_ chave: String, _ no: No?) -> String? {
+        guard let no = no else {
+            return nil
+        }
+        
+        if chave < no.chave {
+            return buscarChaveDoPaiNaSubarvore(chave, no.esquerda)
+        } else if chave > no.chave {
+            return buscarChaveDoPaiNaSubarvore(chave, no.direita)
+        }
+        return no.pai!.chave
+    }
+    
     // MARK: - Remoção
     func remover(_ chave: String) {
         guard let noASerRemovido = getNo(comChave: chave, aPartirDe: raiz) else {
