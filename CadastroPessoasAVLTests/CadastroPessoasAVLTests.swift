@@ -19,9 +19,8 @@ class CadastroPessoasAVLTests: XCTestCase {
     }
 
     // 04_Árvore_AVL.pdf - pág. 12
-    func testRotSimplesADireita() throws {
+    func testRotSimplesADireitaPag12() throws {
         let arvore = ArvoreAVL()
-        
         arvore.inserir("120")
         arvore.inserir("110")
         arvore.inserir("150")
@@ -37,7 +36,7 @@ class CadastroPessoasAVLTests: XCTestCase {
         
         XCTAssertEqual(caminhamentoPosOrdemAntes, "100,110,130,200,150,120")
         
-        arvore.inserir("80")
+        arvore.inserir("080")
         
         guard let arrayCaminhamentoPosOrdemDepois = arvore.getCaminhamentoPosOrdem() else {
             return XCTFail("Não obteve caminhamento.")
@@ -45,7 +44,33 @@ class CadastroPessoasAVLTests: XCTestCase {
         
         let caminhamentoPosOrdemDepois = arrayCaminhamentoPosOrdemDepois.joined(separator:",")
         
-        XCTAssertEqual(caminhamentoPosOrdemDepois, "80,110,100,130,200,150,120")
+        XCTAssertEqual(caminhamentoPosOrdemDepois, "080,110,100,130,200,150,120")
     }
     
+    func testRotSimplesADireitaPag14() throws {
+        let arvore = ArvoreAVL()
+        arvore.inserir("42")
+        arvore.inserir("15")
+        arvore.inserir("88")
+        arvore.inserir("06")
+        arvore.inserir("27")
+        
+        guard let arrayCaminhamentoPosOrdemAntes = arvore.getCaminhamentoPosOrdem() else {
+            return XCTFail("Não obteve caminhamento.")
+        }
+        
+        let caminhamentoPosOrdemAntes = arrayCaminhamentoPosOrdemAntes.joined(separator:",")
+        
+        XCTAssertEqual(caminhamentoPosOrdemAntes, "06,27,15,88,42")
+        
+        arvore.inserir("04")
+        
+        guard let arrayCaminhamentoPosOrdemDepois = arvore.getCaminhamentoPosOrdem() else {
+            return XCTFail("Não obteve caminhamento.")
+        }
+        
+        let caminhamentoPosOrdemDepois = arrayCaminhamentoPosOrdemDepois.joined(separator:",")
+        
+        XCTAssertEqual(caminhamentoPosOrdemDepois, "04,06,27,88,42,15")
+    }
 }
