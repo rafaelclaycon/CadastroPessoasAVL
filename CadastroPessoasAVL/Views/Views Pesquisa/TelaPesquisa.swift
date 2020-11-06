@@ -10,6 +10,11 @@ import SwiftUI
 struct TelaPesquisa: View {
     @ObservedObject var viewModel: TelaPesquisaViewModel
     
+    let columns = [
+        GridItem(.flexible()),
+        GridItem(.flexible())
+    ]
+    
     var body: some View {
         VStack {
             Cabecalho()
@@ -30,7 +35,7 @@ struct TelaPesquisa: View {
                 
                 Spacer()
             }
-            .padding(.bottom, 10)
+            .padding(.bottom, 20)
             
             HStack {
                 Spacer()
@@ -99,8 +104,13 @@ struct TelaPesquisa: View {
                         .opacity(0.4)
                     Spacer()
                 } else {
-                    List(viewModel.pessoas, id: \.cpf) { pessoa in
-                        CartaoPessoa(viewModel: CartaoPessoaViewModel(pessoa: pessoa))
+                    ScrollView {
+                        LazyVGrid(columns: columns, spacing: 20) {
+                            ForEach(viewModel.pessoas, id: \.cpf) { pessoa in
+                                CartaoPessoa(viewModel: CartaoPessoaViewModel(pessoa: pessoa))
+                            }
+                        }
+                        .padding(.horizontal)
                     }
                 }
             }

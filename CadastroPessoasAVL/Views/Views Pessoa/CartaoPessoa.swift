@@ -14,7 +14,7 @@ struct CartaoPessoa: View {
         ZStack {
             RoundedRectangle(cornerRadius: 20, style: .continuous)
                 .fill(Color.blue)
-                .frame(width: 420, height: 180)
+                .frame(width: 500, height: 180)
 //                .overlay(
 //                    RoundedRectangle(cornerRadius: 25)
 //                        .stroke(Color.blue, lineWidth: 1)
@@ -25,6 +25,8 @@ struct CartaoPessoa: View {
                     .font(.title)
                     .bold()
                     .foregroundColor(.white)
+                    .frame(width: 400, height: 20)
+                    .truncationMode(.tail)
                     .padding(.bottom, 2)
                 HStack {
                     VStack(alignment: .leading) {
