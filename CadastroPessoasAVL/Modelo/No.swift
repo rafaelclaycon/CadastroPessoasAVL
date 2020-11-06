@@ -12,7 +12,7 @@ class No {
     var esquerda: No?
     var direita: No?
     var chave: String
-    var dados: Pessoa
+    var dados: Pessoa?
     var fatorBalanceamento: Int {
         return No.getAltura(esquerda) - No.getAltura(direita)
     }
@@ -31,7 +31,7 @@ class No {
         }
     }
     
-    init(pai: No?, esquerda: No?, direita: No?, chave: String, dados: Pessoa) {
+    init(pai: No?, esquerda: No?, direita: No?, chave: String, dados: Pessoa?) {
         self.pai = pai
         self.esquerda = esquerda
         self.direita = direita
