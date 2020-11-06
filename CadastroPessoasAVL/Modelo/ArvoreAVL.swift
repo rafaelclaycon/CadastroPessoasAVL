@@ -17,7 +17,7 @@ class ArvoreAVL {
     private var caminhamento = [String]()
     
     // MARK: - Inserção
-    func inserir(_ chave: String, _ dados: Pessoa) {
+    func inserir(_ chave: String, _ dados: Pessoa? = nil) {
         if raiz == nil {
             raiz = No(pai: nil, esquerda: nil, direita: nil, chave: chave, dados: dados)
             print("O número \(chave) foi inserido.")
@@ -43,7 +43,7 @@ class ArvoreAVL {
         verificarBalanceamento(raiz, balancear: true)
     }
     
-    func inserirEmSubarvore(_ raiz: No, _ chave: String, _ dados: Pessoa) {
+    func inserirEmSubarvore(_ raiz: No, _ chave: String, _ dados: Pessoa?) {
         if chave < raiz.chave {
             if raiz.esquerda == nil {
                 raiz.esquerda = No(pai: raiz, esquerda: nil, direita: nil, chave: chave, dados: dados)
@@ -353,7 +353,7 @@ class ArvoreAVL {
         if no != nil {
             // Quando substring É igual, olha para si e para os filhos
             if substring == no!.chave.prefix(substring.count) {
-                arrayResultado.append(no!.dados)
+                arrayResultado.append(no!.dados!)
                 
                 if no!.esquerda != nil {
                     if substring == no!.esquerda!.chave.prefix(substring.count) {
@@ -468,7 +468,7 @@ class ArvoreAVL {
         return atual
     }
     
-    // MARK: - Caminhamento
+    // MARK: - Caminhamento - Exibição 🖥
     
     func exibirCaminhamentoPreOrdem() {
         guard let raiz = raiz else {
@@ -528,6 +528,32 @@ class ArvoreAVL {
         subarvoreEmOrdem(no.esquerda)
         caminhamento.append("\(no.chave)")
         subarvoreEmOrdem(no.direita)
+    }
+    
+    // MARK: - Caminhamento - Back-end 🧮
+    
+    func getCaminhamentoPosOrdem() -> [String]? {
+        if raiz != nil {
+            var resultado = [String]()
+            
+            getCaminhamentoPosOrdemSubarvore(raiz, &resultado)
+            
+            if resultado.count == 0 {
+                return nil
+            } else {
+                return resultado
+            }
+        }
+        return nil
+    }
+    
+    private func getCaminhamentoPosOrdemSubarvore(_ no: No?, _ arrayResultado: inout [String]) {
+        guard let no = no else {
+            return
+        }
+        getCaminhamentoPosOrdemSubarvore(no.esquerda, &arrayResultado)
+        getCaminhamentoPosOrdemSubarvore(no.direita, &arrayResultado)
+        arrayResultado.append(no.chave)
     }
     
     // MARK: - Funções auxiliares
