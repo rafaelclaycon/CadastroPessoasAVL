@@ -168,6 +168,10 @@ class ArvoreAVL {
         
         a.direita = d
         b.esquerda = a
+        
+        if let d = d {
+            d.pai = a
+        }
     }
     
     func rotacaoSimplesADireita(_ k2: No) {
