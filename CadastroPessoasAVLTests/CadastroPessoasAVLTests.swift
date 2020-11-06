@@ -197,6 +197,67 @@ class CadastroPessoasAVLTests: XCTestCase {
         XCTAssertEqual(nomePaiErick, malu)
     }
     
+    func testInserirDiegoCarlaCarlosMaluCauaErickBento() throws {
+        let diego = "DIEGO MANUEL EDSON BARBOSA"
+        let carla = "CARLA MAYA MARIANA RODRIGUES"
+        let carlos = "CARLOS EDUARDO MIGUEL LUCAS FERNANDES"
+        let malu = "MALU ESTER MAYA ROCHA"
+        let caua = "CAUA CAUE BARBOSA"
+        let erick = "ERICK MARTIN EDSON PEIXOTO"
+        let bento = "BENTO RENAN PINTO"
+        
+        let arvore = ArvoreAVL()
+        arvore.inserir(diego)
+        arvore.inserir(carla)
+        arvore.inserir(carlos)
+        arvore.inserir(malu)
+        arvore.inserir(caua)
+        arvore.inserir(erick)
+        arvore.inserir(bento)
+        
+        guard let arrayCaminhamentoPosOrdem = arvore.getCaminhamentoPosOrdem() else {
+            return XCTFail("Não obteve caminhamento.")
+        }
+        
+        let caminhamentoPosOrdem = arrayCaminhamentoPosOrdem.joined(separator:",")
+        
+        XCTAssertEqual(caminhamentoPosOrdem, "\(bento),\(carla),\(caua),\(carlos),\(erick),\(malu),\(diego)")
+        
+        // Checa os pais
+        let nomePaiDiego = arvore.buscarChavePai(chave: diego)
+        XCTAssertEqual(nomePaiDiego, nil)
+        
+        guard let nomePaiCarlos = arvore.buscarChavePai(chave: carlos) else {
+            return XCTFail("Não obteve a chave do pai.")
+        }
+        XCTAssertEqual(nomePaiCarlos, diego)
+        
+        guard let nomePaiMalu = arvore.buscarChavePai(chave: malu) else {
+            return XCTFail("Não obteve a chave do pai.")
+        }
+        XCTAssertEqual(nomePaiMalu, diego)
+        
+        guard let nomePaiCarla = arvore.buscarChavePai(chave: carla) else {
+            return XCTFail("Não obteve a chave do pai.")
+        }
+        XCTAssertEqual(nomePaiCarla, carlos)
+        
+        guard let nomePaiCaua = arvore.buscarChavePai(chave: caua) else {
+            return XCTFail("Não obteve a chave do pai.")
+        }
+        XCTAssertEqual(nomePaiCaua, carlos)
+        
+        guard let nomePaiErick = arvore.buscarChavePai(chave: erick) else {
+            return XCTFail("Não obteve a chave do pai.")
+        }
+        XCTAssertEqual(nomePaiErick, malu)
+        
+        guard let nomePaiBento = arvore.buscarChavePai(chave: bento) else {
+            return XCTFail("Não obteve a chave do pai.")
+        }
+        XCTAssertEqual(nomePaiBento, carla)
+    }
+    
 //    func testInserir10Nomes() throws {
 //        let arvore = ArvoreAVL()
 //        arvore.inserir("DIEGO MANUEL EDSON BARBOSA")
