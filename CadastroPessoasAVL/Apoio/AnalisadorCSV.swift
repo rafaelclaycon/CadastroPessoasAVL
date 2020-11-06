@@ -55,13 +55,9 @@ class AnalisadorCSV {
             let pessoa = Pessoa(cpf: cpf, rg: rg, nome: nome, dataNascimento: dataNascimento, nomeCidadeNascimento: nomeCidadeNascimento)
             
             indices.cpf.inserir(String(pessoa.cpf), pessoa)
-            indices.nome.inserir(self.getNomeNormalizado(pessoa.nome), pessoa)
+            indices.nome.inserir(Utils.getStringNormalizada(pessoa.nome), pessoa)
             indices.dataNascimento.inserir(self.getISODateFrom(pessoa.dataNascimento), pessoa)
         }
-    }
-    
-    static func getNomeNormalizado(_ nome: String) -> String {
-        return nome.uppercased().folding(options: .diacriticInsensitive, locale: .current)
     }
     
     static func getDateFrom(_ stringDate: String) -> Date {

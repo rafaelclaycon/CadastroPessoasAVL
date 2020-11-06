@@ -14,7 +14,7 @@ class TelaPesquisaViewModel: ObservableObject {
     @Published var entradaNome = ""
     @Published var dataInicial = Date()
     @Published var dataFinal = Date()
-    @Published var filtros = ["CPF", "Nome", "Data de nascimento"]
+    @Published var filtros = ["CPF", "Nome", "Data de Nascimento"]
     @Published var filtroSelecionado = 0
     @Published var exibirAlertaNenhumResultado: Bool = false
     @Published var exibirAlertaValorInvalido: Bool = false
@@ -43,7 +43,7 @@ class TelaPesquisaViewModel: ObservableObject {
                 return self.exibirAlertaValorInvalido = true
             }
         } else if self.filtroSelecionado == 1 {
-            buscarNome(entrada)
+            buscarNome(Utils.getStringNormalizada(entrada))
         } else if self.filtroSelecionado == 2 {
             buscarIntervaloDatas()
         }

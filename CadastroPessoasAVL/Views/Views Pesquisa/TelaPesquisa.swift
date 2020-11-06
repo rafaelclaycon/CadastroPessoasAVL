@@ -16,14 +16,24 @@ struct TelaPesquisa: View {
             
             HStack {
                 Spacer()
-
+                
+                Text("Consultar por")
+                    .padding(.trailing, 5)
+                
                 Picker(selection: $viewModel.filtroSelecionado, label: Text("Filtro de consulta")) {
                     ForEach(0 ..< viewModel.filtros.count) {
                         Text(viewModel.filtros[$0])
                     }
                 }
-                .pickerStyle(MenuPickerStyle())
-                .padding(.trailing, 30)
+                .pickerStyle(SegmentedPickerStyle())
+                .frame(width: 460)
+                
+                Spacer()
+            }
+            .padding(.bottom, 10)
+            
+            HStack {
+                Spacer()
 
                 if viewModel.filtroSelecionado == 0 {
                     Text("CPF:")
