@@ -13,7 +13,7 @@ struct DiagramaSubarvore: View {
     var body: some View {
         if no != nil {
             VStack(alignment: .center) {
-                NoView(chave: no!.chave, fator: no!.fatorBalanceamento)
+                NoView(chave: no!.chave, fator: no!.fatorBalanceamento, pai: no!.pai != nil ? String(no!.pai!.chave.prefix(2)) : nil)
                 HStack(alignment: .center, spacing: 10) {
                     DiagramaSubarvore(no: no!.esquerda)
                     Spacer()
