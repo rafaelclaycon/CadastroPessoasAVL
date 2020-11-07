@@ -367,6 +367,44 @@ class ArvoreAVL {
         buscarNosQueContemNaSubarvore(no.direita, substring: substring, &arrayResultado)
     }
     
+    // Datas
+    
+    func buscarPessoasPorIntervaloDeDatas(de dataInicialOriginal: Date, ate dataFinalOriginal: Date) throws -> [Pessoa]? {
+        guard dataFinalOriginal > dataInicialOriginal else {
+            throw ErroPesquisa.datasInvalidas
+        }
+        guard raiz != nil else {
+            throw ErroPesquisa.arvoreVazia
+        }
+                
+        let dataInicial = Utils.getISODateFrom(dataInicialOriginal)
+        let dataFinal = Utils.getISODateFrom(dataFinalOriginal)
+        
+        var resultado = [Pessoa]()
+                    
+        buscarPessoasDentroDoIntervaloNaSubarvore(raiz, dataInicial, dataFinal, &resultado)
+        
+        if resultado.count == 0 {
+            return nil
+        } else {
+            return resultado
+        }
+    }
+    
+    private func buscarPessoasDentroDoIntervaloNaSubarvore(_ no: No?, _ dataInicial: String, _ dataFinal: String, _ arrayResultado: inout [Pessoa]) {
+        guard let no = no else {
+            return
+        }
+        
+        buscarPessoasDentroDoIntervaloNaSubarvore(no.esquerda, dataInicial, dataFinal, &arrayResultado)
+        
+        if (dataInicial...dataFinal).contains(no.chave) {
+            arrayResultado.append(no.dados!)
+        }
+        
+        buscarPessoasDentroDoIntervaloNaSubarvore(no.direita, dataInicial, dataFinal, &arrayResultado)
+    }
+    
     // Métodos auxiliares pros testes unitários
     func buscarChavePai(chave: String) -> String? {
         if raiz != nil {
@@ -590,4 +628,9 @@ class ArvoreAVL {
         }
         print(nome + ": \(variavel.chave)")
     }
+}
+
+enum ErroPesquisa: Error {
+    case datasInvalidas
+    case arvoreVazia
 }

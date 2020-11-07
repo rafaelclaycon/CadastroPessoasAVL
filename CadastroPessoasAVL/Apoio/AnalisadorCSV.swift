@@ -42,7 +42,7 @@ class AnalisadorCSV {
                 } else if campo == 3 {
                     let dataNascimentoEncontrada = String(column)
                     print("Date = \(dataNascimentoEncontrada)")
-                    dataNascimento = getDateFrom(dataNascimentoEncontrada)
+                    dataNascimento = Utils.getDateFrom(dataNascimentoEncontrada)
                 } else if campo == 4 {
                     let nomeCidadeEncontrado = column
                     print("String = \(nomeCidadeEncontrado)")
@@ -56,20 +56,7 @@ class AnalisadorCSV {
             
             indices.cpf.inserir(String(pessoa.cpf), pessoa)
             indices.nome.inserir(Utils.getStringNormalizada(pessoa.nome), pessoa)
-            indices.dataNascimento.inserir(self.getISODateFrom(pessoa.dataNascimento), pessoa)
+            indices.dataNascimento.inserir(Utils.getISODateFrom(pessoa.dataNascimento), pessoa)
         }
-    }
-    
-    static func getDateFrom(_ stringDate: String) -> Date {
-        let dateFormatter = DateFormatter()
-        dateFormatter.locale = Locale(identifier: "pt-br")
-        dateFormatter.dateFormat = "dd/MM/yyyy"
-        return dateFormatter.date(from: stringDate)!
-    }
-    
-    static func getISODateFrom(_ date: Date) -> String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
-        return dateFormatter.string(from: date)
     }
 }

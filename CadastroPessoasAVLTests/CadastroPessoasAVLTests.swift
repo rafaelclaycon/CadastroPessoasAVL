@@ -368,7 +368,51 @@ class CadastroPessoasAVLTests: XCTestCase {
     }
     
     // MARK: - Pesquisa por intervalo de datas
-    func testBuscarPorDuasDatasDiferentes() throws {
+    
+    func testBuscarPessoasPorDuasDatasDiferentes() throws {
+        let arvore = ArvoreAVL()
         
+        arvore.inserir("1976-02-15", Pessoa(cpf: "", rg: "", nome: diego, dataNascimento: Date(), nomeCidadeNascimento: ""))
+        arvore.inserir("1955-09-20", Pessoa(cpf: "", rg: "", nome: carla, dataNascimento: Date(), nomeCidadeNascimento: ""))
+        arvore.inserir("1990-09-18", Pessoa(cpf: "", rg: "", nome: carlos, dataNascimento: Date(), nomeCidadeNascimento: ""))
+        arvore.inserir("1972-08-02", Pessoa(cpf: "", rg: "", nome: malu, dataNascimento: Date(), nomeCidadeNascimento: ""))
+        arvore.inserir("1967-04-16", Pessoa(cpf: "", rg: "", nome: caua, dataNascimento: Date(), nomeCidadeNascimento: ""))
+        arvore.inserir("1993-03-24", Pessoa(cpf: "", rg: "", nome: erick, dataNascimento: Date(), nomeCidadeNascimento: ""))
+        arvore.inserir("1980-10-04", Pessoa(cpf: "", rg: "", nome: bento, dataNascimento: Date(), nomeCidadeNascimento: ""))
+        arvore.inserir("1974-02-12", Pessoa(cpf: "", rg: "", nome: renata, dataNascimento: Date(), nomeCidadeNascimento: ""))
+        arvore.inserir("1977-05-05", Pessoa(cpf: "", rg: "", nome: eduardo, dataNascimento: Date(), nomeCidadeNascimento: ""))
+        arvore.inserir("1940-02-21", Pessoa(cpf: "", rg: "", nome: sandra, dataNascimento: Date(), nomeCidadeNascimento: ""))
+        arvore.inserir("1944-09-08", Pessoa(cpf: "", rg: "", nome: marcio, dataNascimento: Date(), nomeCidadeNascimento: ""))
+        arvore.inserir("1958-04-03", Pessoa(cpf: "", rg: "", nome: nelson, dataNascimento: Date(), nomeCidadeNascimento: ""))
+        arvore.inserir("1982-12-15", Pessoa(cpf: "", rg: "", nome: giovanna, dataNascimento: Date(), nomeCidadeNascimento: ""))
+        arvore.inserir("1948-08-04", Pessoa(cpf: "", rg: "", nome: vicente, dataNascimento: Date(), nomeCidadeNascimento: ""))
+        arvore.inserir("1968-03-06", Pessoa(cpf: "", rg: "", nome: carlosCesar, dataNascimento: Date(), nomeCidadeNascimento: ""))
+        arvore.inserir("1990-02-04", Pessoa(cpf: "", rg: "", nome: pietra, dataNascimento: Date(), nomeCidadeNascimento: ""))
+        arvore.inserir("1945-04-05", Pessoa(cpf: "", rg: "", nome: brenda, dataNascimento: Date(), nomeCidadeNascimento: ""))
+        arvore.inserir("1940-04-15", Pessoa(cpf: "", rg: "", nome: elaine, dataNascimento: Date(), nomeCidadeNascimento: ""))
+        arvore.inserir("1977-07-24", Pessoa(cpf: "", rg: "", nome: rosangela, dataNascimento: Date(), nomeCidadeNascimento: ""))
+        arvore.inserir("1942-04-07", Pessoa(cpf: "", rg: "", nome: jaqueline, dataNascimento: Date(), nomeCidadeNascimento: ""))
+        arvore.inserir("1964-06-20", Pessoa(cpf: "", rg: "", nome: marlene, dataNascimento: Date(), nomeCidadeNascimento: ""))
+        arvore.inserir("1996-10-27", Pessoa(cpf: "", rg: "", nome: nicolas, dataNascimento: Date(), nomeCidadeNascimento: ""))
+        
+        // Busca por todas as pessoas nascidas nos anos 90
+        let dataInicialString = "1990-01-01T00:00:00+0000"
+        let dataFinalString = "1999-12-31T00:00:00+0000"
+        
+        let dateFormatter = ISO8601DateFormatter()
+        
+        let dataInicial = dateFormatter.date(from: dataInicialString)!
+        let dataFinal = dateFormatter.date(from: dataFinalString)!
+        
+        do {
+            guard let pessoas = try arvore.buscarPessoasPorIntervaloDeDatas(de: dataInicial, ate: dataFinal) else {
+                return XCTFail("Nenhum resultado encontrado.")
+            }
+            XCTAssertEqual(pessoas.count, 4)
+        } catch {
+            XCTFail("Erro inesperado: \(error).")
+        }
     }
+    
+    // TODO: Caso de teste: Buscar por pessoas com a mesma data de aniversário
 }
