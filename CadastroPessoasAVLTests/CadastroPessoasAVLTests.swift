@@ -318,25 +318,36 @@ class CadastroPessoasAVLTests: XCTestCase {
         XCTAssertEqual(caminhamentoPosOrdem, "\(bento),\(carla),\(caua),\(carlos),\(eduardo),\(erick),\(renata),\(malu),\(diego)")
     }
     
-//    func testInserir10Nomes() throws {
-//        let arvore = ArvoreAVL()
-//        arvore.inserir("DIEGO MANUEL EDSON BARBOSA")
-//        arvore.inserir("CARLA MAYA MARIANA RODRIGUES")
-//        arvore.inserir("CARLOS EDUARDO MIGUEL LUCAS FERNANDES")
-//        arvore.inserir("MALU ESTER MAYA ROCHA")
-//        arvore.inserir("CAUA CAUE BARBOSA")
-//        arvore.inserir("ERICK MARTIN EDSON PEIXOTO")
-//        arvore.inserir("BENTO RENAN PINTO")
-//        arvore.inserir("RENATA SIMONE NOVAES")
-//        arvore.inserir("EDUARDO BENEDITO CASTRO")
-//        arvore.inserir("SANDRA LARA PIRES")
-//
-//        guard let arrayCaminhamentoPosOrdemAntes = arvore.getCaminhamentoPosOrdem() else {
-//            return XCTFail("Não obteve caminhamento.")
-//        }
-//
-//        let caminhamentoPosOrdemAntes = arrayCaminhamentoPosOrdemAntes.joined(separator:",")
-//
-//        XCTAssertEqual(caminhamentoPosOrdemAntes, "")
-//    }
+    func testInserirDiegoCarlaCarlosMaluCauaErickBentoRenataEduardoSandra() throws {
+        let diego = "DIEGO MANUEL EDSON BARBOSA"
+        let carla = "CARLA MAYA MARIANA RODRIGUES"
+        let carlos = "CARLOS EDUARDO MIGUEL LUCAS FERNANDES"
+        let malu = "MALU ESTER MAYA ROCHA"
+        let caua = "CAUA CAUE BARBOSA"
+        let erick = "ERICK MARTIN EDSON PEIXOTO"
+        let bento = "BENTO RENAN PINTO"
+        let renata = "RENATA SIMONE NOVAES"
+        let eduardo = "EDUARDO BENEDITO CASTRO"
+        let sandra = "SANDRA LARA PIRES"
+        
+        let arvore = ArvoreAVL()
+        arvore.inserir(diego)
+        arvore.inserir(carla)
+        arvore.inserir(carlos)
+        arvore.inserir(malu)
+        arvore.inserir(caua)
+        arvore.inserir(erick)
+        arvore.inserir(bento)
+        arvore.inserir(renata)
+        arvore.inserir(eduardo)
+        arvore.inserir(sandra)
+        
+        guard let arrayCaminhamentoPosOrdem = arvore.getCaminhamentoPosOrdem() else {
+            return XCTFail("Não obteve caminhamento.")
+        }
+        
+        let caminhamentoPosOrdem = arrayCaminhamentoPosOrdem.joined(separator:",")
+        
+        XCTAssertEqual(caminhamentoPosOrdem, "\(bento),\(carla),\(caua),\(carlos),\(eduardo),\(erick),\(sandra),\(renata),\(malu),\(diego)")
+    }
 }
