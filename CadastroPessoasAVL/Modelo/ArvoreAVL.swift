@@ -168,6 +168,10 @@ class ArvoreAVL {
         
         a.direita = d
         b.esquerda = a
+        
+        if let d = d {
+            d.pai = a
+        }
     }
     
     func rotacaoSimplesADireita(_ k2: No) {
@@ -338,7 +342,7 @@ class ArvoreAVL {
         if raiz != nil {
             var resultado = [Pessoa]()
                         
-            buscarNosQueContemNaSubarvore(raiz, substring: substring, &resultado)
+            buscarNosQueContemNaSubarvore(raiz, substring: Utils.getStringNormalizada(substring), &resultado)
             
             if resultado.count == 0 {
                 return nil
@@ -350,33 +354,56 @@ class ArvoreAVL {
     }
     
     func buscarNosQueContemNaSubarvore(_ no: No?, substring: String, _ arrayResultado: inout [Pessoa]) {
-        if no != nil {
-            // Quando substring É igual, olha para si e para os filhos
-            if substring == no!.chave.prefix(substring.count) {
-                arrayResultado.append(no!.dados!)
-                
-                if no!.esquerda != nil {
-                    if substring == no!.esquerda!.chave.prefix(substring.count) {
-                        buscarNosQueContemNaSubarvore(no!.esquerda, substring: substring, &arrayResultado)
-                    }
-                }
-                
-                if no!.direita != nil {
-                    if substring == no!.direita!.chave.prefix(substring.count) {
-                        buscarNosQueContemNaSubarvore(no!.direita, substring: substring, &arrayResultado)
-                    }
-                }
-                
-            // Quando substring NÃO É igual, olha para os filhos
+        guard let no = no else {
+            return
+        }
+        
+        buscarNosQueContemNaSubarvore(no.esquerda, substring: substring, &arrayResultado)
+        
+        if substring == no.chave.prefix(substring.count) {
+            arrayResultado.append(no.dados!)
+        }
+        
+        buscarNosQueContemNaSubarvore(no.direita, substring: substring, &arrayResultado)
+    }
+    
+    // Métodos auxiliares pros testes unitários
+    func buscarChavePai(chave: String) -> String? {
+        if raiz != nil {
+            if chave == raiz!.chave {
+                // A raíz não tem pai, retorna nil
+                return nil
             } else {
-                if substring < no!.chave.prefix(substring.count) {
-                    buscarNosQueContemNaSubarvore(no!.esquerda, substring: substring, &arrayResultado)
-                } else if substring > no!.chave.prefix(substring.count) {
-                    buscarNosQueContemNaSubarvore(no!.direita, substring: substring, &arrayResultado)
+                var no: No?
+                if chave < raiz!.chave {
+                    no = raiz!.esquerda
+                } else {
+                    no = raiz!.direita
+                }
+                
+                let encontrado = buscarChaveDoPaiNaSubarvore(chave, no)
+                
+                if encontrado != nil {
+                    return encontrado
+                } else {
+                    return nil
                 }
             }
         }
-        return
+        return nil
+    }
+    
+    func buscarChaveDoPaiNaSubarvore(_ chave: String, _ no: No?) -> String? {
+        guard let no = no else {
+            return nil
+        }
+        
+        if chave < no.chave {
+            return buscarChaveDoPaiNaSubarvore(chave, no.esquerda)
+        } else if chave > no.chave {
+            return buscarChaveDoPaiNaSubarvore(chave, no.direita)
+        }
+        return no.pai!.chave
     }
     
     // MARK: - Remoção

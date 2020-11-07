@@ -43,7 +43,7 @@ class TelaPesquisaViewModel: ObservableObject {
                 return self.exibirAlertaValorInvalido = true
             }
         } else if self.filtroSelecionado == 1 {
-            buscarNome(Utils.getStringNormalizada(entrada))
+            buscarNome(entrada)
         } else if self.filtroSelecionado == 2 {
             buscarIntervaloDatas()
         }
