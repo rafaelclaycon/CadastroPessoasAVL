@@ -9,6 +9,30 @@ import XCTest
 @testable import CadastroPessoasAVL
 
 class CadastroPessoasAVLTests: XCTestCase {
+    
+    // Massa de testes
+    let diego = "DIEGO MANUEL EDSON BARBOSA"
+    let carla = "CARLA MAYA MARIANA RODRIGUES"
+    let carlos = "CARLOS EDUARDO MIGUEL LUCAS FERNANDES"
+    let malu = "MALU ESTER MAYA ROCHA"
+    let caua = "CAUA CAUE BARBOSA"
+    let erick = "ERICK MARTIN EDSON PEIXOTO"
+    let bento = "BENTO RENAN PINTO"
+    let renata = "RENATA SIMONE NOVAES"
+    let eduardo = "EDUARDO BENEDITO CASTRO"
+    let sandra = "SANDRA LARA PIRES"
+    let marcio = "MARCIO LEVI VIEIRA"
+    let nelson = "NELSON LUAN VIANA"
+    let giovanna = "GIOVANNA GABRIELA BARROS"
+    let vicente = "VICENTE HENRY FILIPE SOUZA"
+    let carlosCesar = "CARLOS CESAR ANTONIO NOVAES"
+    let pietra = "PIETRA LUCIANA NOGUEIRA"
+    let brenda = "BRENDA SOPHIE CARVALHO"
+    let elaine = "ELAINE EMANUELLY JAQUELINE SILVEIRA"
+    let rosangela = "ROSANGELA FABIANA LAURA BAPTISTA"
+    let jaqueline = "JAQUELINE BARBARA ASSIS"
+    let marlene = "MARLENE CLAUDIA MANUELA PORTO"
+    let nicolas = "NICOLAS ANDRE FIGUEIREDO"
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -23,6 +47,7 @@ class CadastroPessoasAVLTests: XCTestCase {
     // 04_Árvore_AVL.pdf - pág. 12
     func testRotSimplesADireitaPag12() throws {
         let arvore = ArvoreAVL()
+        
         arvore.inserir("120")
         arvore.inserir("110")
         arvore.inserir("150")
@@ -51,6 +76,7 @@ class CadastroPessoasAVLTests: XCTestCase {
     
     func testRotSimplesADireitaPag14() throws {
         let arvore = ArvoreAVL()
+        
         arvore.inserir("42")
         arvore.inserir("15")
         arvore.inserir("88")
@@ -78,6 +104,7 @@ class CadastroPessoasAVLTests: XCTestCase {
     
     func testRotDuplaADireitaPag19() throws {
         let arvore = ArvoreAVL()
+        
         arvore.inserir("120")
         arvore.inserir("110")
         arvore.inserir("150")
@@ -108,9 +135,10 @@ class CadastroPessoasAVLTests: XCTestCase {
     
     func testInserirDiegoCarlaCarlosRotDuplaADireita() throws {
         let arvore = ArvoreAVL()
-        arvore.inserir("DIEGO MANUEL EDSON BARBOSA")
-        arvore.inserir("CARLA MAYA MARIANA RODRIGUES")
-        arvore.inserir("CARLOS EDUARDO MIGUEL LUCAS FERNANDES")
+        
+        arvore.inserir(diego)
+        arvore.inserir(carla)
+        arvore.inserir(carlos)
         
         guard let arrayCaminhamentoPosOrdem = arvore.getCaminhamentoPosOrdem() else {
             return XCTFail("Não obteve caminhamento.")
@@ -118,17 +146,12 @@ class CadastroPessoasAVLTests: XCTestCase {
         
         let caminhamentoPosOrdem = arrayCaminhamentoPosOrdem.joined(separator:",")
         
-        XCTAssertEqual(caminhamentoPosOrdem, "CARLA MAYA MARIANA RODRIGUES,DIEGO MANUEL EDSON BARBOSA,CARLOS EDUARDO MIGUEL LUCAS FERNANDES")
+        XCTAssertEqual(caminhamentoPosOrdem, "\(carla),\(diego),\(carlos)")
     }
     
     func testInserirDiegoCarlaCarlosMaluCaua() throws {
-        let diego = "DIEGO MANUEL EDSON BARBOSA"
-        let carla = "CARLA MAYA MARIANA RODRIGUES"
-        let carlos = "CARLOS EDUARDO MIGUEL LUCAS FERNANDES"
-        let malu = "MALU ESTER MAYA ROCHA"
-        let caua = "CAUA CAUE BARBOSA"
-        
         let arvore = ArvoreAVL()
+        
         arvore.inserir(diego)
         arvore.inserir(carla)
         arvore.inserir(carlos)
@@ -145,14 +168,8 @@ class CadastroPessoasAVLTests: XCTestCase {
     }
     
     func testInserirDiegoCarlaCarlosMaluCauaErick() throws {
-        let diego = "DIEGO MANUEL EDSON BARBOSA"
-        let carla = "CARLA MAYA MARIANA RODRIGUES"
-        let carlos = "CARLOS EDUARDO MIGUEL LUCAS FERNANDES"
-        let malu = "MALU ESTER MAYA ROCHA"
-        let caua = "CAUA CAUE BARBOSA"
-        let erick = "ERICK MARTIN EDSON PEIXOTO"
-        
         let arvore = ArvoreAVL()
+        
         arvore.inserir(diego)
         arvore.inserir(carla)
         arvore.inserir(carlos)
@@ -198,15 +215,8 @@ class CadastroPessoasAVLTests: XCTestCase {
     }
     
     func testInserirDiegoCarlaCarlosMaluCauaErickBento() throws {
-        let diego = "DIEGO MANUEL EDSON BARBOSA"
-        let carla = "CARLA MAYA MARIANA RODRIGUES"
-        let carlos = "CARLOS EDUARDO MIGUEL LUCAS FERNANDES"
-        let malu = "MALU ESTER MAYA ROCHA"
-        let caua = "CAUA CAUE BARBOSA"
-        let erick = "ERICK MARTIN EDSON PEIXOTO"
-        let bento = "BENTO RENAN PINTO"
-        
         let arvore = ArvoreAVL()
+        
         arvore.inserir(diego)
         arvore.inserir(carla)
         arvore.inserir(carlos)
@@ -259,16 +269,8 @@ class CadastroPessoasAVLTests: XCTestCase {
     }
     
     func testInserirDiegoCarlaCarlosMaluCauaErickBentoRenata() throws {
-        let diego = "DIEGO MANUEL EDSON BARBOSA"
-        let carla = "CARLA MAYA MARIANA RODRIGUES"
-        let carlos = "CARLOS EDUARDO MIGUEL LUCAS FERNANDES"
-        let malu = "MALU ESTER MAYA ROCHA"
-        let caua = "CAUA CAUE BARBOSA"
-        let erick = "ERICK MARTIN EDSON PEIXOTO"
-        let bento = "BENTO RENAN PINTO"
-        let renata = "RENATA SIMONE NOVAES"
-        
         let arvore = ArvoreAVL()
+        
         arvore.inserir(diego)
         arvore.inserir(carla)
         arvore.inserir(carlos)
@@ -288,17 +290,8 @@ class CadastroPessoasAVLTests: XCTestCase {
     }
     
     func testInserirDiegoCarlaCarlosMaluCauaErickBentoRenataEduardo() throws {
-        let diego = "DIEGO MANUEL EDSON BARBOSA"
-        let carla = "CARLA MAYA MARIANA RODRIGUES"
-        let carlos = "CARLOS EDUARDO MIGUEL LUCAS FERNANDES"
-        let malu = "MALU ESTER MAYA ROCHA"
-        let caua = "CAUA CAUE BARBOSA"
-        let erick = "ERICK MARTIN EDSON PEIXOTO"
-        let bento = "BENTO RENAN PINTO"
-        let renata = "RENATA SIMONE NOVAES"
-        let eduardo = "EDUARDO BENEDITO CASTRO"
-        
         let arvore = ArvoreAVL()
+        
         arvore.inserir(diego)
         arvore.inserir(carla)
         arvore.inserir(carlos)
@@ -319,18 +312,8 @@ class CadastroPessoasAVLTests: XCTestCase {
     }
     
     func testInserirDiegoCarlaCarlosMaluCauaErickBentoRenataEduardoSandra() throws {
-        let diego = "DIEGO MANUEL EDSON BARBOSA"
-        let carla = "CARLA MAYA MARIANA RODRIGUES"
-        let carlos = "CARLOS EDUARDO MIGUEL LUCAS FERNANDES"
-        let malu = "MALU ESTER MAYA ROCHA"
-        let caua = "CAUA CAUE BARBOSA"
-        let erick = "ERICK MARTIN EDSON PEIXOTO"
-        let bento = "BENTO RENAN PINTO"
-        let renata = "RENATA SIMONE NOVAES"
-        let eduardo = "EDUARDO BENEDITO CASTRO"
-        let sandra = "SANDRA LARA PIRES"
-        
         let arvore = ArvoreAVL()
+        
         arvore.inserir(diego)
         arvore.inserir(carla)
         arvore.inserir(carlos)
@@ -349,5 +332,38 @@ class CadastroPessoasAVLTests: XCTestCase {
         let caminhamentoPosOrdem = arrayCaminhamentoPosOrdem.joined(separator:",")
         
         XCTAssertEqual(caminhamentoPosOrdem, "\(bento),\(carla),\(caua),\(carlos),\(eduardo),\(erick),\(sandra),\(renata),\(malu),\(diego)")
+    }
+    
+    func testBuscarPorMa() throws {
+        let arvore = ArvoreAVL()
+        
+        arvore.inserir(diego)
+        arvore.inserir(carla)
+        arvore.inserir(carlos)
+        arvore.inserir(malu)
+        arvore.inserir(caua)
+        arvore.inserir(erick)
+        arvore.inserir(bento)
+        arvore.inserir(renata)
+        arvore.inserir(eduardo)
+        arvore.inserir(sandra)
+        arvore.inserir(marcio)
+        arvore.inserir(nelson)
+        arvore.inserir(giovanna)
+        arvore.inserir(vicente)
+        arvore.inserir(carlosCesar)
+        arvore.inserir(pietra)
+        arvore.inserir(brenda)
+        arvore.inserir(elaine)
+        arvore.inserir(rosangela)
+        arvore.inserir(jaqueline)
+        arvore.inserir(marlene)
+        arvore.inserir(nicolas)
+        
+        guard let pessoas = arvore.buscarNosQueContem(substring: "ma") else {
+            return XCTFail("Nenhuma pessoa retornada.")
+        }
+        
+        XCTAssertEqual(pessoas.count, 3)
     }
 }
