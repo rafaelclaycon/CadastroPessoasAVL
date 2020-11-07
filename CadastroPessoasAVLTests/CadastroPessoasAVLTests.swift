@@ -366,4 +366,9 @@ class CadastroPessoasAVLTests: XCTestCase {
         
         XCTAssertEqual(pessoas.count, 3)
     }
+    
+    // MARK: - Pesquisa por intervalo de datas
+    func testBuscarPorDuasDatasDiferentes() throws {
+        
+    }
 }

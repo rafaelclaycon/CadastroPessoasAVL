@@ -359,11 +359,12 @@ class ArvoreAVL {
         }
         
         buscarNosQueContemNaSubarvore(no.esquerda, substring: substring, &arrayResultado)
-        buscarNosQueContemNaSubarvore(no.direita, substring: substring, &arrayResultado)
         
         if substring == no.chave.prefix(substring.count) {
             arrayResultado.append(no.dados!)
         }
+        
+        buscarNosQueContemNaSubarvore(no.direita, substring: substring, &arrayResultado)
     }
     
     // Métodos auxiliares pros testes unitários
