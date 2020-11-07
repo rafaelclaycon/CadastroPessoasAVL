@@ -342,7 +342,7 @@ class ArvoreAVL {
         if raiz != nil {
             var resultado = [Pessoa]()
                         
-            buscarNosQueContemNaSubarvore(raiz, substring: substring, &resultado)
+            buscarNosQueContemNaSubarvore(raiz, substring: Utils.getStringNormalizada(substring), &resultado)
             
             if resultado.count == 0 {
                 return nil
@@ -354,35 +354,19 @@ class ArvoreAVL {
     }
     
     func buscarNosQueContemNaSubarvore(_ no: No?, substring: String, _ arrayResultado: inout [Pessoa]) {
-        if no != nil {
-            // Quando substring É igual, olha para si e para os filhos
-            if substring == no!.chave.prefix(substring.count) {
-                arrayResultado.append(no!.dados!)
-                
-                if no!.esquerda != nil {
-                    if substring == no!.esquerda!.chave.prefix(substring.count) {
-                        buscarNosQueContemNaSubarvore(no!.esquerda, substring: substring, &arrayResultado)
-                    }
-                }
-                
-                if no!.direita != nil {
-                    if substring == no!.direita!.chave.prefix(substring.count) {
-                        buscarNosQueContemNaSubarvore(no!.direita, substring: substring, &arrayResultado)
-                    }
-                }
-                
-            // Quando substring NÃO É igual, olha para os filhos
-            } else {
-                if substring < no!.chave.prefix(substring.count) {
-                    buscarNosQueContemNaSubarvore(no!.esquerda, substring: substring, &arrayResultado)
-                } else if substring > no!.chave.prefix(substring.count) {
-                    buscarNosQueContemNaSubarvore(no!.direita, substring: substring, &arrayResultado)
-                }
-            }
+        guard let no = no else {
+            return
         }
-        return
+        
+        buscarNosQueContemNaSubarvore(no.esquerda, substring: substring, &arrayResultado)
+        buscarNosQueContemNaSubarvore(no.direita, substring: substring, &arrayResultado)
+        
+        if substring == no.chave.prefix(substring.count) {
+            arrayResultado.append(no.dados!)
+        }
     }
     
+    // Métodos auxiliares pros testes unitários
     func buscarChavePai(chave: String) -> String? {
         if raiz != nil {
             if chave == raiz!.chave {
