@@ -6,4 +6,6 @@ Este é um trabalho de faculdade publicado aqui para referência.
 
 ![Tela de carregamento de arquivo com cabeçalho e um botão azul no meio rodando no simulador do iPad Air](CadastroPessoasAVL/Recursos/TelaCarregamentoArquivo.png)
 
+![Tela de visualização das árvores geradas a partir do arquivo rodando no simulador do iPad Air](CadastroPessoasAVL/Recursos/TelaArvores.png)
+
 ![Tela de pesquisa de pessoas com campo de digitação para CPF rodando no simulador do iPad Air](CadastroPessoasAVL/Recursos/TelaPesquisa.png)
