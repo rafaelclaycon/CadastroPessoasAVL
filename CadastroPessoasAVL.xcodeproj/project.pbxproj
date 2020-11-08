@@ -25,7 +25,6 @@
 		D90DE667254F0FE20062E7B3 /* IndicesArvore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90DE666254F0FE20062E7B3 /* IndicesArvore.swift */; };
 		D90FBB5625584BA400E936AC /* imagem_perfil.png in Resources */ = {isa = PBXBuildFile; fileRef = D90FBB5525584BA400E936AC /* imagem_perfil.png */; };
 		D90FBB5B25584BAC00E936AC /* ImageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90FBB5A25584BAC00E936AC /* ImageStore.swift */; };
-		D91B07DE2554607D00D396F2 /* DocumentPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91B07DD2554607D00D396F2 /* DocumentPickerView.swift */; };
 		D91CC4282554D2C900BCEE4F /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91CC4272554D2C900BCEE4F /* Utils.swift */; };
 		D97BB515254F21C400023D9F /* VisualizacaoArvores.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97BB514254F21C400023D9F /* VisualizacaoArvores.swift */; };
 		D97BB51D254F295A00023D9F /* Color+CoresPersonalizadas.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97BB51C254F295A00023D9F /* Color+CoresPersonalizadas.swift */; };
@@ -79,7 +78,6 @@
 		D90DE666254F0FE20062E7B3 /* IndicesArvore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicesArvore.swift; sourceTree = "<group>"; };
 		D90FBB5525584BA400E936AC /* imagem_perfil.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imagem_perfil.png; sourceTree = "<group>"; };
 		D90FBB5A25584BAC00E936AC /* ImageStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageStore.swift; sourceTree = "<group>"; };
-		D91B07DD2554607D00D396F2 /* DocumentPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentPickerView.swift; sourceTree = "<group>"; };
 		D91CC4272554D2C900BCEE4F /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		D97BB514254F21C400023D9F /* VisualizacaoArvores.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualizacaoArvores.swift; sourceTree = "<group>"; };
 		D97BB51C254F295A00023D9F /* Color+CoresPersonalizadas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Color+CoresPersonalizadas.swift"; sourceTree = "<group>"; };
@@ -227,7 +225,6 @@
 				D90DE659254F04900062E7B3 /* AnalisadorCSV.swift */,
 				D9C8F97F2550D6B500C3B6A3 /* String+isInt.swift */,
 				D97BB51C254F295A00023D9F /* Color+CoresPersonalizadas.swift */,
-				D91B07DD2554607D00D396F2 /* DocumentPickerView.swift */,
 				D91CC4272554D2C900BCEE4F /* Utils.swift */,
 			);
 			path = Apoio;
@@ -407,7 +404,6 @@
 				D90DE5F1254DDEE60062E7B3 /* CadastroPessoasAVLApp.swift in Sources */,
 				D90DE65F254F04CE0062E7B3 /* TelaCarregamentoArquivoViewModel.swift in Sources */,
 				D90DE62E254DF7520062E7B3 /* TelaPesquisaViewModel.swift in Sources */,
-				D91B07DE2554607D00D396F2 /* DocumentPickerView.swift in Sources */,
 				D981B45025508E3D00FEC57C /* CartaoPessoaViewModel.swift in Sources */,
 				D91CC4282554D2C900BCEE4F /* Utils.swift in Sources */,
 				D90DE641254E3F230062E7B3 /* Cabecalho.swift in Sources */,

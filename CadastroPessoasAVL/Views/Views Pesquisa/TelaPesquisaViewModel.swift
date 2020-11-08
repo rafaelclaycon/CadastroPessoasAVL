@@ -81,7 +81,7 @@ class TelaPesquisaViewModel: ObservableObject {
         } catch ErroPesquisa.datasInvalidas {
             exibirAlertaDatasInvalidas()
         } catch {
-            exibirAlertaErroInesperado(erro: "\(error)")
+            exibirAlertaErroInesperado(erro: error.localizedDescription)
         }
     }
     
