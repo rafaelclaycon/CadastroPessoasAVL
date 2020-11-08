@@ -15,10 +15,6 @@ struct CartaoPessoa: View {
             RoundedRectangle(cornerRadius: 20, style: .continuous)
                 .fill(Color.blue)
                 .frame(width: 500, height: 180)
-//                .overlay(
-//                    RoundedRectangle(cornerRadius: 25)
-//                        .stroke(Color.blue, lineWidth: 1)
-//                )
             
             VStack(alignment: .leading) {
                 Text(viewModel.nome)
