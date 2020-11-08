@@ -27,7 +27,7 @@ struct CartaoPessoa: View {
                     .foregroundColor(.white)
                     .frame(width: 400, height: 20)
                     .truncationMode(.tail)
-                    .padding(.bottom, 2)
+                    .padding(.bottom, 8)
                 HStack {
                     VStack(alignment: .leading) {
                         Text("RG")
@@ -49,11 +49,11 @@ struct CartaoPessoa: View {
                             .foregroundColor(.white)
                             .bold()
                     }.padding(.leading, 65)
-                }.padding(.bottom, 2)
+                }.padding(.bottom, 4)
                 
                 HStack {
                     VStack(alignment: .leading) {
-                        Text("DATA DE NASCIMENTO")
+                        Text("🎉  DATA DE NASCIMENTO")
                             .foregroundColor(.white)
                             .font(.footnote)
                             .bold()
@@ -63,7 +63,7 @@ struct CartaoPessoa: View {
                             .bold()
                     }
                     VStack(alignment: .leading) {
-                        Text("CIDADE NATAL")
+                        Text("🏖  CIDADE NATAL")
                             .foregroundColor(.white)
                             .font(.footnote)
                             .bold()

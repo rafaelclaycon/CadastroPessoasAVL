@@ -44,7 +44,7 @@ class TelaPesquisaViewModel: ObservableObject {
                 exibirAlertaValorInvalidoApenasNumeros()
             }
         } else if self.filtroSelecionado == 1 {
-            guard !entrada.isEmpty else {
+            guard !entradaNome.isEmpty else {
                 return exibirAlertaValorInvalidoCampoEmBranco()
             }
             
