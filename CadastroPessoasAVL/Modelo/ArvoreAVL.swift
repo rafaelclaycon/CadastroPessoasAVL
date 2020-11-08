@@ -141,7 +141,7 @@ class ArvoreAVL {
         // b - com certeza existe
         let b = a.direita!
         // c
-        let c = b.direita
+        let _ = b.direita
         // d
         let d = b.esquerda
         
@@ -251,10 +251,12 @@ class ArvoreAVL {
     func rotacaoDuplaAEsquerda(_ k1: No) {
         let k3 = k1.direita!
         let k2 = k3.esquerda!
-        let a = k1.esquerda
+        // a
+        let _ = k1.esquerda
         let b = k2.esquerda
         let c = k2.direita
-        let d = k3.direita
+        // d
+        let _ = k3.direita
         
 //        imprimirVariavelAuxiliar(k1, "k1")
 //        imprimirVariavelAuxiliar(k2, "k2")
