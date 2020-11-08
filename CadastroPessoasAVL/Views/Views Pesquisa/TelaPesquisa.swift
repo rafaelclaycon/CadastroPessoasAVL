@@ -66,11 +66,7 @@ struct TelaPesquisa: View {
                 }
 
                 Button(action: {
-                    if viewModel.filtroSelecionado == 0 {
-                        viewModel.processarEntrada(viewModel.entrada)
-                    } else if viewModel.filtroSelecionado == 1 {
-                        viewModel.processarEntrada(viewModel.entradaNome)
-                    }
+                    viewModel.processarEntrada()
                 }) {
                     HStack {
                         Image(systemName: "magnifyingglass")
@@ -78,8 +74,8 @@ struct TelaPesquisa: View {
                     }
                 }
                 .padding(.leading, 10)
-                .alert(isPresented: $viewModel.exibirAlertaValorInvalido) {
-                    Alert(title: Text("Valor Inválido"), message: Text("Utilize apenas números para realizar essa pesquisa."), dismissButton: .default(Text("OK")))
+                .alert(isPresented: $viewModel.exibirAlerta) {
+                    Alert(title: Text(viewModel.tituloAlerta), message: Text(viewModel.mensagemAlerta), dismissButton: .default(Text("OK")))
                 }
 
                 Spacer()
@@ -114,9 +110,6 @@ struct TelaPesquisa: View {
                     }
                 }
             }
-        }
-        .alert(isPresented: $viewModel.exibirAlertaNenhumResultado) {
-            Alert(title: Text("Nenhum Resultado"), message: Text("Não foi encontrada nenhuma pessoa para a chave \"\(viewModel.entrada)\"."), dismissButton: .default(Text("OK")))
         }
     }
 }
