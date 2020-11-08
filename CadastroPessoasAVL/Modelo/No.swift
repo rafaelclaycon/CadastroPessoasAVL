@@ -12,7 +12,7 @@ class No {
     var esquerda: No?
     var direita: No?
     var chave: String
-    var dados: Pessoa?
+    var dados: [Pessoa]?
     var fatorBalanceamento: Int {
         return No.getAltura(esquerda) - No.getAltura(direita)
     }
@@ -36,7 +36,10 @@ class No {
         self.esquerda = esquerda
         self.direita = direita
         self.chave = chave
-        self.dados = dados
+        self.dados = [Pessoa]()
+        if dados != nil {
+            self.dados!.append(dados!)
+        }
     }
     
     static func getAltura(_ no: No?) -> Int {
@@ -52,6 +55,16 @@ class No {
                 return alturaDireita + 1
             }
         }
+    }
+    
+    func adicionar(pessoa: Pessoa?) {
+        guard let pessoa = pessoa else {
+            return
+        }
+        guard self.dados != nil else {
+            return
+        }
+        self.dados!.append(pessoa)
     }
 }
 

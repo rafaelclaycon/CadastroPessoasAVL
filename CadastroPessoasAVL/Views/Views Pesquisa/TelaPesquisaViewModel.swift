@@ -59,7 +59,7 @@ class TelaPesquisaViewModel: ObservableObject {
         guard let pessoa = indices.cpf.buscar(chave: cpfProcurado) else {
             return exibirAlertaNenhumResultado(chave: cpfProcurado)
         }
-        self.pessoas.append(pessoa)
+        self.pessoas.append(contentsOf: pessoa)
     }
     
     func buscarNome(_ substring: String) {

@@ -42,7 +42,7 @@ class CadastroPessoasAVLTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
     
-    // MARK: - Testes da árvore AVL com inteiros
+    // MARK: - Verifica balanceamento com inteiros
 
     // 04_Árvore_AVL.pdf - pág. 12
     func testRotSimplesADireitaPag12() throws {
@@ -131,7 +131,7 @@ class CadastroPessoasAVLTests: XCTestCase {
         XCTAssertEqual(caminhamentoPosOrdemDepois, "080,110,100,130,200,150,120")
     }
     
-    // MARK: - Testes da árvore AVL com nomes
+    // MARK: - Verifica balanceamento com nomes
     
     func testInserirDiegoCarlaCarlosRotDuplaADireita() throws {
         let arvore = ArvoreAVL()
@@ -334,7 +334,9 @@ class CadastroPessoasAVLTests: XCTestCase {
         XCTAssertEqual(caminhamentoPosOrdem, "\(bento),\(carla),\(caua),\(carlos),\(eduardo),\(erick),\(sandra),\(renata),\(malu),\(diego)")
     }
     
-    func testBuscarPorMa() throws {
+    // MARK: - Pesquisa por nome
+    
+    func testBuscarPorSubstringQueRetornaMultiplasPessoas() throws {
         let arvore = ArvoreAVL()
         
         arvore.inserir(diego, Pessoa(cpf: "", rg: "", nome: diego, dataNascimento: Date(), nomeCidadeNascimento: ""))
@@ -414,5 +416,31 @@ class CadastroPessoasAVLTests: XCTestCase {
         }
     }
     
-    // TODO: Caso de teste: Buscar por pessoas com a mesma data de aniversário
+    func testBuscarPessoasComAMesmaDataDeAniversario() throws {
+        let arvore = ArvoreAVL()
+
+        arvore.inserir("1976-02-15", Pessoa(cpf: "", rg: "", nome: diego, dataNascimento: Date(), nomeCidadeNascimento: ""))
+        arvore.inserir("1955-09-20", Pessoa(cpf: "", rg: "", nome: carla, dataNascimento: Date(), nomeCidadeNascimento: ""))
+        arvore.inserir("1990-09-18", Pessoa(cpf: "", rg: "", nome: carlos, dataNascimento: Date(), nomeCidadeNascimento: ""))
+        arvore.inserir("1972-08-02", Pessoa(cpf: "", rg: "", nome: malu, dataNascimento: Date(), nomeCidadeNascimento: ""))
+        arvore.inserir("1967-04-16", Pessoa(cpf: "", rg: "", nome: caua, dataNascimento: Date(), nomeCidadeNascimento: ""))
+        arvore.inserir("1990-09-18", Pessoa(cpf: "", rg: "", nome: carlos, dataNascimento: Date(), nomeCidadeNascimento: ""))
+
+        let dataInicialString = "1990-01-01T00:00:00+0000"
+        let dataFinalString = "1999-12-31T00:00:00+0000"
+
+        let dateFormatter = ISO8601DateFormatter()
+
+        let dataInicial = dateFormatter.date(from: dataInicialString)!
+        let dataFinal = dateFormatter.date(from: dataFinalString)!
+
+        do {
+            guard let pessoas = try arvore.buscarPessoasPorIntervaloDeDatas(de: dataInicial, ate: dataFinal) else {
+                return XCTFail("Nenhum resultado encontrado.")
+            }
+            XCTAssertEqual(pessoas.count, 2)
+        } catch {
+            XCTFail("Erro inesperado: \(error).")
+        }
+    }
 }

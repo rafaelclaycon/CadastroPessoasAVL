@@ -18,48 +18,46 @@ class ArvoreAVL {
     
     // MARK: - Inserção
     func inserir(_ chave: String, _ dados: Pessoa? = nil) {
-        if raiz == nil {
-            raiz = No(pai: nil, esquerda: nil, direita: nil, chave: chave, dados: dados)
-            print("O número \(chave) foi inserido.")
-        } else {
-            if chave < raiz!.chave {
-                if raiz?.esquerda == nil {
-                    raiz?.esquerda = No(pai: raiz, esquerda: nil, direita: nil, chave: chave, dados: dados)
-                    print("O número \(chave) foi inserido.")
-                } else {
-                    inserirEmSubarvore((raiz?.esquerda)!, chave, dados)
-                }
-            } else if chave > raiz!.chave {
-                if raiz?.direita == nil {
-                    raiz?.direita = No(pai: raiz, esquerda: nil, direita: nil, chave: chave, dados: dados)
-                    print("O número \(chave) foi inserido.")
-                } else {
-                    inserirEmSubarvore((raiz?.direita)!, chave, dados)
-                }
-            } else {
-                print("O número \(chave) já existe na árvore.")
-            }
+        guard let raiz = self.raiz else {
+            return self.raiz = No(pai: nil, esquerda: nil, direita: nil, chave: chave, dados: dados)
         }
-        verificarBalanceamento(raiz, balancear: true)
-    }
-    
-    func inserirEmSubarvore(_ raiz: No, _ chave: String, _ dados: Pessoa?) {
+        
         if chave < raiz.chave {
             if raiz.esquerda == nil {
                 raiz.esquerda = No(pai: raiz, esquerda: nil, direita: nil, chave: chave, dados: dados)
-                print("O número \(chave) foi inserido.")
             } else {
                 inserirEmSubarvore((raiz.esquerda)!, chave, dados)
             }
         } else if chave > raiz.chave {
             if raiz.direita == nil {
                 raiz.direita = No(pai: raiz, esquerda: nil, direita: nil, chave: chave, dados: dados)
-                print("O número \(chave) foi inserido.")
             } else {
                 inserirEmSubarvore((raiz.direita)!, chave, dados)
             }
         } else {
-            print("O número \(chave) já existe na árvore.")
+            // Se não é menor nem maior, é igual. Adiciona a pessoa ao array de dados pois podem fazer aniversário no mesmo dia.
+            raiz.adicionar(pessoa: dados)
+        }
+        
+        verificarBalanceamento(raiz, balancear: true)
+    }
+    
+    func inserirEmSubarvore(_ no: No, _ chave: String, _ dados: Pessoa?) {
+        if chave < no.chave {
+            if no.esquerda == nil {
+                no.esquerda = No(pai: no, esquerda: nil, direita: nil, chave: chave, dados: dados)
+            } else {
+                inserirEmSubarvore((no.esquerda)!, chave, dados)
+            }
+        } else if chave > no.chave {
+            if no.direita == nil {
+                no.direita = No(pai: no, esquerda: nil, direita: nil, chave: chave, dados: dados)
+            } else {
+                inserirEmSubarvore((no.direita)!, chave, dados)
+            }
+        } else {
+            // Se não é menor nem maior, é igual. Adiciona a pessoa ao array de dados pois podem fazer aniversário no mesmo dia.
+            no.adicionar(pessoa: dados)
         }
     }
     
@@ -295,7 +293,7 @@ class ArvoreAVL {
     }
     
     // MARK: - Busca
-    func buscar(chave: String) -> Pessoa? {
+    func buscar(chave: String) -> [Pessoa]? {
         if raiz != nil {
             //self.nosConsultados.append("\(raiz!.chave)")
             
@@ -323,7 +321,7 @@ class ArvoreAVL {
         return nil
     }
     
-    func buscarNaSubarvore(_ chave: String, _ no: No?) -> Pessoa? {
+    func buscarNaSubarvore(_ chave: String, _ no: No?) -> [Pessoa]? {
         guard let no = no else {
             return nil
         }
@@ -361,7 +359,7 @@ class ArvoreAVL {
         buscarNosQueContemNaSubarvore(no.esquerda, substring: substring, &arrayResultado)
         
         if substring == no.chave.prefix(substring.count) {
-            arrayResultado.append(no.dados!)
+            arrayResultado.append(contentsOf: no.dados!)
         }
         
         buscarNosQueContemNaSubarvore(no.direita, substring: substring, &arrayResultado)
@@ -399,7 +397,7 @@ class ArvoreAVL {
         buscarPessoasDentroDoIntervaloNaSubarvore(no.esquerda, dataInicial, dataFinal, &arrayResultado)
         
         if (dataInicial...dataFinal).contains(no.chave) {
-            arrayResultado.append(no.dados!)
+            arrayResultado.append(contentsOf: no.dados!)
         }
         
         buscarPessoasDentroDoIntervaloNaSubarvore(no.direita, dataInicial, dataFinal, &arrayResultado)
