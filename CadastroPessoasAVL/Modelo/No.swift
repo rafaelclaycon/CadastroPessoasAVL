@@ -12,7 +12,7 @@ class No {
     var esquerda: No?
     var direita: No?
     var chave: String
-    var dados: [Pessoa]?
+    var dados: [UnsafeMutablePointer<Pessoa>]?
     var fatorBalanceamento: Int {
         return No.getAltura(esquerda) - No.getAltura(direita)
     }

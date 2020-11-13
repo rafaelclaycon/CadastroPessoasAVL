@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+var indices = IndicesArvore()
+
 @main
 struct CadastroPessoasAVLApp: App {
     var body: some Scene {

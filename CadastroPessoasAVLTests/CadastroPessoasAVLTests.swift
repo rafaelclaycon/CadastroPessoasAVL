@@ -443,4 +443,8 @@ class CadastroPessoasAVLTests: XCTestCase {
             XCTFail("Erro inesperado: \(error).")
         }
     }
+    
+    // MARK: - Lidando com ponteiros
+    
+    
 }

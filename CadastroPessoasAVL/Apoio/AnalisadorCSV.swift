@@ -11,6 +11,17 @@ class AnalisadorCSV {
     static func analisar(arquivo: String) {
         let lines = arquivo.split(separator: "\n")
         
+        //indices = IndicesArvore()
+        let oneTwo = UnsafeMutablePointer<Int>.allocate(capacity: 2)
+        
+        oneTwo.initialize(repeating: 1, count: 2)
+        print("First memory address:", oneTwo) // First memory address: 0x000000010045deb0
+        print("First value:", oneTwo.pointee) // First value: 1
+
+        oneTwo[1] = 2 // Subscript
+        print("Second memory address:", oneTwo + 1) // Second memory address: 0x000000010045deb8
+        print("Second value:", oneTwo[1]) // Second value: 2
+        
         var campo: Int = 0
         var cpf: String = ""
         var rg: String = ""
