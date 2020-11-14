@@ -8,10 +8,17 @@
 import Foundation
 
 class AnalisadorCSV {
-    static func analisar(arquivo: String) {
+    static func analisar(arquivo: String, indices indice: IndicesArvore) {
         let lines = arquivo.split(separator: "\n")
         
+        // Inicializa array de ponteiros Pessoa
+        indice.pessoas = UnsafeMutablePointer<Pessoa>.allocate(capacity: lines.count)
+        indice.pessoas!.initialize(repeating: Pessoa(), count: lines.count)
+        
+        // Inicializa variáveis locais de apoio
+        var linha: Int = 0
         var campo: Int = 0
+        
         var cpf: String = ""
         var rg: String = ""
         var nome: String = ""
@@ -52,11 +59,14 @@ class AnalisadorCSV {
                 campo += 1
             }
             
-            let pessoa = Pessoa(cpf: cpf, rg: rg, nome: nome, dataNascimento: dataNascimento, nomeCidadeNascimento: nomeCidadeNascimento)
+            // Adiciona pessoa ao array Pessoas
+            indice.pessoas![linha] = Pessoa(cpf: cpf, rg: rg, nome: nome, dataNascimento: dataNascimento, nomeCidadeNascimento: nomeCidadeNascimento)
             
-            indices.cpf.inserir(String(pessoa.cpf), pessoa)
-            indices.nome.inserir(Utils.getStringNormalizada(pessoa.nome), pessoa)
-            indices.dataNascimento.inserir(Utils.getISODateFrom(pessoa.dataNascimento), pessoa)
+            indice.cpf.inserir(String(indice.pessoas![linha].cpf), indice.pessoas![linha])
+            indice.nome.inserir(Utils.getStringNormalizada(indice.pessoas![linha].nome), indice.pessoas![linha])
+            indice.dataNascimento.inserir(Utils.getISODateFrom(indice.pessoas![linha].dataNascimento), indice.pessoas![linha])
+            
+            linha += 1
         }
     }
 }

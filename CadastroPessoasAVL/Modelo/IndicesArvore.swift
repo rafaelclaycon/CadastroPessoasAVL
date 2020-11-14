@@ -11,6 +11,7 @@ class IndicesArvore {
     var cpf: ArvoreAVL
     var nome: ArvoreAVL
     var dataNascimento: ArvoreAVL
+    var pessoas: UnsafeMutablePointer<Pessoa>? = nil
     
     init() {
         self.cpf = ArvoreAVL()

@@ -7,8 +7,6 @@
 
 import SwiftUI
 
-var indices = IndicesArvore()
-
 struct TelaCarregamentoArquivo: View {
     @ObservedObject var viewModel: TelaCarregamentoArquivoViewModel
     @State private var exibirModalImportacaoArquivo: Bool = false
@@ -62,7 +60,7 @@ struct TelaCarregamentoArquivo: View {
                 guard let selectedFile: URL = try result.get().first else { return }
                 guard let conteudoArquivo = String(data: try Data(contentsOf: selectedFile), encoding: .utf8) else { return }
                 
-                AnalisadorCSV.analisar(arquivo: conteudoArquivo)
+                AnalisadorCSV.analisar(arquivo: conteudoArquivo, indices: indices)
                 
                 viewModel.exibirAlertaArquivoImportadoComSucesso(nomeArquivo: selectedFile.lastPathComponent)
             } catch {

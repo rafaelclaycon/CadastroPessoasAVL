@@ -21,4 +21,8 @@ class Pessoa {
         self.dataNascimento = dataNascimento
         self.nomeCidadeNascimento = nomeCidadeNascimento
     }
+    
+    convenience init() {
+        self.init(cpf: "", rg: "", nome: "", dataNascimento: Date(), nomeCidadeNascimento: "")
+    }
 }
