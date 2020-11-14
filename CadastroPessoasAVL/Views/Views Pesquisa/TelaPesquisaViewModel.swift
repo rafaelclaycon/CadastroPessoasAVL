@@ -9,7 +9,7 @@ import Combine
 import SwiftUI
 
 class TelaPesquisaViewModel: ObservableObject {
-    @Published var pessoas: [Pessoa]
+    @Published var resultados: [Pessoa]
     @Published var entrada = ""
     @Published var entradaNome = ""
     @Published var dataInicial = Date()
@@ -21,15 +21,15 @@ class TelaPesquisaViewModel: ObservableObject {
     @Published var exibirAlerta: Bool = false
     
     var listaVazia: Bool {
-        return pessoas.isEmpty
+        return resultados.isEmpty
     }
     
     init(pessoas: [Pessoa]) {
-        self.pessoas = pessoas
+        self.resultados = pessoas
     }
     
     func limparResultados() {
-        self.pessoas.removeAll()
+        self.resultados.removeAll()
     }
     
     func processarEntrada() {
@@ -59,8 +59,8 @@ class TelaPesquisaViewModel: ObservableObject {
         guard let pessoa = indices.cpf.buscar(chave: cpfProcurado) else {
             return exibirAlertaNenhumResultado(chave: cpfProcurado)
         }
-        self.pessoas.append(contentsOf: pessoa)
-        self.pessoas.sort {
+        self.resultados.append(contentsOf: pessoa)
+        self.resultados.sort {
             $0.nome < $1.nome
         }
     }
@@ -70,8 +70,8 @@ class TelaPesquisaViewModel: ObservableObject {
         guard let pessoas = indices.nome.buscarNosQueContem(substring: substring) else {
             return exibirAlertaNenhumResultado(chave: substring)
         }
-        self.pessoas.append(contentsOf: pessoas)
-        self.pessoas.sort {
+        self.resultados.append(contentsOf: pessoas)
+        self.resultados.sort {
             $0.nome < $1.nome
         }
     }
@@ -83,8 +83,8 @@ class TelaPesquisaViewModel: ObservableObject {
             guard let resultado = try indices.dataNascimento.buscarPessoasPorIntervaloDeDatas(de: dataInicial, ate: dataFinal) else {
                 return exibirAlertaNenhumResultadoIntervalo(dataInicial: dataInicial, dataFinal: dataFinal)
             }
-            self.pessoas.append(contentsOf: resultado)
-            self.pessoas.sort {
+            self.resultados.append(contentsOf: resultado)
+            self.resultados.sort {
                 $0.dataNascimento < $1.dataNascimento
             }
         } catch ErroPesquisa.datasInvalidas {
@@ -92,6 +92,21 @@ class TelaPesquisaViewModel: ObservableObject {
         } catch {
             exibirAlertaErroInesperado(erro: error.localizedDescription)
         }
+    }
+    
+    func getTextoResultados() -> String {
+        guard self.resultados.count > 1 else {
+            return ""
+        }
+        
+        var texto: String = ""
+        
+        if (filtroSelecionado == 0) || (filtroSelecionado == 1) {
+            texto = "\(self.resultados.count) resultados ordenados pelo nome (A → Z)."
+        } else if filtroSelecionado == 2 {
+            texto = "\(self.resultados.count) resultados ordenados pela data de nascimento (da mais antiga à mais recente)."
+        }
+        return texto
     }
     
     // MARK: - Mensagens de Erro 🛑

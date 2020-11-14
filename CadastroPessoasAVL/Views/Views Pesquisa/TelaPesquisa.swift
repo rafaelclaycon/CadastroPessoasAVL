@@ -87,14 +87,11 @@ struct TelaPesquisa: View {
                         .font(.title2)
                         .bold()
                         .padding()
+                    
                     Spacer()
-                    if (viewModel.filtroSelecionado == 0) || (viewModel.filtroSelecionado == 1) {
-                        Text("Ordenados alfabeticamente pelo nome.")
-                            .foregroundColor(.gray)
-                    } else if viewModel.filtroSelecionado == 2 {
-                        Text("Ordenados da data de nascimento mais antiga à mais recente.")
-                            .foregroundColor(.gray)
-                    }
+                    
+                    Text(viewModel.getTextoResultados())
+                        .foregroundColor(.gray)
                 }
                 .padding(.leading, 10)
                 .padding(.trailing, 30)
@@ -110,7 +107,7 @@ struct TelaPesquisa: View {
                 } else {
                     ScrollView {
                         LazyVGrid(columns: columns, spacing: 20) {
-                            ForEach(viewModel.pessoas, id: \.cpf) { pessoa in
+                            ForEach(viewModel.resultados, id: \.cpf) { pessoa in
                                 CartaoPessoa(viewModel: CartaoPessoaViewModel(pessoa: pessoa))
                             }
                         }
