@@ -32,6 +32,9 @@ struct TelaPesquisa: View {
                 }
                 .pickerStyle(SegmentedPickerStyle())
                 .frame(width: 460)
+                .onChange(of: viewModel.filtroSelecionado, perform: { _ in
+                    viewModel.limparResultados()
+                })
                 
                 Spacer()
             }
@@ -47,7 +50,6 @@ struct TelaPesquisa: View {
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .keyboardType(.numberPad)
                         .frame(width: 150)
-                        .padding(.trailing, 30)
                 } else if viewModel.filtroSelecionado == 1 {
                     Text("Nome:")
 
@@ -55,11 +57,9 @@ struct TelaPesquisa: View {
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .keyboardType(.numberPad)
                         .frame(width: 180)
-                        .padding(.trailing, 30)
                 } else if viewModel.filtroSelecionado == 2 {
                     DatePicker("Nascidos entre", selection: $viewModel.dataInicial, displayedComponents: .date)
                         .frame(width: 250)
-                        .padding(.trailing, 4)
 
                     DatePicker(" e ", selection: $viewModel.dataFinal, displayedComponents: .date)
                         .frame(width: 150)

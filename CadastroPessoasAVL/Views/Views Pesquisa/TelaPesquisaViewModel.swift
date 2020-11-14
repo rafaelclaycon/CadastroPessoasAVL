@@ -28,7 +28,7 @@ class TelaPesquisaViewModel: ObservableObject {
         self.pessoas = pessoas
     }
     
-    private func limparResultados() {
+    func limparResultados() {
         self.pessoas.removeAll()
     }
     
@@ -60,6 +60,9 @@ class TelaPesquisaViewModel: ObservableObject {
             return exibirAlertaNenhumResultado(chave: cpfProcurado)
         }
         self.pessoas.append(contentsOf: pessoa)
+        self.pessoas.sort {
+            $0.nome < $1.nome
+        }
     }
     
     func buscarNome(_ substring: String) {
@@ -68,6 +71,9 @@ class TelaPesquisaViewModel: ObservableObject {
             return exibirAlertaNenhumResultado(chave: substring)
         }
         self.pessoas.append(contentsOf: pessoas)
+        self.pessoas.sort {
+            $0.nome < $1.nome
+        }
     }
     
     func buscarIntervaloDatas(_ dataInicial: Date, _ dataFinal: Date) {
@@ -78,6 +84,9 @@ class TelaPesquisaViewModel: ObservableObject {
                 return exibirAlertaNenhumResultadoIntervalo(dataInicial: dataInicial, dataFinal: dataFinal)
             }
             self.pessoas.append(contentsOf: resultado)
+            self.pessoas.sort {
+                $0.dataNascimento < $1.dataNascimento
+            }
         } catch ErroPesquisa.datasInvalidas {
             exibirAlertaDatasInvalidas()
         } catch {
