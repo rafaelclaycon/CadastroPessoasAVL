@@ -112,6 +112,7 @@ struct TelaPesquisa: View {
                             }
                         }
                         .padding(.horizontal)
+                        .animation(.spring())
                     }
                 }
             }
