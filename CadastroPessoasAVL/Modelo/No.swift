@@ -60,6 +60,16 @@ class No {
         }
     }
     
+    private func getPrimeiroIndicePessoaVazio() -> Int? {
+        let buffer = UnsafeBufferPointer(start: self.dados!, count: 10)
+        for (index, element) in buffer.enumerated() {
+            if element.nome.isEmpty {
+                return index
+            }
+        }
+        return nil
+    }
+    
     func adicionar(pessoa: Pessoa?) {
         guard let pessoa = pessoa else {
             return
@@ -67,10 +77,10 @@ class No {
         guard self.dados != nil else {
             return
         }
-        
-        // TODO: Problemas.
-        let buffer = UnsafeBufferPointer(start: self.dados!, count: 10)
-        self.dados![buffer.count] = pessoa
+        guard let indiceVazio = self.getPrimeiroIndicePessoaVazio() else {
+            fatalError("O array de Pessoas deste Nó atingiu sua capacidade máxima (10).")
+        }
+        self.dados![indiceVazio] = pessoa
     }
     
     func getDados() -> [Pessoa] {
