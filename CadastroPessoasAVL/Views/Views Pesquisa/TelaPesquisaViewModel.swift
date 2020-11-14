@@ -137,7 +137,7 @@ class TelaPesquisaViewModel: ObservableObject {
     
     private func exibirAlertaDatasInvalidas() {
         self.tituloAlerta = "Intervalo Inválido"
-        self.mensagemAlerta = "A data inicial deve ser MENOR do que a data final de consulta."
+        self.mensagemAlerta = "A data inicial deve ser MENOR OU IGUAL à data final de consulta."
         self.exibirAlerta = true
     }
     

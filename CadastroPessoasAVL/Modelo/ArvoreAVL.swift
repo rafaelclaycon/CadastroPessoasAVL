@@ -370,7 +370,7 @@ class ArvoreAVL {
     // Datas
     
     func buscarPessoasPorIntervaloDeDatas(de dataInicialOriginal: Date, ate dataFinalOriginal: Date) throws -> [Pessoa]? {
-        guard dataFinalOriginal > dataInicialOriginal else {
+        guard dataFinalOriginal >= dataInicialOriginal else {
             throw ErroPesquisa.datasInvalidas
         }
         guard raiz != nil else {
