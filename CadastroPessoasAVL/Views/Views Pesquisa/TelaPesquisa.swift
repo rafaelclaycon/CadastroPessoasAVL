@@ -87,9 +87,17 @@ struct TelaPesquisa: View {
                         .font(.title2)
                         .bold()
                         .padding()
-                        .padding(.leading, 10)
                     Spacer()
+                    if (viewModel.filtroSelecionado == 0) || (viewModel.filtroSelecionado == 1) {
+                        Text("Ordenados alfabeticamente pelo nome.")
+                            .foregroundColor(.gray)
+                    } else if viewModel.filtroSelecionado == 2 {
+                        Text("Ordenados da data de nascimento mais antiga à mais recente.")
+                            .foregroundColor(.gray)
+                    }
                 }
+                .padding(.leading, 10)
+                .padding(.trailing, 30)
                 
                 if viewModel.listaVazia {
                     Spacer()
