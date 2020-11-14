@@ -300,7 +300,7 @@ class ArvoreAVL {
             //self.nosConsultados.append("\(raiz!.chave)")
             
             if chave == raiz!.chave {
-                return raiz!.dados
+                return raiz!.getDados()
             } else {
                 var no: No?
                 if chave < raiz!.chave {
@@ -335,7 +335,7 @@ class ArvoreAVL {
         } else if chave > no.chave {
             return buscarNaSubarvore(chave, no.direita)
         }
-        return no.dados
+        return no.getDados()
     }
     
     func buscarNosQueContem(substring: String) -> [Pessoa]? {
@@ -361,7 +361,7 @@ class ArvoreAVL {
         buscarNosQueContemNaSubarvore(no.esquerda, substring: substring, &arrayResultado)
         
         if substring == no.chave.prefix(substring.count) {
-            arrayResultado.append(contentsOf: no.dados!)
+            arrayResultado.append(contentsOf: no.getDados())
         }
         
         buscarNosQueContemNaSubarvore(no.direita, substring: substring, &arrayResultado)
@@ -399,7 +399,7 @@ class ArvoreAVL {
         buscarPessoasDentroDoIntervaloNaSubarvore(no.esquerda, dataInicial, dataFinal, &arrayResultado)
         
         if (dataInicial...dataFinal).contains(no.chave) {
-            arrayResultado.append(contentsOf: no.dados!)
+            arrayResultado.append(contentsOf: no.getDados())
         }
         
         buscarPessoasDentroDoIntervaloNaSubarvore(no.direita, dataInicial, dataFinal, &arrayResultado)

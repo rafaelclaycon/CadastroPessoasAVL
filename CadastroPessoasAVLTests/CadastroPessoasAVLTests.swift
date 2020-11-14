@@ -446,5 +446,31 @@ class CadastroPessoasAVLTests: XCTestCase {
     
     // MARK: - Lidando com ponteiros
     
-    
+    func testImportarArquivo() throws {
+        guard let fileURL = Bundle.main.url(forResource: "Pessoas", withExtension: "csv") else {
+            fatalError("Arquivo não encontrado.")
+        }
+        
+        let indices = IndicesArvore()
+        
+        do {
+            let arquivo = try String(contentsOf: fileURL, encoding: .utf8)
+            
+            AnalisadorCSV.analisar(arquivo: arquivo, indices: indices)
+        } catch {
+            // TODO: Lidar com o erro de ler o arquivo!
+        }
+                
+        let buffer = UnsafeBufferPointer(start: indices.pessoas, count: 23)
+
+        XCTAssertEqual(buffer.count, 23)
+        
+        XCTAssertEqual(buffer[0].nome, "Diego Manuel Edson Barbosa")
+        XCTAssertEqual(buffer[1].nome, "Carla Maya Mariana Rodrigues")
+        XCTAssertEqual(buffer[2].nome, "Carlos Eduardo Miguel Lucas Fernandes")
+        XCTAssertEqual(buffer[3].nome, "Malu Ester Maya Rocha")
+        XCTAssertEqual(buffer[4].nome, "Cauã Cauê Barbosa")
+        
+        XCTAssertEqual(buffer[22].nome, "Luís Rodrigo Cauã Lima")
+    }
 }

@@ -8,21 +8,17 @@
 import Foundation
 
 class AnalisadorCSV {
-    static func analisar(arquivo: String) {
+    static func analisar(arquivo: String, indices indice: IndicesArvore) {
         let lines = arquivo.split(separator: "\n")
         
-        //indices = IndicesArvore()
-        let oneTwo = UnsafeMutablePointer<Int>.allocate(capacity: 2)
+        // Inicializa array de ponteiros Pessoa
+        indice.pessoas = UnsafeMutablePointer<Pessoa>.allocate(capacity: lines.count)
+        indice.pessoas!.initialize(repeating: Pessoa(), count: lines.count)
         
-        oneTwo.initialize(repeating: 1, count: 2)
-        print("First memory address:", oneTwo) // First memory address: 0x000000010045deb0
-        print("First value:", oneTwo.pointee) // First value: 1
-
-        oneTwo[1] = 2 // Subscript
-        print("Second memory address:", oneTwo + 1) // Second memory address: 0x000000010045deb8
-        print("Second value:", oneTwo[1]) // Second value: 2
-        
+        // Inicializa variáveis locais de apoio
+        var linha: Int = 0
         var campo: Int = 0
+        
         var cpf: String = ""
         var rg: String = ""
         var nome: String = ""
@@ -63,11 +59,14 @@ class AnalisadorCSV {
                 campo += 1
             }
             
-            let pessoa = Pessoa(cpf: cpf, rg: rg, nome: nome, dataNascimento: dataNascimento, nomeCidadeNascimento: nomeCidadeNascimento)
+            // Adiciona pessoa ao array Pessoas
+            indice.pessoas![linha] = Pessoa(cpf: cpf, rg: rg, nome: nome, dataNascimento: dataNascimento, nomeCidadeNascimento: nomeCidadeNascimento)
             
-            indices.cpf.inserir(String(pessoa.cpf), pessoa)
-            indices.nome.inserir(Utils.getStringNormalizada(pessoa.nome), pessoa)
-            indices.dataNascimento.inserir(Utils.getISODateFrom(pessoa.dataNascimento), pessoa)
+            indice.cpf.inserir(String(indice.pessoas![linha].cpf), indice.pessoas![linha])
+            indice.nome.inserir(Utils.getStringNormalizada(indice.pessoas![linha].nome), indice.pessoas![linha])
+            indice.dataNascimento.inserir(Utils.getISODateFrom(indice.pessoas![linha].dataNascimento), indice.pessoas![linha])
+            
+            linha += 1
         }
     }
 }
