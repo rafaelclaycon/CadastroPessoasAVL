@@ -19,4 +19,25 @@ class IndicesArvore {
         self.nome = ArvoreAVL()
         self.dataNascimento = ArvoreAVL()
     }
+    
+    func getQuantidadeNosCPF() -> Int {
+        guard let array = cpf.getCaminhamentoPosOrdem() else {
+            return 0
+        }
+        return array.count
+    }
+    
+    func getQuantidadeNosNome() -> Int {
+        guard let array = nome.getCaminhamentoPosOrdem() else {
+            return 0
+        }
+        return array.count
+    }
+    
+    func getQuantidadeNosDataNascimento() -> Int {
+        guard let array = dataNascimento.getCaminhamentoPosOrdem() else {
+            return 0
+        }
+        return array.count
+    }
 }

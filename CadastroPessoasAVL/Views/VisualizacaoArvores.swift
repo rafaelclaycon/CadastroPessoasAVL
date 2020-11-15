@@ -35,14 +35,30 @@ struct VisualizacaoArvores: View {
             
             Spacer()
             
-            Picker(selection: $arvoreSelecionada, label: Text("Filtro de consulta")) {
-                ForEach(0 ..< arvores.count) {
-                    Text(arvores[$0])
+            ZStack {
+                Picker(selection: $arvoreSelecionada, label: Text("Filtro de consulta")) {
+                    ForEach(0 ..< arvores.count) {
+                        Text(arvores[$0])
+                    }
                 }
+                .pickerStyle(SegmentedPickerStyle())
+                .frame(width: 500)
+                .padding(.bottom, 35)
+                
+                HStack {
+                    Spacer()
+                    
+                    if arvoreSelecionada == 0 {
+                        Text("CPFs: \(indices.getQuantidadeNosCPF()) nós")
+                    } else if arvoreSelecionada == 1 {
+                        Text("Nomes: \(indices.getQuantidadeNosNome()) nós")
+                    } else if arvoreSelecionada == 2 {
+                        Text("Datas de nascimento: \(indices.getQuantidadeNosDataNascimento()) nós")
+                    }
+                }
+                .padding(.trailing, 40)
+                .padding(.bottom, 30)
             }
-            .pickerStyle(SegmentedPickerStyle())
-            .frame(width: 500)
-            .padding(.bottom, 35)
         }
     }
 }
