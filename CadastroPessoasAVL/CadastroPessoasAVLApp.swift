@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-var indices = IndicesArvore()
+var indices: IndicesArvore? = nil
 
 @main
 struct CadastroPessoasAVLApp: App {

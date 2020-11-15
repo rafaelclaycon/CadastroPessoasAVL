@@ -33,7 +33,7 @@ class TelaPesquisaViewModel: ObservableObject {
     }
     
     func processarEntrada() {
-        guard indices.quantidadePessoas > 0 else {
+        guard indices != nil else {
             return exibirAlertaNenhumArquivoImportado()
         }
         
@@ -60,7 +60,7 @@ class TelaPesquisaViewModel: ObservableObject {
     
     func buscarCPF(_ cpfProcurado: String) {
         limparResultados()
-        guard let pessoa = indices.cpf.buscar(chave: cpfProcurado) else {
+        guard let pessoa = indices?.cpf.buscar(chave: cpfProcurado) else {
             return exibirAlertaNenhumResultado(chave: cpfProcurado)
         }
         self.resultados.append(contentsOf: pessoa)
@@ -71,7 +71,7 @@ class TelaPesquisaViewModel: ObservableObject {
     
     func buscarNome(_ substring: String) {
         limparResultados()
-        guard let pessoas = indices.nome.buscarNosQueContem(substring: substring) else {
+        guard let pessoas = indices?.nome.buscarNosQueContem(substring: substring) else {
             return exibirAlertaNenhumResultado(chave: substring)
         }
         self.resultados.append(contentsOf: pessoas)
@@ -84,7 +84,7 @@ class TelaPesquisaViewModel: ObservableObject {
         limparResultados()
         
         do {
-            guard let resultado = try indices.dataNascimento.buscarPessoasPorIntervaloDeDatas(de: dataInicial, ate: dataFinal) else {
+            guard let resultado = try indices?.dataNascimento.buscarPessoasPorIntervaloDeDatas(de: dataInicial, ate: dataFinal) else {
                 return exibirAlertaNenhumResultadoIntervalo(dataInicial: dataInicial, dataFinal: dataFinal)
             }
             self.resultados.append(contentsOf: resultado)

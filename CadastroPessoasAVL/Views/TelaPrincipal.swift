@@ -19,7 +19,7 @@ struct TelaPrincipal: View {
             }
             
             VStack {
-                VisualizacaoArvores()
+                VisualizacaoArvores(viewModel: VisualizacaoArvoresViewModel())
             }
             .tabItem {
                 Image(systemName: "leaf.fill")

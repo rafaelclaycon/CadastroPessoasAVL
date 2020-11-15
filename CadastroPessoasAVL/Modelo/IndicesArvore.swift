@@ -40,4 +40,11 @@ class IndicesArvore {
         }
         return array.count
     }
+    
+    deinit {
+        if pessoas != nil {
+            pessoas!.deinitialize(count: quantidadePessoas)
+            pessoas!.deallocate()
+        }
+    }
 }

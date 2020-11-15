@@ -95,6 +95,13 @@ class No {
         
         return resultado
     }
+    
+    deinit {
+        if dados != nil {
+            dados!.deinitialize(count: 10)
+            dados!.deallocate()
+        }
+    }
 }
 
 enum OrientacaoNo {

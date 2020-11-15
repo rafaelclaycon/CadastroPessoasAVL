@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct VisualizacaoArvores: View {
+    @ObservedObject var viewModel: VisualizacaoArvoresViewModel
     @State private var arvores = ["CPFs", "Nomes", "Datas de Nascimento"]
     @State private var arvoreSelecionada = 0
     
@@ -25,11 +26,11 @@ struct VisualizacaoArvores: View {
             
             ScrollView(.horizontal) {
                 if arvoreSelecionada == 0 {
-                    DiagramaSubarvore(no: indices.cpf.raiz)
+                    DiagramaSubarvore(no: indices?.cpf.raiz)
                 } else if arvoreSelecionada == 1 {
-                    DiagramaSubarvore(no: indices.nome.raiz)
-                } else if arvoreSelecionada == 2 {
-                    DiagramaSubarvore(no: indices.dataNascimento.raiz)
+                    DiagramaSubarvore(no: indices?.nome.raiz)
+                } else {
+                    DiagramaSubarvore(no: indices?.dataNascimento.raiz)
                 }
             }
             
@@ -48,23 +49,27 @@ struct VisualizacaoArvores: View {
                 HStack {
                     Spacer()
                     
-                    if arvoreSelecionada == 0 {
-                        Text("CPFs: \(indices.getQuantidadeNosCPF()) nós")
-                    } else if arvoreSelecionada == 1 {
-                        Text("Nomes: \(indices.getQuantidadeNosNome()) nós")
-                    } else if arvoreSelecionada == 2 {
-                        Text("Datas de nascimento: \(indices.getQuantidadeNosDataNascimento()) nós")
-                    }
+                    getTextoNos()
                 }
                 .padding(.trailing, 40)
                 .padding(.bottom, 30)
             }
         }
     }
+    
+    func getTextoNos() -> some View {
+        if arvoreSelecionada == 0 {
+            return AnyView(Text(viewModel.getTextoNosCPF()))
+        } else if arvoreSelecionada == 1 {
+            return AnyView(Text(viewModel.getTextoNosNome()))
+        } else {
+            return AnyView(Text(viewModel.getTextoNosDataNascimento()))
+        }
+    }
 }
 
 struct VisualizacaoArvores_Previews: PreviewProvider {
     static var previews: some View {
-        VisualizacaoArvores()
+        VisualizacaoArvores(viewModel: VisualizacaoArvoresViewModel())
     }
 }

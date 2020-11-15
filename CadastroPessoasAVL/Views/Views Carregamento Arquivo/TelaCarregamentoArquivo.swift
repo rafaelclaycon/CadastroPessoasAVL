@@ -68,7 +68,14 @@ struct TelaCarregamentoArquivo: View {
                 guard let selectedFile: URL = try result.get().first else { return }
                 guard let conteudoArquivo = String(data: try Data(contentsOf: selectedFile), encoding: .utf8) else { return }
                 
-                AnalisadorCSV.analisar(arquivo: conteudoArquivo, indices: indices)
+                if indices == nil {
+                    indices = IndicesArvore()
+                } else {
+                    indices = nil
+                    indices = IndicesArvore()
+                }
+                
+                AnalisadorCSV.analisar(arquivo: conteudoArquivo, indices: indices!)
                 
                 viewModel.nomeArquivoImportado = selectedFile.lastPathComponent
             } catch {
@@ -81,12 +88,12 @@ struct TelaCarregamentoArquivo: View {
     }
     
     func getStatusArquivo() -> some View {
-        if indices.quantidadePessoas == 0 {
+        if indices == nil {
             return AnyView(HStack {
                 Image(systemName: "nosign")
                 Text("Nenhum arquivo importado.")
             })
-        } else if indices.quantidadePessoas == 1 {
+        } else if indices!.quantidadePessoas == 1 {
             return AnyView(HStack {
                 Image(systemName: "checkmark.circle.fill")
                     .foregroundColor(.green)
@@ -96,7 +103,7 @@ struct TelaCarregamentoArquivo: View {
             return AnyView(HStack {
                 Image(systemName: "checkmark.circle.fill")
                     .foregroundColor(.green)
-                Text("\(indices.quantidadePessoas) pessoas importadas do arquivo \"\(viewModel.nomeArquivoImportado)\".")
+                Text("\(indices!.quantidadePessoas) pessoas importadas do arquivo \"\(viewModel.nomeArquivoImportado)\".")
             })
         }
     }
