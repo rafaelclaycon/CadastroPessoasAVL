@@ -12,6 +12,7 @@ class TelaCarregamentoArquivoViewModel: ObservableObject {
     @Published var tituloAlerta: String = ""
     @Published var mensagemAlerta: String = ""
     @Published var exibirAlerta: Bool = false
+    @Published var nomeArquivoImportado: String = ""
     
     func processarArquivoInterno() {
         guard let fileURL = Bundle.main.url(forResource: "Pessoas", withExtension: "csv") else {
@@ -26,9 +27,10 @@ class TelaCarregamentoArquivoViewModel: ObservableObject {
         }
     }
     
-    func exibirAlertaArquivoImportadoComSucesso(nomeArquivo: String) {
-        self.tituloAlerta = "Importação Concluída"
-        self.mensagemAlerta = "O arquivo \"\(nomeArquivo)\" foi importado com sucesso."
-        self.exibirAlerta = true
-    }
+    // TODO: Implementar mensagem de erro de importação de arquivo.
+//    func exibirAlertaArquivoImportadoComSucesso(nomeArquivo: String) {
+//        self.tituloAlerta = "Importação Concluída"
+//        self.mensagemAlerta = "O arquivo \"\(nomeArquivo)\" foi importado com sucesso."
+//        self.exibirAlerta = true
+//    }
 }

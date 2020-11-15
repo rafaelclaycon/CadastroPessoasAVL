@@ -33,6 +33,10 @@ class TelaPesquisaViewModel: ObservableObject {
     }
     
     func processarEntrada() {
+        guard indices.quantidadePessoas > 0 else {
+            return exibirAlertaNenhumArquivoImportado()
+        }
+        
         if self.filtroSelecionado == 0 {
             guard !entrada.isEmpty else {
                 return exibirAlertaValorInvalidoCampoEmBranco()
@@ -110,6 +114,12 @@ class TelaPesquisaViewModel: ObservableObject {
     }
     
     // MARK: - Mensagens de Erro 🛑
+    
+    private func exibirAlertaNenhumArquivoImportado() {
+        self.tituloAlerta = "Nenhum Dado Disponível"
+        self.mensagemAlerta = "Importe um arquivo na aba Carregar Arquivo e tente novamente."
+        self.exibirAlerta = true
+    }
     
     private func exibirAlertaNenhumResultado(chave: String) {
         self.tituloAlerta = "Nenhum Resultado"

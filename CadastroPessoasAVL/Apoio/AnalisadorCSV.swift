@@ -14,6 +14,7 @@ class AnalisadorCSV {
         // Inicializa array de ponteiros Pessoa
         indice.pessoas = UnsafeMutablePointer<Pessoa>.allocate(capacity: lines.count)
         indice.pessoas!.initialize(repeating: Pessoa(), count: lines.count)
+        indice.quantidadePessoas = lines.count
         
         // Inicializa variáveis locais de apoio
         var linha: Int = 0

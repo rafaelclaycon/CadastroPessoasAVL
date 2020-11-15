@@ -19,14 +19,15 @@ struct TelaCarregamentoArquivo: View {
             
             ZStack {
                 RoundedRectangle(cornerRadius: 25, style: .continuous)
-                    .fill(Color(UIColor(red: 0.86, green: 0.95, blue: 1.00, alpha: 1.00)))
+                    .stroke(Color.gray, lineWidth: 1)
                     .frame(width: 600, height: 300)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 25)
-                            .stroke(Color.blue, lineWidth: 1)
-                    )
                 
                 VStack {
+                    Text("Para começar, importe um arquivo:")
+                        .font(.title2)
+                        .bold()
+                        .padding(.bottom, 17)
+                    
                     Button(action: {
                         exibirModalImportacaoArquivo = true
                     }) {
@@ -35,6 +36,13 @@ struct TelaCarregamentoArquivo: View {
                             Text("Importar arquivo CSV")
                         }
                     }
+                    .padding(.bottom, 20)
+                    
+                    Text("Formato esperado: cpf;rg;nome;dataAniversario;cidadeNatal")
+                        .foregroundColor(.gray)
+                        .padding(.bottom, 45)
+                    
+                    self.getStatusArquivo()
                 }
             }
             
@@ -62,13 +70,34 @@ struct TelaCarregamentoArquivo: View {
                 
                 AnalisadorCSV.analisar(arquivo: conteudoArquivo, indices: indices)
                 
-                viewModel.exibirAlertaArquivoImportadoComSucesso(nomeArquivo: selectedFile.lastPathComponent)
+                viewModel.nomeArquivoImportado = selectedFile.lastPathComponent
             } catch {
                 // TODO: Implementar alert para exibir mensagem de erro.
             }
         }
         .alert(isPresented: $viewModel.exibirAlerta) {
             Alert(title: Text(viewModel.tituloAlerta), message: Text(viewModel.mensagemAlerta), dismissButton: .default(Text("OK")))
+        }
+    }
+    
+    func getStatusArquivo() -> some View {
+        if indices.quantidadePessoas == 0 {
+            return AnyView(HStack {
+                Image(systemName: "nosign")
+                Text("Nenhum arquivo importado.")
+            })
+        } else if indices.quantidadePessoas == 1 {
+            return AnyView(HStack {
+                Image(systemName: "checkmark.circle.fill")
+                    .foregroundColor(.green)
+                Text("1 pessoa importadas do arquivo \"\(viewModel.nomeArquivoImportado)\".")
+            })
+        } else {
+            return AnyView(HStack {
+                Image(systemName: "checkmark.circle.fill")
+                    .foregroundColor(.green)
+                Text("\(indices.quantidadePessoas) pessoas importadas do arquivo \"\(viewModel.nomeArquivoImportado)\".")
+            })
         }
     }
 }

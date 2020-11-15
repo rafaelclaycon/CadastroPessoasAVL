@@ -23,12 +23,14 @@ struct VisualizacaoArvores: View {
             
             Spacer()
             
-            if arvoreSelecionada == 0 {
-                DiagramaSubarvore(no: indices.cpf.raiz)
-            } else if arvoreSelecionada == 1 {
-                DiagramaSubarvore(no: indices.nome.raiz)
-            } else if arvoreSelecionada == 2 {
-                DiagramaSubarvore(no: indices.dataNascimento.raiz)
+            ScrollView(.horizontal) {
+                if arvoreSelecionada == 0 {
+                    DiagramaSubarvore(no: indices.cpf.raiz)
+                } else if arvoreSelecionada == 1 {
+                    DiagramaSubarvore(no: indices.nome.raiz)
+                } else if arvoreSelecionada == 2 {
+                    DiagramaSubarvore(no: indices.dataNascimento.raiz)
+                }
             }
             
             Spacer()
