@@ -5,11 +5,12 @@
 //  Created by Rafael Schmitt on 02/11/20.
 //
 
-import Foundation
+import SwiftUI
 import Combine
 
 class CartaoPessoaViewModel: ObservableObject {
     var pessoa: Pessoa
+    private var cores: [Color] = [.blue, .green, .gray, .red, .orange, .pink, .purple, .yellow]
     @Published var nome: String
     @Published var rg: String
     @Published var cpf: String
@@ -28,15 +29,4 @@ class CartaoPessoaViewModel: ObservableObject {
         
         self.nomeCidadeNascimento = pessoa.nomeCidadeNascimento
     }
-    
-    func getRGFormatado(rg: Int) -> String {
-        return ""
-    }
-    
-//    static func getDataFormatada(data: Date) -> String {
-//        let dateFormatter = DateFormatter()
-//        dateFormatter.locale = Locale(identifier: "pt-br")
-//        dateFormatter.dateFormat = "dd/MM/yyyy"
-//        return dateFormatter.string(from: data)
-//    }
 }
