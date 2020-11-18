@@ -5,11 +5,12 @@
 //  Created by Rafael Schmitt on 02/11/20.
 //
 
-import Foundation
+import SwiftUI
 import Combine
 
-class CartaoPessoaViewModel: ObservableObject {
+class CartaoPessoaV2ViewModel: ObservableObject {
     var pessoa: Pessoa
+    private var cores: [Color] = [.blue, .green, .gray, .red, .orange, .pink, .purple, .yellow]
     @Published var nome: String
     @Published var rg: String
     @Published var cpf: String
@@ -31,5 +32,9 @@ class CartaoPessoaViewModel: ObservableObject {
     
     func getRGFormatado(rg: Int) -> String {
         return ""
+    }
+    
+    func getCorFundoAleatoria() -> Color {
+        return cores[Int.random(in: 0...7)]
     }
 }
