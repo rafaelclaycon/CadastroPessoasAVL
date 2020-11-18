@@ -108,7 +108,7 @@ struct TelaPesquisa: View {
                     ScrollView {
                         LazyVGrid(columns: columns, spacing: 20) {
                             ForEach(viewModel.resultados, id: \.cpf) { pessoa in
-                                CartaoPessoaV2(viewModel: CartaoPessoaV2ViewModel(pessoa: pessoa))
+                                CartaoPessoa(viewModel: CartaoPessoaViewModel(pessoa: pessoa))
                             }
                         }
                         .padding(.horizontal)
