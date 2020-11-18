@@ -18,6 +18,7 @@ struct CartaoPessoaV2: View {
                 .fill(gradiente)
                 .frame(width: 500, height: 180)
             
+            // HStack de fora
             HStack {
                 VStack(alignment: .leading) {
                     Text(viewModel.nome)
@@ -25,50 +26,59 @@ struct CartaoPessoaV2: View {
                         .bold()
                         .foregroundColor(.white)
                         .padding(.bottom, 8)
-                    HStack {
-                        VStack(alignment: .leading) {
-                            Text("RG")
-                                .foregroundColor(.white)
-                                .font(.footnote)
-                                .bold()
-                                .opacity(0.8)
-                            Text(viewModel.rg)
-                                .foregroundColor(.white)
-                                .bold()
-                        }
-                        VStack(alignment: .leading) {
-                            Text("CPF")
-                                .foregroundColor(.white)
-                                .font(.footnote)
-                                .bold()
-                                .opacity(0.8)
-                            Text(viewModel.cpf)
-                                .foregroundColor(.white)
-                                .bold()
-                        }.padding(.leading, 65)
-                    }.padding(.bottom, 4)
                     
                     HStack {
+                        // 1º VStack interno
                         VStack(alignment: .leading) {
-                            Text("DATA DE NASCIMENTO")
-                                .foregroundColor(.white)
-                                .font(.footnote)
-                                .bold()
-                                .opacity(0.8)
-                            Text(viewModel.dataNascimento)
-                                .foregroundColor(.white)
-                                .bold()
+                            VStack(alignment: .leading) {
+                                Text("RG")
+                                    .foregroundColor(.white)
+                                    .font(.footnote)
+                                    .bold()
+                                    .opacity(0.8)
+                                Text(viewModel.rg)
+                                    .foregroundColor(.white)
+                                    .bold()
+                            }.padding(.bottom, 4)
+                            
+                            VStack(alignment: .leading) {
+                                Text("DATA DE NASCIMENTO")
+                                    .foregroundColor(.white)
+                                    .font(.footnote)
+                                    .bold()
+                                    .opacity(0.8)
+                                Text(viewModel.dataNascimento)
+                                    .foregroundColor(.white)
+                                    .bold()
+                            }
                         }
+                        
+                        // 2º VStack interno
                         VStack(alignment: .leading) {
-                            Text("CIDADE NATAL")
-                                .foregroundColor(.white)
-                                .font(.footnote)
-                                .bold()
-                                .opacity(0.8)
-                            Text(viewModel.nomeCidadeNascimento)
-                                .foregroundColor(.white)
-                                .bold()
-                        }.padding(.leading)
+                            VStack(alignment: .leading) {
+                                Text("CPF")
+                                    .foregroundColor(.white)
+                                    .font(.footnote)
+                                    .bold()
+                                    .opacity(0.8)
+                                Text(viewModel.cpf)
+                                    .foregroundColor(.white)
+                                    .bold()
+                            }
+                            .padding(.leading)
+                            .padding(.bottom, 4)
+                            
+                            VStack(alignment: .leading) {
+                                Text("CIDADE NATAL")
+                                    .foregroundColor(.white)
+                                    .font(.footnote)
+                                    .bold()
+                                    .opacity(0.8)
+                                Text(viewModel.nomeCidadeNascimento)
+                                    .foregroundColor(.white)
+                                    .bold()
+                            }.padding(.leading)
+                        }
                     }
                 }
                 .padding(.leading, 60)
