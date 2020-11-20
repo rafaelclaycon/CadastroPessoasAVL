@@ -15,7 +15,7 @@ class TelaCarregamentoArquivoViewModel: ObservableObject {
     @Published var nomeArquivoImportado: String = ""
     
     func processarArquivoInterno() {
-        guard let fileURL = Bundle.main.url(forResource: "Pessoas", withExtension: "csv") else {
+        guard let fileURL = Bundle.main.url(forResource: "testImportacao30Pessoas", withExtension: "csv") else {
             fatalError("Arquivo não encontrado.")
         }
         do {

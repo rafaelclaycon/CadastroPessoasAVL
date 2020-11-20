@@ -18,7 +18,7 @@ struct Cabecalho: View {
                     .bold()
                     .padding(.bottom, 1)
                     
-                Text("TRABALHO DO GRAU B - ESTRUTURAS AVANÇADAS DE DADOS I")
+                Text("TRABALHO PRÁTICO DO GRAU B - ESTRUTURAS AVANÇADAS DE DADOS I")
                     .font(.headline)
                     .foregroundColor(.gray)
             }
