@@ -447,7 +447,7 @@ class CadastroPessoasAVLTests: XCTestCase {
     // MARK: - Lidando com ponteiros
     
     func testImportarArquivo() throws {
-        guard let fileURL = Bundle.main.url(forResource: "Pessoas", withExtension: "csv") else {
+        guard let fileURL = Bundle.main.url(forResource: "testImportarArquivo", withExtension: "csv") else {
             fatalError("Arquivo não encontrado.")
         }
         
@@ -472,5 +472,26 @@ class CadastroPessoasAVLTests: XCTestCase {
         XCTAssertEqual(buffer[4].nome, "Cauã Cauê Barbosa")
         
         XCTAssertEqual(buffer[22].nome, "Luís Rodrigo Cauã Lima")
+        
+        // Não existem datas de nascimento repeditas no arquivo, logo devem existir 23 nós de data de nascimento.
+        XCTAssertEqual(indices.getQuantidadeNosDataNascimento(), 23)
+    }
+    
+    func testQuantidadeNosImportacaoDuasPessoasMesmaDataNascimento() throws {
+        guard let fileURL = Bundle.main.url(forResource: "testImportacao30Pessoas", withExtension: "csv") else {
+            fatalError("Arquivo não encontrado.")
+        }
+        
+        let indices = IndicesArvore()
+        
+        do {
+            let arquivo = try String(contentsOf: fileURL, encoding: .utf8)
+            
+            AnalisadorCSV.analisar(arquivo: arquivo, indices: indices)
+        } catch {
+            // TODO: Lidar com o erro de ler o arquivo!
+        }
+        
+        XCTAssertEqual(indices.getQuantidadeNosDataNascimento(), 29)
     }
 }

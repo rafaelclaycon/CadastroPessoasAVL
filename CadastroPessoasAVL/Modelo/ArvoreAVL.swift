@@ -39,10 +39,10 @@ class ArvoreAVL {
             raiz.adicionar(pessoa: dados)
         }
         
-        verificarBalanceamento(raiz, balancear: true)
+        verificarBalanceamento(raiz, balancear: true, debug: debug)
     }
     
-    func inserirEmSubarvore(_ no: No, _ chave: String, _ dados: Pessoa?) {
+    func inserirEmSubarvore(_ no: No, _ chave: String, _ dados: Pessoa? ) {
         if chave < no.chave {
             if no.esquerda == nil {
                 no.esquerda = No(pai: no, esquerda: nil, direita: nil, chave: chave, dados: dados)
@@ -62,7 +62,7 @@ class ArvoreAVL {
     }
     
     // MARK: - Balanceamento
-    func verificarBalanceamento(_ no: No?, balancear: Bool) {
+    func verificarBalanceamento(_ no: No?, balancear: Bool, debug: Bool) {
         guard let noAtual = no else {
             return
         }

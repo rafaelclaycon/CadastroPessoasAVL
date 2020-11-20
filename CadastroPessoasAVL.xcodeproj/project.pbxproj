@@ -13,7 +13,6 @@
 		D90DE5F8254DDEE70062E7B3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D90DE5F7254DDEE70062E7B3 /* Preview Assets.xcassets */; };
 		D90DE603254DDEE80062E7B3 /* CadastroPessoasAVLTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90DE602254DDEE80062E7B3 /* CadastroPessoasAVLTests.swift */; };
 		D90DE60E254DDEE80062E7B3 /* CadastroPessoasAVLUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90DE60D254DDEE80062E7B3 /* CadastroPessoasAVLUITests.swift */; };
-		D90DE623254DECEC0062E7B3 /* Pessoas.csv in Resources */ = {isa = PBXBuildFile; fileRef = D90DE622254DECEC0062E7B3 /* Pessoas.csv */; };
 		D90DE629254DEDD00062E7B3 /* Pessoa.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90DE628254DEDD00062E7B3 /* Pessoa.swift */; };
 		D90DE62E254DF7520062E7B3 /* TelaPesquisaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90DE62D254DF7520062E7B3 /* TelaPesquisaViewModel.swift */; };
 		D90DE639254E3DD50062E7B3 /* TelaCarregamentoArquivo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90DE638254E3DD50062E7B3 /* TelaCarregamentoArquivo.swift */; };
@@ -35,6 +34,8 @@
 		D99C646F25615D0400D7E4A3 /* VisualizacaoArvoresViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99C646E25615D0400D7E4A3 /* VisualizacaoArvoresViewModel.swift */; };
 		D9C8F9752550C1E800C3B6A3 /* TelaPrincipal.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C8F9742550C1E800C3B6A3 /* TelaPrincipal.swift */; };
 		D9C8F9802550D6B500C3B6A3 /* String+isInt.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C8F97F2550D6B500C3B6A3 /* String+isInt.swift */; };
+		D9DE8F272565E0EB00A3E46E /* testImportarArquivo.csv in Resources */ = {isa = PBXBuildFile; fileRef = D9DE8F262565E0EB00A3E46E /* testImportarArquivo.csv */; };
+		D9DE8F2C2565E15400A3E46E /* testImportacao30Pessoas.csv in Resources */ = {isa = PBXBuildFile; fileRef = D9DE8F2B2565E15400A3E46E /* testImportacao30Pessoas.csv */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,7 +68,6 @@
 		D90DE609254DDEE80062E7B3 /* CadastroPessoasAVLUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CadastroPessoasAVLUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D90DE60D254DDEE80062E7B3 /* CadastroPessoasAVLUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CadastroPessoasAVLUITests.swift; sourceTree = "<group>"; };
 		D90DE60F254DDEE80062E7B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D90DE622254DECEC0062E7B3 /* Pessoas.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Pessoas.csv; sourceTree = "<group>"; };
 		D90DE628254DEDD00062E7B3 /* Pessoa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pessoa.swift; sourceTree = "<group>"; };
 		D90DE62D254DF7520062E7B3 /* TelaPesquisaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelaPesquisaViewModel.swift; sourceTree = "<group>"; };
 		D90DE638254E3DD50062E7B3 /* TelaCarregamentoArquivo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelaCarregamentoArquivo.swift; sourceTree = "<group>"; };
@@ -89,6 +89,8 @@
 		D99C646E25615D0400D7E4A3 /* VisualizacaoArvoresViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualizacaoArvoresViewModel.swift; sourceTree = "<group>"; };
 		D9C8F9742550C1E800C3B6A3 /* TelaPrincipal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelaPrincipal.swift; sourceTree = "<group>"; };
 		D9C8F97F2550D6B500C3B6A3 /* String+isInt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+isInt.swift"; sourceTree = "<group>"; };
+		D9DE8F262565E0EB00A3E46E /* testImportarArquivo.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = testImportarArquivo.csv; sourceTree = "<group>"; };
+		D9DE8F2B2565E15400A3E46E /* testImportacao30Pessoas.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = testImportacao30Pessoas.csv; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,8 +182,9 @@
 		D90DE621254DEBCF0062E7B3 /* Recursos */ = {
 			isa = PBXGroup;
 			children = (
+				D9DE8F2B2565E15400A3E46E /* testImportacao30Pessoas.csv */,
+				D9DE8F262565E0EB00A3E46E /* testImportarArquivo.csv */,
 				D90FBB5525584BA400E936AC /* imagem_perfil.png */,
-				D90DE622254DECEC0062E7B3 /* Pessoas.csv */,
 			);
 			path = Recursos;
 			sourceTree = "<group>";
@@ -371,10 +374,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D90DE623254DECEC0062E7B3 /* Pessoas.csv in Resources */,
 				D90FBB5625584BA400E936AC /* imagem_perfil.png in Resources */,
 				D90DE5F8254DDEE70062E7B3 /* Preview Assets.xcassets in Resources */,
+				D9DE8F272565E0EB00A3E46E /* testImportarArquivo.csv in Resources */,
 				D90DE5F5254DDEE70062E7B3 /* Assets.xcassets in Resources */,
+				D9DE8F2C2565E15400A3E46E /* testImportacao30Pessoas.csv in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

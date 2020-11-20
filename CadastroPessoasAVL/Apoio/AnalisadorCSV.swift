@@ -27,34 +27,21 @@ class AnalisadorCSV {
         var nomeCidadeNascimento: String = ""
         
         for line in lines {
-            print(line)
             let columns = line.split(separator: ";", omittingEmptySubsequences: false)
             
             campo = 0
             
             for column in columns {
-                print(column)
-                
                 if campo == 0 {
-                    let cpfEncontrado = column
-                    print("String = \(cpfEncontrado)")
-                    cpf = String(cpfEncontrado)
+                    cpf = String(column)
                 } else if campo == 1 {
-                    let rgEncontrado = column
-                    print("String = \(rgEncontrado)")
-                    rg = String(rgEncontrado)
+                    rg = String(column)
                 } else if campo == 2 {
-                    let nomeEncontrado = column
-                    print("String = \(nomeEncontrado)")
-                    nome = String(nomeEncontrado)
+                    nome = String(column)
                 } else if campo == 3 {
-                    let dataNascimentoEncontrada = String(column)
-                    print("Date = \(dataNascimentoEncontrada)")
-                    dataNascimento = Utils.getDateFrom(dataNascimentoEncontrada)
+                    dataNascimento = Utils.getDateFrom(String(column))
                 } else if campo == 4 {
-                    let nomeCidadeEncontrado = column
-                    print("String = \(nomeCidadeEncontrado)")
-                    nomeCidadeNascimento = String(nomeCidadeEncontrado)
+                    nomeCidadeNascimento = String(column)
                 }
                 
                 campo += 1
