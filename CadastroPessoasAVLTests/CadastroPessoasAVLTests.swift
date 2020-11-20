@@ -492,6 +492,6 @@ class CadastroPessoasAVLTests: XCTestCase {
             // TODO: Lidar com o erro de ler o arquivo!
         }
         
-        XCTAssertEqual(indices.getQuantidadeNosDataNascimento(), 29)
+        XCTAssertEqual(indices.getQuantidadeNosDataNascimento(), 27)
     }
 }

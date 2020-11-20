@@ -39,7 +39,8 @@ class ArvoreAVL {
             raiz.adicionar(pessoa: dados)
         }
         
-        verificarBalanceamento(raiz, balancear: true, debug: debug)
+        // (chave == "1944-09-08") || (chave == "1945-04-05")
+        verificarBalanceamento(raiz, debug: chave == "1944-04-02")
     }
     
     func inserirEmSubarvore(_ no: No, _ chave: String, _ dados: Pessoa? ) {
@@ -62,18 +63,16 @@ class ArvoreAVL {
     }
     
     // MARK: - Balanceamento
-    func verificarBalanceamento(_ no: No?, balancear: Bool, debug: Bool) {
+    func verificarBalanceamento(_ no: No?, debug: Bool) {
         guard let noAtual = no else {
             return
         }
         
-        verificarBalanceamento(noAtual.esquerda, balancear: balancear)
-        verificarBalanceamento(noAtual.direita, balancear: balancear)
-        
-        print("\(noAtual.chave) consultado para balanceamento. F: \(noAtual.fatorBalanceamento)")
+        verificarBalanceamento(noAtual.esquerda, debug: debug)
+        verificarBalanceamento(noAtual.direita, debug: debug)
         
         if (noAtual.fatorBalanceamento < -1) || (noAtual.fatorBalanceamento > 1) {
-            print("Nó \(noAtual.chave) necessita balanceamento!")
+            if debug { print("DEBUG - Nó \(noAtual.chave) necessita balanceamento!") }
             
             // Rotação Simples à Direita
             // Toda vez que uma sub-árvore fica com um fator
@@ -85,23 +84,17 @@ class ArvoreAVL {
             
             if noAtual.fatorBalanceamento > 1 {
                 if noAtual.esquerda!.fatorBalanceamento > 0 {
-                    print("Rotação Simples à Direita")
+                    if debug { print("DEBUG - Rotação Simples à Direita") }
 
-                    if balancear {
-                        rotacaoSimplesADireita(noAtual)
-                        print("Rotação Simples à Direita aplicada.")
-                    } else {
-                        print("Executaria uma Rotação Simples à Direita no nó \(noAtual.chave).")
-                    }
-                } else if noAtual.esquerda!.fatorBalanceamento < 0 {
-                    print("Rotação Dupla à Direita")
+                    rotacaoSimplesADireita(noAtual)
                     
-                    if balancear {
-                        rotacaoDuplaADireita(noAtual)
-                        print("Rotação Dupla à Direita aplicada.")
-                    } else {
-                        print("Executaria uma Rotação Dupla à Direita no nó \(noAtual.chave).")
-                    }
+                    if debug { print("DEBUG - Rotação Simples à Direita aplicada.") }
+                } else if noAtual.esquerda!.fatorBalanceamento < 0 {
+                    if debug { print("DEBUG - Rotação Dupla à Direita") }
+                    
+                    rotacaoDuplaADireita(noAtual)
+                        
+                    if debug { print("DEBUG - Rotação Dupla à Direita aplicada.") }
                 }
             }
             
@@ -115,23 +108,17 @@ class ArvoreAVL {
             
             if noAtual.fatorBalanceamento < -1 {
                 if noAtual.direita!.fatorBalanceamento > 0 {
-                    print("Rotação Dupla à Esquerda")
+                    if debug { print("DEBUG - Rotação Dupla à Esquerda") }
                     
-                    if balancear {
-                        rotacaoDuplaAEsquerda(noAtual)
-                        print("Rotação Dupla à Esquerda aplicada.")
-                    } else {
-                        print("Executaria uma Rotação Dupla à Esquerda no nó \(noAtual.chave).")
-                    }
+                    rotacaoDuplaAEsquerda(noAtual)
+                    
+                    if debug { print("DEBUG - Rotação Dupla à Esquerda aplicada.") }
                 } else if noAtual.direita!.fatorBalanceamento < 0 {
-                    print("Rotação Simples à Esquerda")
+                    if debug { print("DEBUG - Rotação Simples à Esquerda") }
                     
-                    if balancear {
-                        rotacaoSimplesAEsquerda(noAtual)
-                        print("Rotação Simples à Esquerda aplicada.")
-                    } else {
-                        print("Executaria uma Rotação Simples à Esquerda no nó \(noAtual.chave).")
-                    }
+                    rotacaoSimplesAEsquerda(noAtual)
+                        
+                    if debug { print("DEBUG - Rotação Simples à Esquerda aplicada.") }
                 }
             }
         }
@@ -509,7 +496,7 @@ class ArvoreAVL {
             print("💀  O número \(chave) foi removido.")
         }
         
-        verificarBalanceamento(raiz, balancear: true)
+        verificarBalanceamento(raiz, debug: true)
     }
     
     func getNo(comChave chave: String, aPartirDe no: No?) -> No? {
