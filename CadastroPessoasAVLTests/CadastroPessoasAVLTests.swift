@@ -477,7 +477,7 @@ class CadastroPessoasAVLTests: XCTestCase {
         XCTAssertEqual(indices.getQuantidadeNosDataNascimento(), 23)
     }
     
-    func testQuantidadeNosImportacaoDuasPessoasMesmaDataNascimento() throws {
+    func testQuantidadeNosImportacaoTrintaPessoas_DuasMesmaDataNascimento() throws {
         guard let fileURL = Bundle.main.url(forResource: "testImportacao30Pessoas", withExtension: "csv") else {
             fatalError("Arquivo não encontrado.")
         }
@@ -492,6 +492,6 @@ class CadastroPessoasAVLTests: XCTestCase {
             // TODO: Lidar com o erro de ler o arquivo!
         }
         
-        XCTAssertEqual(indices.getQuantidadeNosDataNascimento(), 27)
+        XCTAssertEqual(indices.getQuantidadeNosDataNascimento(), 29)
     }
 }

@@ -33,10 +33,11 @@ struct NoView: View {
             Text(String(self.fator))
                 .font(.footnote)
                 .foregroundColor(corFator)
-                .offset(x: -25.0, y: -25.0)
+                .offset(x: -25.0, y: 25.0)
             
             Text(String(self.pai ?? ""))
                 .font(.footnote)
+                .bold()
                 .foregroundColor(.gray)
                 .offset(y: -30.0)
         }
@@ -46,7 +47,7 @@ struct NoView: View {
 struct NoView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            NoView(chave: "1994-07-19", fator: 0, pai: "19")
+            NoView(chave: "1994-07-19", fator: 0, pai: "1942-02-17")
             NoView(chave: "57309454421", fator: 0, pai: nil)
             NoView(chave: "CARLOS EDUARDO MIGUEL LUCAS FERNANDES", fator: 0, pai: "CA")
             NoView(chave: "CARLA MAYA MARIANA RODRIGUES", fator: 0, pai: "DI")

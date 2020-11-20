@@ -39,8 +39,7 @@ class ArvoreAVL {
             raiz.adicionar(pessoa: dados)
         }
         
-        // (chave == "1944-09-08") || (chave == "1945-04-05")
-        verificarBalanceamento(raiz, debug: chave == "1944-04-02")
+        verificarBalanceamento(raiz, debug: false)
     }
     
     func inserirEmSubarvore(_ no: No, _ chave: String, _ dados: Pessoa? ) {
@@ -72,7 +71,7 @@ class ArvoreAVL {
         verificarBalanceamento(noAtual.direita, debug: debug)
         
         if (noAtual.fatorBalanceamento < -1) || (noAtual.fatorBalanceamento > 1) {
-            if debug { print("DEBUG - Nó \(noAtual.chave) necessita balanceamento!") }
+            if debug { print("Nó \(noAtual.chave) necessita balanceamento!") }
             
             // Rotação Simples à Direita
             // Toda vez que uma sub-árvore fica com um fator
@@ -84,17 +83,17 @@ class ArvoreAVL {
             
             if noAtual.fatorBalanceamento > 1 {
                 if noAtual.esquerda!.fatorBalanceamento > 0 {
-                    if debug { print("DEBUG - Rotação Simples à Direita") }
+                    if debug { print("Rotação Simples à Direita") }
 
                     rotacaoSimplesADireita(noAtual)
                     
-                    if debug { print("DEBUG - Rotação Simples à Direita aplicada.") }
+                    if debug { print("Rotação Simples à Direita aplicada.") }
                 } else if noAtual.esquerda!.fatorBalanceamento < 0 {
-                    if debug { print("DEBUG - Rotação Dupla à Direita") }
+                    if debug { print("Rotação Dupla à Direita") }
                     
                     rotacaoDuplaADireita(noAtual)
                         
-                    if debug { print("DEBUG - Rotação Dupla à Direita aplicada.") }
+                    if debug { print("Rotação Dupla à Direita aplicada.") }
                 }
             }
             
@@ -108,17 +107,17 @@ class ArvoreAVL {
             
             if noAtual.fatorBalanceamento < -1 {
                 if noAtual.direita!.fatorBalanceamento > 0 {
-                    if debug { print("DEBUG - Rotação Dupla à Esquerda") }
+                    if debug { print("Rotação Dupla à Esquerda") }
                     
                     rotacaoDuplaAEsquerda(noAtual)
                     
-                    if debug { print("DEBUG - Rotação Dupla à Esquerda aplicada.") }
+                    if debug { print("Rotação Dupla à Esquerda aplicada.") }
                 } else if noAtual.direita!.fatorBalanceamento < 0 {
-                    if debug { print("DEBUG - Rotação Simples à Esquerda") }
+                    if debug { print("Rotação Simples à Esquerda") }
                     
                     rotacaoSimplesAEsquerda(noAtual)
                         
-                    if debug { print("DEBUG - Rotação Simples à Esquerda aplicada.") }
+                    if debug { print("Rotação Simples à Esquerda aplicada.") }
                 }
             }
         }
@@ -227,12 +226,16 @@ class ArvoreAVL {
         k1.pai = k2
         k1.direita = b
         
+        b?.pai = k1
+        
         // Rotação direita
         k2.pai = k3.pai
         k2.direita = k3
         
         k3.pai = k2
         k3.esquerda = c
+        
+        c?.pai = k3
     }
     
     func rotacaoDuplaAEsquerda(_ k1: No) {

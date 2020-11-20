@@ -9,6 +9,7 @@ import Combine
 import SwiftUI
 
 class VisualizacaoArvoresViewModel: ObservableObject {
+    @Published var mostarArvore: Bool = true
     
     func getTextoNosCPF() -> String {
         guard indices != nil else {

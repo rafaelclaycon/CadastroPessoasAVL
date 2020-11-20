@@ -11,6 +11,7 @@ struct VisualizacaoArvores: View {
     @ObservedObject var viewModel: VisualizacaoArvoresViewModel
     @State private var arvores = ["CPFs", "Nomes", "Datas de Nascimento"]
     @State private var arvoreSelecionada = 0
+    @State private var entrada = ""
     
     var body: some View {
         VStack {
@@ -25,13 +26,48 @@ struct VisualizacaoArvores: View {
             Spacer()
             
             ScrollView(.horizontal) {
-                if arvoreSelecionada == 0 {
-                    DiagramaSubarvore(no: indices?.cpf.raiz)
-                } else if arvoreSelecionada == 1 {
-                    DiagramaSubarvore(no: indices?.nome.raiz)
-                } else {
-                    DiagramaSubarvore(no: indices?.dataNascimento.raiz)
+                if viewModel.mostarArvore {
+                    if arvoreSelecionada == 0 {
+                        DiagramaSubarvore(no: indices?.cpf.raiz)
+                    } else if arvoreSelecionada == 1 {
+                        DiagramaSubarvore(no: indices?.nome.raiz)
+                    } else {
+                        DiagramaSubarvore(no: indices?.dataNascimento.raiz)
+                    }
                 }
+            }
+            
+            Spacer()
+            
+            HStack {
+                Spacer()
+                
+                TextField("", text: $entrada)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .keyboardType(.numberPad)
+                    .frame(width: 120)
+                    .padding(.trailing, 20)
+                
+                Button(action: {
+                    if arvoreSelecionada == 0 {
+                        indices?.cpf.inserir(entrada)
+                    } else if arvoreSelecionada == 1 {
+                        indices?.nome.inserir(entrada)
+                    } else {
+                        indices?.dataNascimento.inserir(entrada)
+                    }
+                    entrada = ""
+                }) {
+                    Text("Inserir")
+                }
+                .padding(.trailing, 20)
+                
+                Toggle(isOn: $viewModel.mostarArvore) {
+                    Text("Mostrar árvore")
+                }
+                .frame(width: 180)
+                
+                Spacer()
             }
             
             Spacer()
