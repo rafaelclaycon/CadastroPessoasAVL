@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct TelaPesquisa: View {
+
     @ObservedObject var viewModel: TelaPesquisaViewModel
     
     let columns = [

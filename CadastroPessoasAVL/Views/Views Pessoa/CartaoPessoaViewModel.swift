@@ -1,14 +1,8 @@
-//
-//  CartaoPessoaViewModel.swift
-//  CadastroPessoasAVL
-//
-//  Created by Rafael Schmitt on 02/11/20.
-//
-
 import SwiftUI
 import Combine
 
 class CartaoPessoaViewModel: ObservableObject {
+
     var pessoa: Pessoa
     private var cores: [Color] = [.blue, .green, .gray, .red, .orange, .pink, .purple, .yellow]
     @Published var nome: String
@@ -29,4 +23,5 @@ class CartaoPessoaViewModel: ObservableObject {
         
         self.nomeCidadeNascimento = pessoa.nomeCidadeNascimento
     }
+
 }

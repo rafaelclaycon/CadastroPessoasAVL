@@ -1,13 +1,7 @@
-//
-//  CartaoPessoa.swift
-//  CadastroPessoasAVL
-//
-//  Created by Rafael Schmitt on 02/11/20.
-//
-
 import SwiftUI
 
 struct CartaoPessoa: View {
+
     @ObservedObject var viewModel: CartaoPessoaViewModel
     
     let gradiente = LinearGradient(gradient: Gradient(colors: [.azul, .azul, .azulClaro]), startPoint: .topLeading, endPoint: .bottomTrailing)
@@ -92,13 +86,16 @@ struct CartaoPessoa: View {
                 .offset(x: 210, y: 50)
         }
     }
+
 }
 
 struct CartaoPessoa_Previews: PreviewProvider {
+
     static var previews: some View {
         Group {
             CartaoPessoa(viewModel: CartaoPessoaViewModel(pessoa: Pessoa(cpf: "71828160245", rg: "448284224", nome: "Clarice Marcela da Rosa", dataNascimento: Date(), nomeCidadeNascimento: "Itatiba")))
             CartaoPessoa(viewModel: CartaoPessoaViewModel(pessoa: Pessoa(cpf: "13598557698", rg: "467532953", nome: "Diego Manuel Edson Barbosa", dataNascimento: Date(), nomeCidadeNascimento: "Luziânia")))
         }.previewLayout(.fixed(width: 560, height: 220))
     }
+
 }
